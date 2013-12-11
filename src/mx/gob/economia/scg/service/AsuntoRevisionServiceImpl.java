@@ -227,7 +227,6 @@ public class AsuntoRevisionServiceImpl extends AsuntoServiceImpl implements Asun
         // pertenecen a áreas internas
         // Ticket 152
         // Rodolfo Milano Oliveros
-        // Fecha: 09/12/2013
         Integer tipoAreaRemite = asunto.getAsunto_detalle().getEmpleado_remi().getArea().getTipo();
         Integer tipoAreaDestino = asunto.getAsunto_detalle().getEmpleado_dest().getArea().getTipo();
         if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
@@ -249,7 +248,6 @@ public class AsuntoRevisionServiceImpl extends AsuntoServiceImpl implements Asun
         // pertenecen a áreas internas
         // Ticket 152
         // Rodolfo Milano Oliveros
-        // Fecha: 09/12/2013
         if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
             asuntoDetalle.setEstatus(Constantes.TURNADO);
         }
@@ -259,7 +257,6 @@ public class AsuntoRevisionServiceImpl extends AsuntoServiceImpl implements Asun
         // pertenecen a áreas internas
         // Ticket 152
         // Rodolfo Milano Oliveros
-        // Fecha: 09/12/2013
         if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
             asunto.setEstatus(Constantes.TURNADO);
         }
