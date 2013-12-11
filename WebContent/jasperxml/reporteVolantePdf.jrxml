@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coffet" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="526"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="SansSerif" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="SansSerif" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="SansSerif" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="LOGO" class="java.io.InputStream"/>
+	<parameter name="procedencia" class="java.lang.String"/>
+	<parameter name="remitente" class="java.lang.String"/>
+	<parameter name="firmante" class="java.lang.String"/>
+	<parameter name="cargo" class="java.lang.String"/>
+	<parameter name="documento" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<parameter name="volante" class="java.lang.String"/>
+	<parameter name="seguimiento" class="java.lang.String"/>
+	<parameter name="responderantesdel" class="java.lang.String"/>
+	<parameter name="referencia" class="java.lang.String"/>
+	<parameter name="comentarios" class="java.lang.String"/>
+	<parameter name="oficina" class="java.lang.String"/>
+	<parameter name="puestoremitente" class="java.lang.String"/>
+	<parameter name="tituloremitente" class="java.lang.String"/>
+	<parameter name="destinatario" class="java.lang.String"/>
+	<parameter name="puestodestinatario" class="java.lang.String"/>
+	<parameter name="respuestaoficina" class="java.lang.String"/>
+	<parameter name="respuestaarea" class="java.lang.String"/>
+	<parameter name="respuestasecretaria" class="java.lang.String"/>
+	<parameter name="respuestavolante" class="java.lang.String"/>
+	<parameter name="respuestaseguimiento" class="java.lang.String"/>
+	<parameter name="respuestacontestacion" class="java.lang.String"/>
+	<field name="id_asunto" class="java.lang.String"/>
+	<field name="asunto" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="no_oficio" class="java.lang.String"/>
+	<field name="fh_oficioDDMMYYYY" class="java.lang.String"/>
+	<field name="estatus_desc" class="java.lang.String"/>
+	<field name="asunto_detalle.fh_limiteDDMMYYYY" class="java.lang.String"/>
+	<field name="asunto_detalle.empleado_remi.nombre_completo" class="java.lang.String"/>
+	<field name="asunto_detalle.empleado_dest.nombre_completo" class="java.lang.String"/>
+	<field name="expediente.expediente" class="java.lang.String"/>
+	<field name="tema.tema" class="java.lang.String"/>
+	<field name="id_asunto_ref" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="11" y="5" width="550" height="45"/>
+				<imageExpression class="java.io.InputStream"><![CDATA[$P{LOGO}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="4" y="33" width="565" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="171" y="19" width="223" height="13" forecolor="#003333" backcolor="#63BBDE"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single">
+					<font size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Volante de correspondencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="5" width="383" height="15" forecolor="#003D71"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Control de Gestión de la Secretaría de Economía]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="8" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="290" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Opaque" x="5" y="98" width="563" height="155" forecolor="#63BBDE" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="86" width="100" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sintesis:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="100" width="550" height="151"/>
+				<textElement markup="none"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="62" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expediente:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="35" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{asunto_detalle.empleado_dest.nombre_completo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="62" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{expediente.expediente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="35" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turnado a:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="71" width="106" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{id_asunto_ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="53" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{asunto_detalle.empleado_remi.nombre_completo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="53" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remitente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="44" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de compromiso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="71" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Referencia:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="44" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{asunto_detalle.fh_limiteDDMMYYYY}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="383" y="34" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="43" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volante:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="480" y="34" width="85" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fh_oficioDDMMYYYY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="43" width="85" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{estatus_desc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="10" width="276" height="13"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{asunto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="26" width="94" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documento:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="26" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{no_oficio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="263" width="67" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Respuesta:]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" mode="Transparent" x="5" y="276" width="563" height="1" forecolor="#999999" backcolor="#E8E7E7"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="5" y="278" width="92" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false" isItalic="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sistema de Control de Gestión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="10" width="36" height="13"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TURNO: $F{asunto}]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="14" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="48" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="24" width="564" height="15" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="517" y="1" width="40" height="11" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="1" width="64" height="11" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="5" y="1" width="146" height="13" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement x="2" y="8" width="566" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Alfonso Reyes No. 30 Colonia Hipódromo Condesa, Delegación Cuauhtémoc, C.P.  06140  Teléfono 57 29 91 00.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,121 @@
+        
+div .tree
+{
+    width: 220px;
+}
+
+input.tree
+{
+    background-color: #c6c7c8;
+    font-weight: bold;
+    color: #646463;
+}
+
+.ui-widget .ui-widget
+{
+    font-size:9px;
+}
+
+.td_concepto_cntr_gde
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_cntr_peq
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_izq_gde
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_izq_peq
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_descripcion_cntr_gde
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 14px;
+    /*font-weight: bold;*/
+    color: #646463;
+}
+
+.td_descripcion_cntr_peq
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 12px;
+    /*font-weight: bold;*/
+    color: #646463;
+}
+
+div.content div.inner div.ayudaBscr
+{
+    background: none repeat scroll 0 0 #DADADA;
+    float:right;
+    height:auto;
+    /*margin: 200% 20% 20% 10%;*/
+    margin: -113px -262px 2px 1px;
+    position:relative;
+    width:60%;
+    text-align: justify;
+    font-size: 10.5px;
+    border-color: #565656;  /*#9ED4F1*/
+    border-style: dashed;
+    border-width: 1px;
+}
+
+
+div.content div.inner div.ayudaAgregar
+{
+    background:none repeat scroll 0 0 #DADADA;
+    float:right;
+    height:auto;
+    /*margin: 200% 20% 20% 10%;*/
+    margin: -110px -262px 2px 1px;
+    position:relative;
+    width:60%;
+    text-align: justify;
+    font-size: 10.5px;
+    border-color: #565656;  
+    border-style: dashed;
+    border-width: 1px;
+}
+
+
+div.content div.inner div.ayudaEditar
+{
+    background:none repeat scroll 0 0 #DADADA;
+    float:right;
+    height:auto;
+    /*margin: 200% 20% 20% 10%;*/
+    margin: -82px -262px 2px 1px;
+    position:relative;
+    width:60%;
+    text-align: justify;
+    font-size: 10.5px;
+    border-color: #565656; 
+    border-style: dashed;
+    border-width: 1px;
+}

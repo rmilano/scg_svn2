@@ -1,0 +1,343 @@
+/*
+    Document   : login
+    Created on : 07-oct-2010, 15:22:32
+    Author     : gerardo
+    Description:
+        Purpose of the stylesheet follows.
+
+
+
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.superior
+{
+    display: inline;
+    /*background-color:#E4F5FF;
+    border-color:#D0EAF8;*/
+}
+.div_textos
+{
+    background-color: transparent;
+    height:auto;
+    width:50%;
+    margin: 40px 0px -250px 60px;
+    text-align: justify;
+    font-size: 12px;
+    
+}
+
+.img_login
+{
+    /*background-image: url("../../../imagenes/login.png");*/
+    /*height:auto;*/
+    /*line-height:24px;*/
+    /*margin-left:72%;*/
+    margin:0px 0px 20px 0px;
+    /*padding:18px 13px;*/
+    /*width:24%;*/
+    text-align: center;
+
+}
+
+.login
+{
+    background-color:transparent;
+    height:auto;
+    line-height:24px;
+    /*margin-left:72%;*/
+    margin:10px 10px 50px 250px;
+    padding:18px 13px;
+    width:18%;
+    /*display: none;*/
+}
+
+.div_avisos
+{
+    background-color: #9c9e9f;
+    height:auto;
+    width:35%;
+    position:relative;
+    margin: -35px 10px 50px 550px;
+    text-align: justify;
+    font-size: 12px;
+    border-style: none;
+    border-width: thin;
+    border-color: #565656;
+
+}
+
+.btn_login
+{
+    background-color: #9C9E9F;
+    border-width: thin;
+    border-color: #565656;
+    border-style: none;
+    color: #ffffff; 
+    font-size: 13px;
+    font-weight: bold;
+    height: 28px;
+    width: 142px;
+     font-family: Times New Roman;
+}
+
+.btn_login:hover
+{
+    background-color: #C6C7C8;
+    border-color: #565656;
+   border-width: thin;
+    color: #ffffff;
+    font-size: 13px;
+    border-style: none;
+    height: 28px;
+   width: 142px; 
+   
+    font-family: Times New Roman;
+}
+
+.pelicula
+{
+    background-color:transparent;
+    height:auto;
+    margin: 130px 1% 2% 5%;
+    width:90%;
+
+}
+
+.hr_titulo
+{
+    width: 100%;
+    color: #646463;
+    background-color: #fafafa;
+    height: 5px;
+    border-color: #565656;
+    border-style: solid;
+}
+
+.hr_subtitulo
+{
+    width: 100%;
+    color: #646463;
+    background-color: #FAFAFA;
+    height: 3px;
+    border-color: #565656;
+    border-style: solid;
+}
+
+.td_concepto_izq_gde
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_izq_peq
+{
+    text-align: left;
+    font-family: Trajan Pro;
+    font-size: 12px;
+    color: #646463;
+}
+
+.td_descripcion_izq_peq
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 12px;
+    color: #646463;
+}
+
+.td_descripcion_just_peq
+{
+    text-align: justify;
+    font-family: Times New Roman;
+    font-size: 12px;
+    color: #646463;
+}
+
+.td_titulo
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ba2025;
+}
+
+/* ----- INICIA Tablero de Control ----  */
+
+.divTableroCtrl
+{
+    /*position: absolute;*/
+    margin: 51px 22px 10px 90px;
+    width: 80%;
+    border-color: #565656;
+    border-style: solid;
+}
+
+.divTableroCtrl .tdTableroCtrl
+{
+    text-align: left;
+    vertical-align: top;
+    width: 33.3%; /* 33.3% para los TD contenedores */
+    color: #646363;
+    /*background-color: #9c9e9f;*/
+    /*background-image: url("../../../imagenes/bckTablero.png");*/
+    font-size: 12px;
+    font-family: Times New Roman;
+}
+
+.divTableroCtrl .linkInicio
+{
+    color: #BA2025;
+    font-size: 14px;
+    font-family: Times New Roman;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.divTableroCtrl .linkInicio:hover
+{
+    color: white;
+    font-size: 14px;
+    font-family: Times New Roman;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.divTableroCtrl .tdTituloTblCtrl
+{
+    text-align: center;
+    vertical-align: top;
+    color: #646463;
+    background-color: #9c9e9f;
+    font-size: 14px;
+    font-variant: bold;
+    font-family: Times New Roman;
+}
+.imgInicio
+{
+    width: 142px;
+    height: 125px;
+  
+}
+
+.imgPanel_
+{
+    width: 48px;
+    height: 48px;
+  
+}
+
+.imgbckTablero
+{
+    background-image: url("../../../imagenes/bckTablero.png");
+    background-repeat:repeat;
+}
+
+
+/* ----- FIN Tablero de Control ----  */
+
+.imgAccsDenegado
+{
+    width: 200px;
+    height: 190px;
+    position: relative;
+    margin: 76px 22px 70px 362px;
+}
+
+
+.imgSesExpirada
+{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 76px 22px 70px 380px;
+}
+
+.txtMsgsAtencion
+{
+    font-family: Times New Roman;
+    font-size:14px;
+    color: #BA2025;
+    position: relative;
+    margin: 32px 22px 70px 390px;
+}
+
+
+.link
+{
+    color: #BA2025;
+    font-size: 14px;
+    font-family: Times New Roman;
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+.link:hover 
+{
+    color: #BA2025;
+    font-size: 14px;
+    font-family: Times New Roman;
+    font-weight: bold;
+}
+
+
+.mis-asuntos
+{
+    margin: 20px 1px 3px 33px;
+    position: absolute;
+    width: 26%;
+}
+.panel-admon
+{
+    margin: 20px 1px 3px 321px;
+    position: absolute;
+    width: 30%;
+}
+.panel-ayuda
+{
+    margin: 20px 1px 3px 625px;
+    position: absolute;
+    width: 28%;
+}
+/*.content .inner div
+{
+    display: inline-table;    
+}*/
+.items-panel
+{
+    color: #ba2025;
+    font-family: trajan pro;
+    font-size: 14px;
+    text-decoration: none;
+    
+}
+.items-panel ul
+{
+    line-height: 17px;
+}
+.items-panel ul a,.items-panel ul a:hover,.items-panel ul a:visited,.items-panel ul a:link
+{
+    color:#515151;
+    font-family: Times New Roman;
+    font-size: 12px;
+    text-decoration: none;
+}
+.items-panel .panel-number
+{
+    color: #646463;
+    text-decoration: none;
+}
+.items-panel label span
+{
+    margin: 11px 1px 2px 10px;
+    position: absolute;
+}
+.inicio-parent
+{
+    height: 530px;
+}

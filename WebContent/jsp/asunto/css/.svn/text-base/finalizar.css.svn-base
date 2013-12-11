@@ -1,0 +1,30 @@
+/* 
+    Document   : finalizar
+    Created on : 12/05/2011, 10:08:05 AM
+    Author     : valentin.gomez
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#scg-descricion-finalizar
+{
+    width: 98%;    
+    height: 80px;
+}
+#id_tipo_documento
+{
+    width: 300px;
+}
+#idEmpleadoCcp
+{
+    width: 300px;
+}
+#scg-desc-area
+{
+    width: 300px;
+}

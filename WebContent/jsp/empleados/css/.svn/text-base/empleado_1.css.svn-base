@@ -1,0 +1,181 @@
+/*
+    Document   : empleado
+    Created on : 16-nov-2010, 13:27:24
+    Author     : rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+
+
+ 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+
+
+*/
+
+div .tree
+{
+    width: 220px;
+}
+
+input.tree
+{
+    background-color: #FAFAFA;
+    font-weight: bold;
+    color: #646463;
+}
+
+.ui-widget .ui-widget
+{
+    font-size:9px;
+}
+
+.td_concepto_cntr_gde
+{
+    text-align: center;
+    font-family: Trajan Pro;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+
+.td_concepto_izq_gde
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+
+.td_concepto_cntr_peq
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_izq_peq
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_descripcion_cntr_gde
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_descripcion_cntr_peq
+{
+    text-align: center;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+.td_descripcion_izq_peq
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+
+div.content div.inner div.ayuda
+{
+    background:none repeat scroll 0 0 #FAFAFA;
+    float:right;
+    height:auto;
+    margin: 200% 20% 20% 10%;
+    margin:-78px -265px 2px 1px;
+    position:relative;
+    width:50%;
+    text-align: justify;
+    font-size: 12px;
+    border-color: #565656;
+    border-style: solid;
+    border-width: 1px;
+}
+
+div.content div.inner div.ayuda_opc
+{
+    background:none repeat scroll 0 0 #FAFAFA;
+    float:right;
+    height:auto;
+    margin: 200% 20% 20% 10%;
+    margin: 11px -264px 2px 1px;
+    position:relative;
+    width:50%;
+    text-align: justify;
+    font-size: 10.5px;
+    border-color: #565656;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.ui-widget-header
+{
+    background-image: url("../../../imagenes/barTituloPagina.png");
+    color: #ba2025;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    line-height: 1;
+    text-align: center;
+}
+div.content .contentform table.empleado 
+{
+    width: 99%;
+    text-align: center;
+    border-collapse: collapse;
+}
+div.content .contentform table.empleado td,div.content .contentform table.empleado th
+{
+    border: 1px solid #565656;
+}
+div.content .contentform table.empleado input[type="text"]
+{
+    width: 90%;
+}
+
+
+.edit 
+{
+    background-image: url("../../../imagenes/edit.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 20px;
+    margin: 5px 45px -6px 15px;
+    overflow: hidden;
+    text-indent: -99999px;
+    width: 16px;
+}
+.delete
+{
+    background-image: url("../../../imagenes/delete.png");
+    height: 20px;
+    width: 16px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: -15px -3px -3px 54px;
+    cursor: pointer;
+}
+
+#empleado span {
+    display: inline-block;
+}

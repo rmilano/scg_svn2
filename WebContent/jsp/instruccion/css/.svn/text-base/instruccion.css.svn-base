@@ -1,0 +1,105 @@
+/* 
+    Document   : tema
+    Created on : 04-jul-2011, 13:43:15
+    Author     : roque
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*.catalogo-tema  td, .catalogo-tema  th
+{
+    border: 1px solid #81BEF7;
+}*/
+
+input.tree
+{
+    width: 70%;
+}
+#descripcion-instruccion
+{
+    width: 98%;
+}
+.edit
+{
+    background-image: url("../../../imagenes/edit.png");
+    height: 20px;
+    width: 16px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: 1px -5px 1px 10px;
+    cursor: pointer;
+}
+.delete
+{
+    background-image: url("../../../imagenes/delete.png");
+    height: 20px;
+    width: 16px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: 1px -36px 1px 10px;
+    cursor: pointer;
+}
+
+#instrucciones span
+{
+    display: inline-block;
+}
+
+#nombre-area
+{
+    width: 88%;
+}
+
+.editar
+{
+    background-image: url("../../../imagenes/edit.png");
+    height: 20px;
+    width: 16px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: 1px -5px 1px 10px;
+    cursor: pointer;
+}
+.ui-widget-header
+{
+    background-image: url("../../../imagenes/barTituloPagina.png");
+    color: #ba2025;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    line-height: 1;
+    text-align: center;
+}
+
+.catalogo-instruccion
+{
+    text-align: center;
+}
+
+div.content .contentform table.catalogo-instruccion td, div.content .contentform table.catalogo-instruccion th {
+    border: 1px solid #565656;
+}
+
+
+#catalog-instruccion-form fieldset {
+    border: 0 none;
+    margin-top: 25px;
+    padding: 0;
+}
+.captura-catalog-dialog input.block {
+    margin-bottom: 12px;
+    padding: 0.4em;
+    width: 95%;
+}
+#areaBuffer,#vigenciaBuffer {
+    margin-bottom: 12px;
+    padding: 0.4em;
+    width: 81%;
+}

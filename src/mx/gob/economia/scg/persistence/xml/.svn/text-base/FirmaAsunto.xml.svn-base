@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="FirmaAsunto">
+	<resultMap id="firmaAsuntoMap" class="mx.gob.economia.scg.model.FirmaAsunto">
+		<result property="id_asunto" column="id_asunto"/>
+		<result property="id_asunto_detalle" column="id_asunto_detalle"/>
+		<result property="estatus" column="estatus"/>
+		<result property="firmante" column="firmante"/>
+		<result property="firma" column="firma"/>
+		<result property="fh_registro" column="fh_registro"/>
+	</resultMap>
+	<insert id="insertFirmaAsunto" parameterClass="mx.gob.economia.scg.model.FirmaAsunto">
+		INSERT INTO firma_asunto(id_asunto, id_asunto_detalle, estatus, firmante, firma, fh_registro) 
+		VALUES (#id_asunto#, #id_asunto_detalle#, #estatus#, #firmante#, #firma#, #fh_registro#)
+	</insert>
+</sqlMap>

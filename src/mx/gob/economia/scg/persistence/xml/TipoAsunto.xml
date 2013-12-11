@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TipoAsunto">
+
+    <resultMap id="tipoAsuntoMap" class="mx.gob.economia.scg.model.TipoAsunto">
+        <result property="idTipoAsunto" column="id_tipo_asunto"/>
+        <result property="tipoAsunto" column="tipo_asunto"/>
+        <result property="activo" column="activo"/>
+    </resultMap>
+
+    <select id="listTiposDocumento" resultMap="tipoAsuntoMap">
+        SELECT TIPOASUNTO.ID_TIPO_ASUNTO, TIPOASUNTO.TIPO_ASUNTO, TIPOASUNTO.ACTIVO 
+        FROM TIPO_ASUNTO TIPOASUNTO WHERE TIPOASUNTO.ACTIVO = 1 ORDER BY TIPOASUNTO.TIPO_ASUNTO		
+    </select>
+    <select id="getTipoAsunto" resultMap="tipoAsuntoMap" parameterClass="java.lang.Integer">
+        SELECT TIPOASUNTO.ID_TIPO_ASUNTO, TIPOASUNTO.TIPO_ASUNTO, TIPOASUNTO.ACTIVO 
+        FROM TIPO_ASUNTO TIPOASUNTO WHERE TIPOASUNTO.ID_TIPO_ASUNTO=#idTipoAsunto# AND TIPOASUNTO.ACTIVO = 1
+    </select>
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.TipoAsunto">
+        <selectKey keyProperty="id_tipo_asunto" resultClass="int">
+			SELECT seq_tipo_asunto.nextval FROM dual
+        </selectKey>
+                insert into TIPO_ASUNTO (ID_TIPO_ASUNTO,TIPO_ASUNTO,ACTIVO)
+                values(#idTipoAsunto#,#tipoAsunto#,#activo#)
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.TipoAsunto">
+            update TIPO_ASUNTO set TIPO_ASUNTO=#tipoAsunto#
+            where ID_TIPO_ASUNTO=#idTipoAsunto#
+    </update>
+    <delete id="delete" parameterClass="java.lang.Integer" >
+              delete from TIPO_ASUNTO where ID_TIPO_ASUNTO=#idTipoAsunto#
+    </delete >   
+</sqlMap>

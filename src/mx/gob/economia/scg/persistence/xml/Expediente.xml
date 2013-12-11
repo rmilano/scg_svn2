@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Expediente">
+        <select id="listExpedientesByPagina" resultClass="mx.gob.economia.scg.model.Expediente" parameterClass="mx.gob.economia.scg.model.CriterioExpediente">
+        SELECT * FROM (
+         SELECT vista.*, rownum r FROM(
+          SELECT id_expediente, id_area, cve_expediente, expediente, fh_vigencia, activo,rownum fila FROM expediente 
+          WHERE id_expediente>0 AND activo=1 
+        <dynamic prepend="AND">
+             
+            <isNotNull prepend="" property="expediente.area.id_area">
+                <isNotEqual prepend="AND" property="expediente.area.id_area" compareValue="-1">
+					id_area =  #expediente.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="expediente.expediente">
+                <isNotEqual prepend="AND" property="expediente.expediente" compareValue="">
+					expediente LIKE '%$expediente.expediente$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+               ) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+                ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#
+	</select>
+        <select id="countExpedientesByCriterio" resultClass="java.lang.Integer" parameterClass="mx.gob.economia.scg.model.CriterioExpediente">        
+        SELECT count(*) FROM expediente WHERE id_expediente>0 AND activo=1 
+        <dynamic prepend="AND">
+              
+            <isNotNull prepend="" property="expediente.area.id_area">
+                <isNotEqual prepend="AND" property="expediente.area.id_area" compareValue="-1">
+					id_area =  #expediente.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="expediente.expediente">
+                <isNotEqual prepend="AND" property="expediente.expediente" compareValue="">
+					expediente LIKE '%$expediente.expediente$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+    </select>
+	<select id="listExpedientes" resultClass="mx.gob.economia.scg.model.Expediente" parameterClass="java.lang.Integer">
+		SELECT id_expediente, id_area, cve_expediente, expediente, fh_vigencia, activo, expediente expediente_clave  FROM expediente
+		WHERE id_area = #id_area# AND activo = 1 AND fh_vigencia <![CDATA[ >= ]]> SYSDATE ORDER BY EXPEDIENTE
+	</select>
+    <select id="getExpediente" resultClass="mx.gob.economia.scg.model.Expediente" parameterClass="java.lang.Integer">
+		SELECT id_expediente, id_area, cve_expediente, expediente, fh_vigencia, activo, expediente expediente_clave FROM expediente
+		WHERE id_expediente = #id_expediente# AND activo = 1 ORDER BY id_area, id_expediente
+	</select>
+        
+	<select id="getById" resultClass="mx.gob.economia.scg.model.Expediente" parameterClass="java.lang.Integer">
+		SELECT id_expediente, id_area, cve_expediente, expediente, fh_vigencia, activo FROM expediente 
+		WHERE id_expediente = #id_expediente# 
+	</select>
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Expediente">
+		<selectKey keyProperty="id_expediente" resultClass="int">
+			SELECT seq_expediente.nextval FROM dual
+		</selectKey>
+		INSERT INTO expediente (id_expediente, id_area, cve_expediente, expediente, fh_vigencia, activo)
+		VALUES (#id_expediente#, #area.id_area#, #cve_expediente#, #expediente#, #fh_vigencia#, #activo#)
+	</insert>
+	<update id="update" parameterClass="mx.gob.economia.scg.model.Expediente">
+	    UPDATE expediente SET id_expediente = #id_expediente#, id_area = #id_area#, cve_expediente = #cve_expediente#, 
+	    	expediente = #expediente#, fh_vigencia = #fh_vigencia#, activo = #activo#
+	    WHERE id_expediente=#id_expediente#
+	</update>
+	<delete id="delete" parameterClass="java.lang.Integer" >
+		DELETE FROM  expediente WHERE id_expediente = #id_expediente#
+	</delete >
+</sqlMap>

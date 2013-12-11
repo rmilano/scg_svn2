@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- Configuracion del servicio de Ldap -->
+	<bean id="ldapService" class="mx.gob.economia.scg.service.LdapServiceImpl">
+		<property name="inicialContextFactory" value="${ldap.factory.initial}" />
+		<property name="providerUrl" value="${ldap.provider.url}" />
+		<property name="securityAuthentication" value="${ldap.security.authentication}" />
+		<property name="securityPrincipal" value="${ldap.security.principal}" />
+		<property name="securityCredentials" value="${java.naming.security.credentials}" />
+	</bean>
+	
+	<!--Configuracion de filtros y modalidades para el login con Acegi-->
+	<bean id="filterChainProxy" class="org.acegisecurity.util.FilterChainProxy">
+		<property name="filterInvocationDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/**=concurrentSessionFilter,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,securityContextHolderAwareRequestFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor
+			</value>
+		</property>
+	</bean>
+
+<!--	<bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.Md5PasswordEncoder"/>-->
+		<bean id="passwordEncoder" class="org.acegisecurity.providers.ldap.authenticator.LdapShaPasswordEncoder"/>
+<!--	<bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.ShaPasswordEncoder"/>-->
+
+	<bean id="sessionRegistry" class="org.acegisecurity.concurrent.SessionRegistryImpl" />
+
+	<bean id="currentSessionController"
+		class="org.acegisecurity.concurrent.ConcurrentSessionControllerImpl">
+		<property name="maximumSessions">
+			<value>1</value>
+		</property>
+		<property name="exceptionIfMaximumExceeded" value="false" />
+		<property name="sessionRegistry" ref="sessionRegistry" />
+	</bean>
+
+	<bean id="concurrentSessionFilter" class="org.acegisecurity.concurrent.ConcurrentSessionFilter">
+		<property name="sessionRegistry" ref="sessionRegistry" />
+		<property name="expiredUrl" value="/expirada.do" />
+	</bean>
+
+	<bean id="httpSessionContextIntegrationFilter"
+		class="org.acegisecurity.context.HttpSessionContextIntegrationFilter" />
+
+	<bean id="logoutFilter" class="org.acegisecurity.ui.logout.LogoutFilter">
+		<constructor-arg value="/index.jsp" />
+		<constructor-arg>
+			<list>
+				<ref bean="rememberMeServices" />
+				<bean class="org.acegisecurity.ui.logout.SecurityContextLogoutHandler" />
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="authenticationProcessingFilter"
+		class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="authenticationFailureUrl" value="/autenticacion.do?errorContrasenna=errorContrasenna" />
+		<property name="defaultTargetUrl" value="/" />
+		<property name="alwaysUseDefaultTargetUrl" value = "true" />
+		<property name="filterProcessesUrl" value="/j_acegi_security_check" />
+		<property name="rememberMeServices" ref="rememberMeServices" />
+	</bean>
+
+	<bean id="securityContextHolderAwareRequestFilter"
+		class="org.acegisecurity.wrapper.SecurityContextHolderAwareRequestFilter" />
+
+	<bean id="rememberMeProcessingFilter"
+		class="org.acegisecurity.ui.rememberme.RememberMeProcessingFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="rememberMeServices" ref="rememberMeServices" />
+	</bean>
+
+	<bean id="anonymousProcessingFilter"
+		class="org.acegisecurity.providers.anonymous.AnonymousProcessingFilter">
+		<property name="key" value="changeThis" />
+		<property name="userAttribute" value="anonymousUser,ROLE_ANONYMOUS" />
+	</bean>
+
+	<bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
+		<property name="authenticationEntryPoint">
+			<bean
+				class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+				<property name="loginFormUrl" value="/autenticacion.do" />
+				<property name="forceHttps" value="false" />
+			</bean>
+		</property>
+		<property name="accessDeniedHandler">
+			<bean class="org.acegisecurity.ui.AccessDeniedHandlerImpl">
+				<property name="errorPage" value="/denegado.do" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="filterInvocationInterceptor"
+		class="org.acegisecurity.intercept.web.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager">
+			<bean class="org.acegisecurity.vote.AffirmativeBased">
+				<property name="allowIfAllAbstainDecisions" value="false" />
+				<property name="decisionVoters">
+					<list>
+						<bean class="org.acegisecurity.vote.RoleVoter" />
+						<bean class="org.acegisecurity.vote.AuthenticatedVoter" />
+					</list>
+				</property>
+			</bean>
+		</property>
+		<property name="objectDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+			 	/areas**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/asunto**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/atendido**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/bandeja**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/captura**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_REVISOR,ROLE_EMPLEADO
+			 	/temas**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_REVISOR
+                                /instruccion**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_REVISOR
+                                /expediente**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_REVISOR
+			 	/ccp**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/empleado**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA,ROLE_EMPLEADO
+			 	/finalizado**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/inicio**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/recepcion**=ROLE_ADMINISTRADOR,ROLE_RECEPCIONISTA
+			 	/reporte**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/estadisticas**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/resumen**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/tipo-documento**=ROLE_ADMINISTRADOR
+			 	/tipo_documento**=ROLE_ADMINISTRADOR
+			 	/prioridad**=ROLE_ADMINISTRADOR
+			 	/turnado**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+                                /modificado**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/consulta**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/consulta-captura**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA
+			 	/consulta-recepcion**=ROLE_ADMINISTRADOR,ROLE_CAPTURISTA
+			 	/atender**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/turnar**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+                                /returnar**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/finalizar**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL
+			 	/rechazar**=ROLE_ADMINISTRADOR,ROLE_EMPLEADO,ROLE_OFICIAL			 	
+			 	/regmod_area**=ROLE_ADMINISTRADOR
+			 	/regmod_empleado**=ROLE_ADMINISTRADOR
+			 	/common/**=IS_AUTHENTICATED_REMEMBERED
+				/**=IS_AUTHENTICATED_ANONYMOUSLY
+			</value>
+		</property>
+	</bean>
+
+	<bean id="rememberMeServices"
+		class="org.acegisecurity.ui.rememberme.TokenBasedRememberMeServices">
+<!--		<property name="userDetailsService" ref="userDetailsService" />-->
+		<property name="userDetailsService" ref="autenticacionService" />
+		<property name="tokenValiditySeconds" value="1800"></property>
+		<property name="key" value="changeThis" />
+	</bean>
+
+	<bean id="authenticationManager" class="org.acegisecurity.providers.ProviderManager">
+		<property name="providers">
+			<list>
+<!--				<ref local="ldapAuthenticationProvider" />-->
+				<ref local="daoAuthenticationProvider" />
+				<bean
+					class="org.acegisecurity.providers.anonymous.AnonymousAuthenticationProvider">
+					<property name="key" value="changeThis" />
+				</bean>
+				<bean
+					class="org.acegisecurity.providers.rememberme.RememberMeAuthenticationProvider">
+					<property name="key" value="changeThis" />
+				</bean>
+			</list>
+		</property>
+		<property name="sessionController" ref="currentSessionController" />
+	</bean>
+
+	<bean id="daoAuthenticationProvider"
+		class="org.acegisecurity.providers.dao.DaoAuthenticationProvider">
+		<property name="userDetailsService" ref="autenticacionService" />
+		<property name="passwordEncoder" ref ="passwordEncoder"/>
+	</bean>
+<!--
+	<bean id="userDetailsService" class="org.acegisecurity.userdetails.memory.InMemoryDaoImpl">
+		<property name="userMap">
+			<value>
+				admin=admin,ROLE_RECEPCIONISTA vale=vale,EMPLEADO vale=vale, ADMINISTRADOR vale=vale
+			</value>
+		</property>
+	</bean>
+-->
+	<bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener" />
+	
+</beans>

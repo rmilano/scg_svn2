@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/gestion/!svn/ver/597/V8/scg_svn2/WebContent/jsp
+END
+taglibs.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/taglibs.jsp
+END
+autenticacion.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/autenticacion.jsp
+END
+denegado.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/denegado.jsp
+END
+autenticacion-sso.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/autenticacion-sso.jsp
+END
+error.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/error.jsp
+END
+expirada.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/expirada.jsp
+END
+arbol.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/arbol.jsp
+END
+autenticacion-alone.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/autenticacion-alone.jsp
+END

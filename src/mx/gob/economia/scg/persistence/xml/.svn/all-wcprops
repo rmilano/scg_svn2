@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/gestion/!svn/ver/593/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml
+END
+Reporte.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gestion/!svn/ver/608/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Reporte.xml
+END
+SqlMapConfig.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/SqlMapConfig.xml
+END
+TipoSeguimiento.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/TipoSeguimiento.xml
+END
+RolDocto.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/RolDocto.xml
+END
+Tema.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Tema.xml
+END
+Empleado.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/570/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Empleado.xml
+END
+AsuntoRevision.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/AsuntoRevision.xml
+END
+FirmaAsunto.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/FirmaAsunto.xml
+END
+TipoDocumento.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/TipoDocumento.xml
+END
+Expediente.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/538/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Expediente.xml
+END
+Rol.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Rol.xml
+END
+DocumentoBlob.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/DocumentoBlob.xml
+END
+Documento.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Documento.xml
+END
+Evento.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Evento.xml
+END
+Instruccion.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/582/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Instruccion.xml
+END
+AsuntoCapturaActualizacion.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gestion/!svn/ver/548/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/AsuntoCapturaActualizacion.xml
+END
+TemaRevisor.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/TemaRevisor.xml
+END
+AsuntoDetalle.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/603/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/AsuntoDetalle.xml
+END
+SqlMapConfig2.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/SqlMapConfig2.xml
+END
+TipoAsunto.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/TipoAsunto.xml
+END
+AsuntoConsultaGenerales.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/AsuntoConsultaGenerales.xml
+END
+Area.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/569/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Area.xml
+END
+Asunto.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/607/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Asunto.xml
+END
+FirmaDocumento.xml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/FirmaDocumento.xml
+END
+Prioridad.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml/Prioridad.xml
+END

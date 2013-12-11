@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Asunto" >
+
+    <resultMap id="asuntoDetalleMap" class="mx.gob.economia.scg.model.Asunto">
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="asunto" column="asunto"/>
+        <result property="folio" column="folio"/>
+        <result property="descripcion" column="descripcion"/>
+        <result property="no_oficio" column="no_oficio"/>
+        <result property="fh_oficio" column="fh_oficio"/>
+        <result property="fh_recepcion" column="fh_recepcion"/>
+        <result property="fh_por_vencer" column="fh_por_vencer"/>
+        <result property="estatus" column="estatus"/>
+        <result property="empleado_capt.id_empleado" column="id_empleado_capt"/>
+        <result property="empleado_capt.correo" column="correo_capt"/>
+        <result property="empleado_capt.nombre" column="nombre_capt"/>
+        <result property="empleado_capt.paterno" column="paterno_capt"/>
+        <result property="empleado_capt.materno" column="materno_capt"/>
+        <result property="empleado_capt.area.id_area" column="id_area_capt"/>
+        <result property="empleado_capt.area.area" column="area_capt"/>
+        <result property="empleado_capt.puesto" column="puesto_capt"/>
+        <result property="empleado_capt.activo" column="activo_capt"/>
+        <result property="asunto_detalle.id_asunto_detalle" column="id_asunto_detalle"/>
+        <result property="asunto_detalle.estatus" column="estatus"/>
+        <result property="asunto_detalle.fh_lectura" column="fh_lectura"/>
+        <result property="asunto_detalle.fh_registro" column="fh_registro"/>
+        <result property="asunto_detalle.fh_limite" column="fh_limite"/>
+        <result property="asunto_detalle.comentario" column="comentario"/>
+        <result property="asunto_detalle.ip" column="ip"/>
+        <result property="asunto_detalle.empleado_remi.id_empleado" column="id_empleado_remi"/>
+        <result property="asunto_detalle.empleado_remi.correo" column="correo_remi"/>
+        <result property="asunto_detalle.empleado_remi.nombre" column="nombre_remi"/>
+        <result property="asunto_detalle.empleado_remi.paterno" column="paterno_remi"/>
+        <result property="asunto_detalle.empleado_remi.materno" column="materno_remi"/>
+        <result property="asunto_detalle.empleado_remi.id_area" column="id_area_remi"/>
+        <result property="asunto_detalle.empleado_remi.area.id_area" column="id_area_remi"/>
+        <result property="asunto_detalle.empleado_remi.area.area" column="area_remi"/>
+        <result property="asunto_detalle.empleado_remi.puesto" column="puesto_remi"/>
+        <result property="asunto_detalle.empleado_remi.activo" column="activo_remi"/>
+        <result property="asunto_detalle.empleado_dest.id_empleado" column="id_empleado_dest"/>
+        <result property="asunto_detalle.empleado_dest.correo" column="correo_dest"/>
+        <result property="asunto_detalle.empleado_dest.nombre" column="nombre_dest"/>
+        <result property="asunto_detalle.empleado_dest.paterno" column="paterno_dest"/>
+        <result property="asunto_detalle.empleado_dest.materno" column="materno_dest"/>
+        <result property="asunto_detalle.empleado_dest.id_area" column="id_area_dest"/>
+        <result property="asunto_detalle.empleado_dest.area.id_area" column="id_area_dest"/>
+        <result property="asunto_detalle.empleado_dest.area.area" column="area_dest"/>
+        <result property="asunto_detalle.empleado_dest.puesto" column="puesto_dest"/>
+        <result property="asunto_detalle.empleado_dest.activo" column="activo_dest"/>
+        <result property="asunto_detalle.empleado_dest_ini.id_empleado" column="id_empleado_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.correo" column="correo_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.nombre" column="nombre_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.paterno" column="paterno_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.materno" column="materno_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.id_area" column="id_area_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.area.id_area" column="id_area_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.area.area" column="area_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.puesto" column="puesto_ini"/>
+        <result property="asunto_detalle.empleado_dest_ini.activo" column="activo_ini"/>
+        <result property="asunto_detalle.prioridad.id_prioridad" column="id_prioridad"/>
+        <result property="id_asunto_padre" column="id_asunto_padre"/>
+        <result property="id_expediente" column="id_expediente"/>
+        <result property="expediente.expediente" column="expediente"/>
+        <result property="expediente.id_expediente" column="id_expediente"/>
+        <result property="id_tema" column="id_tema"/>
+        <result property="tema.tema" column="tema"/>
+        <result property="tema.evento" column="evento"/>
+        <result property="fh_evento" column="fh_evento"/>
+        <result property="tema.id_tema" column="id_tema"/>
+        <result property="tema.id_tema_padre" column="id_tema_padre"/>
+        <result property="id_instruccion" column="id_instruccion"/>
+        <result property="instruccion.id_instruccion" column="id_instruccion"/>
+        <result property="instruccion.instruccion" column="instruccion"/>
+        <result property="tipoAsunto.id_tipo_documento" column="id_tipo_asunto"/>
+    </resultMap>
+	
+    <resultMap id="asuntoMap" class="mx.gob.economia.scg.model.Asunto">
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="id_asunto_ref" column="id_asunto_ref"/>
+        <result property="folio" column="folio"/>
+        <result property="asunto" column="asunto"/>
+        <result property="descripcion" column="descripcion"/>
+        <result property="no_oficio" column="no_oficio"/>
+        <result property="fh_oficio" column="fh_oficio"/>
+        <result property="fh_recepcion" column="fh_recepcion"/>
+        <result property="estatus" column="estatus"/>
+        <result property="empleado_capt.id_empleado" column="id_empleado_capt"/>
+        <result property="empleado_capt.correo" column="correo_capt"/>
+        <result property="empleado_capt.nombre" column="nombre_capt"/>
+        <result property="empleado_capt.paterno" column="paterno_capt"/>
+        <result property="empleado_capt.materno" column="materno_capt"/>
+        <result property="empleado_capt.area.id_area" column="id_area_capt"/>
+        <result property="empleado_capt.area.area" column="area_capt"/>
+        <result property="empleado_capt.puesto" column="puesto_capt"/>
+        <result property="empleado_capt.activo" column="activo_capt"/>
+        <result property="id_asunto_padre" column="id_asunto_padre"/>
+        <result property="id_expediente" column="id_expediente"/>
+        <result property="expediente.expediente" column="expediente"/>
+        <result property="expediente.cve_expediente" column="cve_expediente"/>
+        <result property="expediente.id_expediente" column="id_expediente"/>
+        <result property="id_tema" column="id_tema"/>
+        <result property="tema.tema" column="tema"/>
+        <result property="tema.id_tema" column="id_tema"/>
+        <result property="tema.id_tema_padre" column="id_tema_padre"/>
+        <result property="tema.evento" column="evento"/>
+        <result property="fh_evento" column="fh_evento"/>
+        <result property="id_instruccion" column="id_instruccion"/>
+        <result property="instruccion.instruccion" column="instruccion"/>
+        <result property="instruccion.id_instruccion" column="id_instruccion"/>
+        <result property="tipoAsunto.id_tipo_documento" column="id_tipo_asunto"/>
+    </resultMap>
+
+
+    <resultMap id="asuntoCompletoMap" class="mx.gob.economia.scg.model.Asunto" extends="asuntoMap">
+        <result property="asuntos_detalles" column="id_asunto" select="AsuntoDetalle.listByIdAsuntoDetalle"/>
+        <result property="empleadosCcp" column="id_asunto" select="Empleado.listCcpByIdAsunto"/>
+    </resultMap>
+
+    <select id="listInicialesByCriterio" parameterClass="mx.gob.economia.scg.model.CriterioAsunto" resultMap="asuntoDetalleMap">
+		SELECT * FROM (
+		SELECT vista.*, rownum r FROM(
+			SELECT a.folio,
+	            a.id_asunto, a.asunto, a.descripcion, a.no_oficio, a.fh_oficio, a.fh_recepcion, a.id_empleado_capt,
+	            CASE to_number(to_char(ad.fh_limite-2,'d')) 
+	            WHEN 7 THEN ad.fh_limite-4
+	            WHEN 6 THEN ad.fh_limite-4
+	            ELSE ad.fh_limite-2 END AS fh_por_vencer, a.estatus,
+	            c.correo AS correo_capt, c.nombre AS nombre_capt,
+	            c.paterno AS paterno_capt, c.materno AS materno_capt,  
+	            c.id_area AS id_area_capt, ac.area AS area_capt, c.activo AS activo_capt, c.puesto AS puesto_capt, 
+	            ad.id_asunto_detalle, ad.fh_lectura, ad.fh_registro, ad.fh_limite, ad.comentario, ad.ip, 
+	            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi, r.nombre AS nombre_remi, 
+	            r.paterno AS paterno_remi, r.materno AS materno_remi,  
+	            r.id_area AS id_area_remi, ar_r.area AS area_remi, r.activo AS activo_remi, r.puesto AS puesto_remi, 
+	            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest, d.nombre AS nombre_dest, 
+	            d.paterno AS paterno_dest, d.materno AS materno_dest,  
+	            d.id_area AS id_area_dest, ar_d.area AS area_dest, d.activo AS activo_dest, d.puesto AS puesto_dest,
+	            i.id_empleado AS id_empleado_ini, i.correo AS correo_ini, i.nombre AS nombre_ini, 
+	            i.paterno AS paterno_ini, i.materno AS materno_ini,  
+	            i.id_area AS id_area_ini, ar_i.area AS area_ini, i.activo AS activo_ini, i.puesto AS puesto_ini, a.id_asunto_padre, 
+	            a.id_expediente, e.expediente, a.id_tema, t.id_tema_padre, t.tema, t.evento, a.fh_evento,
+	            a.id_instruccion, ins.instruccion, a.id_tipo_asunto, ad.id_prioridad
+	        FROM asunto a 
+	        LEFT JOIN empleado c ON c.id_empleado = a.id_empleado_capt
+	        LEFT JOIN area ac ON ac.id_area = c.id_area 
+                
+                
+	        LEFT JOIN asunto_detalle ad ON a.id_asunto = ad.id_asunto 
+	        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest 
+	        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area 
+	        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi 
+	        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+	        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini 
+	        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+	        LEFT JOIN expediente e ON e.id_expediente = a.id_expediente
+			LEFT JOIN tema t ON t.id_tema = a.id_tema
+			LEFT JOIN instruccion ins ON ins.id_instruccion = a.id_instruccion
+        <dynamic prepend="">
+            <isNotEqual prepend="" property="id_empleado_ccp" compareValue="">
+	        		INNER JOIN asunto_ccp ccp ON ccp.ID_ASUNTO= a.ID_ASUNTO AND ccp.ID_EMPLEADO = #id_empleado_ccp#
+            </isNotEqual>
+        </dynamic>
+        <dynamic prepend="">
+            <isNotEqual prepend="" property="id_empleado_recep" compareValue="">
+			        INNER JOIN asunto_recepcion ar ON ar.id_asunto = a.id_asunto
+			        AND ar.id_asunto_detalle= ad.id_asunto_detalle AND ar.ID_EMPLEADO = #id_empleado_recep#
+            </isNotEqual>
+        </dynamic>
+        <isEqual prepend="" property="tipo_area_remi" compareValue="0">
+	        WHERE ad.id_asunto_detalle = 
+                    (select max(ID_ASUNTO_DETALLE) from asunto_detalle ad2 WHERE ad2.id_asunto = a.id_asunto  
+                and rownum between  1 and 2 )                                              
+        </isEqual>
+        <isEqual prepend="" property="tipo_area_remi" compareValue="1">
+	        WHERE ad.id_asunto_detalle = 
+				(SELECT MIN(ad2.id_asunto_detalle) FROM asunto_detalle ad2 WHERE ad2.id_asunto = a.id_asunto)            
+        </isEqual>
+        
+        <dynamic prepend="">
+            <isNotEmpty prepend="" property="ids_estatus">
+                <iterate prepend="AND" property="ids_estatus"
+			  			open="(" close=")" conjunction="OR">
+							ad.estatus =#ids_estatus[]#
+                </iterate>
+            </isNotEmpty>
+            <isNotNull prepend="" property="estatus">
+                <isNotEqual prepend="AND" property="estatus" compareValue="">
+                    <isLessEqual prepend="" property="estatus" compareValue="3">
+							a.estatus = #estatus#
+                    </isLessEqual>
+                    <isGreaterThan prepend="" property="estatus" compareValue="6">
+							a.estatus = #estatus#
+                    </isGreaterThan>
+                    <isEqual prepend="" property="estatus" compareValue="4">
+							<![CDATA[ 
+						    	(SELECT 
+								    CASE to_number(to_char(ad3.fh_limite-2,'d')) 
+								    WHEN 7 THEN ad3.fh_limite-4
+								    WHEN 6 THEN ad3.fh_limite-4
+								    ELSE ad3.fh_limite-2 END 
+							    FROM asunto_detalle ad3 
+							    WHERE ad.id_asunto_detalle = ad3.id_asunto_detalle) > sysdate 
+							]]>
+                    </isEqual>
+                    <isEqual prepend="" property="estatus" compareValue="5">
+							<![CDATA[ 
+						    	(SELECT 
+								    CASE to_number(to_char(ad4.fh_limite-2,'d')) 
+								    WHEN 7 THEN ad4.fh_limite-4
+								    WHEN 6 THEN ad4.fh_limite-4
+								    ELSE ad4.fh_limite-2 END 
+							    FROM asunto_detalle ad4 
+							    WHERE ad.id_asunto_detalle = ad4.id_asunto_detalle) <= sysdate
+							    AND ad.fh_limite > to_date(to_char(sysdate,'DD/MM/YYYY'),'DD/MM/YYYY') 
+							]]>
+                    </isEqual>
+                    <isEqual prepend="" property="estatus" compareValue="6">
+							<![CDATA[ 
+								ad.fh_limite <= to_date(to_char(sysdate,'DD/MM/YYYY'),'DD/MM/YYYY') 
+							]]>
+                    </isEqual>
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="ids_asunto">
+                <iterate prepend="AND" property="ids_asunto"
+				  		open="(" close=")" conjunction="OR">
+				  		a.id_asunto=#ids_asunto[]#
+                </iterate>
+            </isNotNull>
+            <isNotNull prepend="" property="folio">
+                <isNotEqual prepend="AND" property="folio" compareValue="">
+						a.folio LIKE '%$folio$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_asunto">
+                <isNotEqual prepend="AND" property="id_asunto" compareValue="">
+						a.id_asunto = #id_asunto#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="asunto">
+                <isNotEqual prepend="AND" property="asunto" compareValue="">
+						a.asunto LIKE '%$asunto$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="descripcion">
+                <isNotEqual prepend="AND" property="descripcion" compareValue="">
+						a.descripcion LIKE '%$descripcion$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="no_oficio">
+                <isNotEqual prepend="AND" property="no_oficio" compareValue="">
+						a.no_oficio LIKE '%$no_oficio$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="fh_oficio_ini">
+                <isNotNull prepend="AND" property="fh_oficio_fin">
+		 				a.fh_oficio BETWEEN #fh_oficio_ini# AND #fh_oficio_fin#
+                </isNotNull>
+            </isNotNull>
+            <isNotNull prepend="" property="fh_recepcion_ini">
+                <isNotNull prepend="AND" property="fh_recepcion_fin">
+		 				a.fh_recepcion BETWEEN #fh_recepcion_ini# AND #fh_recepcion_fin#
+                </isNotNull>
+            </isNotNull>
+            <isNotNull prepend="" property="fh_lectura_ini">
+                <isNotNull prepend="AND" property="fh_lectura_fin">
+		  				ad.fh_lectura BETWEEN #fh_lectura_ini# AND #fh_lectura_fin#
+                </isNotNull>
+            </isNotNull>
+            <isNotNull prepend="" property="fh_registro_ini">
+                <isNotNull prepend="AND" property="fh_registro_fin">
+		  				ad.fh_registro BETWEEN #fh_registro_ini# AND #fh_registro_fin#
+                </isNotNull>
+            </isNotNull>
+            <isNotNull prepend="" property="fh_limite_ini">
+                <isNotNull prepend="AND" property="fh_limite_fin">
+		  				ad.fh_limite BETWEEN #fh_limite_ini# AND #fh_limite_fin#
+                </isNotNull>
+            </isNotNull>
+            <isNotNull prepend="AND" property="fh_limite_ini">
+		  				ad.fh_limite = #fh_limite_ini#
+            </isNotNull>
+            <isNotNull prepend="" property="id_prioridad">
+                <isGreaterThan prepend="AND" property="id_prioridad" compareValue="-1">
+                    ad.id_prioridad = #id_prioridad#
+                </isGreaterThan>
+            </isNotNull>
+
+            <isNotNull prepend="" property="id_area_capt">
+                <isNotEqual prepend="AND" property="id_area_capt" compareValue="">
+						c.id_area = #id_area_capt#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="nombre_capt">
+                <isNotEqual prepend="AND" property="nombre_capt" compareValue="">
+						c.nombre LIKE '%$nombre_capt$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="paterno_capt">
+                <isNotEqual prepend="AND" property="paterno_capt" compareValue="">
+						c.paterno LIKE '%$paterno_capt$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="materno_capt">
+                <isNotEqual prepend="AND" property="materno_capt" compareValue="">
+						c.materno LIKE '%$materno_capt$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_empleado_remi">
+                <isNotEqual prepend="AND" property="id_empleado_remi" compareValue="">
+						r.id_empleado = #id_empleado_remi#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_area_remi">
+                <isNotEqual prepend="AND" property="id_area_remi" compareValue="">
+						r.id_area = #id_area_remi#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="nombre_remi">
+                <isNotEqual prepend="AND" property="nombre_remi" compareValue="">
+						r.nombre LIKE '%$nombre_remi$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="paterno_remi">
+                <isNotEqual prepend="AND" property="paterno_remi" compareValue="">
+						r.paterno LIKE '%$paterno_remi$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="materno_remi">
+                <isNotEqual prepend="AND" property="materno_remi" compareValue="">
+						r.materno LIKE '%$materno_remi$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_empleado_dest">
+                <isNotEqual prepend="AND" property="id_empleado_dest" compareValue="">
+						d.id_empleado = #id_empleado_dest#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_area_dest">
+                <isNotEqual prepend="AND" property="id_area_dest" compareValue="">
+						d.id_area = #id_area_dest#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="nombre_dest">
+                <isNotEqual prepend="AND" property="nombre_dest" compareValue="">
+						d.nombre LIKE '%$nombre_dest$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="paterno_dest">
+                <isNotEqual prepend="AND" property="paterno_dest" compareValue="">
+						d.paterno LIKE '%$paterno_dest$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="materno_dest">
+                <isNotEqual prepend="AND" property="materno_dest" compareValue="">
+						d.materno LIKE '%$materno_dest$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_tema">
+                <isNotEqual prepend="AND" property="id_tema" compareValue="-1">
+						a.id_tema = #id_tema#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="id_expediente">
+                <isNotEqual prepend="AND" property="id_expediente" compareValue="-1">
+						a.id_expediente = #id_expediente#
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+			ORDER BY a.id_asunto DESC
+		) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+	    ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#			
+    </select>
+              
+</sqlMap>

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/gestion/!svn/ver/569/V8/scg_svn2/WebContent/WEB-INF/spring
+END
+applicationContext-service.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/569/V8/scg_svn2/WebContent/WEB-INF/spring/applicationContext-service.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/WEB-INF/spring/applicationContext.xml
+END
+applicationContext-persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/WEB-INF/spring/applicationContext-persistence.xml
+END
+applicationContext-struts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/554/V8/scg_svn2/WebContent/WEB-INF/spring/applicationContext-struts.xml
+END
+applicationContext-security.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/WEB-INF/spring/applicationContext-security.xml
+END

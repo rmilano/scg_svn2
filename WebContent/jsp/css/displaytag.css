@@ -1,0 +1,143 @@
+.tabla {
+	border: 1px solid #565656;
+	width: 100%;
+	margin: 20px 0 20px 0 !important;
+}
+
+.tabla2 {
+	border: 1px solid #565656;
+	width: 100%;
+	margin: 20px 0 20px 0 !important;
+}
+
+.tabla thead tr {
+        font-family: Trajan Pro;
+        color: #BA2025;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	text-decoration: none;
+	background-color: #c6c7c8;
+	height: 25px;
+}
+
+.odd {
+    background-color: #dadada;
+    font-family: Times New Roman;
+    font-size: 11px;
+}
+
+.par{
+    background-color: #FAFAFA;
+    font-family: Times New Roman;
+    font-size: 11px;
+}
+.even {
+    background-color: #ffffff;
+    font-family: Times New Roman;
+    font-size: 11px;
+}
+
+.table {
+    width:95%;
+    border: 1px solid #565656;
+	border-color: #565656;
+	border-width: 1px;
+	color:#515151;
+	margin:25px auto;
+}
+
+
+
+.tabla tablath.sorted {
+    background-color: #c6c7c8;
+}
+
+
+.tabla th a,th a:visited {
+	color: #ebeced;
+}
+
+.tabla th a:hover {
+	text-decoration: underline;
+	color: #ba2025;
+}
+
+.tabla th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+th.sortable a {
+	background-image: url(../../imagenes/displaytag/arrow_off.png);
+}
+
+th.order1 a {
+	background-image: url(../../imagenes/displaytag/arrow_down.png);
+}
+
+th.order2 a {
+	background-image: url(../imagenes/displaytag/arrow_up.png);
+}
+
+.tabla th a,th a:visited {
+    color: #ba2025;
+    text-decoration: none;
+}
+
+.tabla th a:hover {
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+.tabla th.sorted a,.tabla th.sortable a {
+    background-position: right;
+    display: block;
+    width: 100%;
+}
+
+.tabla th.sortable a {
+    background-image:url(../../imagenes/displaytag/arrow_off.png);
+    background-repeat:no-repeat;
+}
+
+.tabla th.order1 a {
+    background-image: url(../../imagenes/displaytag/arrow_down.png);
+    background-repeat:no-repeat;
+}
+
+.tabla th.order2 a {
+    background-image: url(../../imagenes/displaytag/arrow_up.png);
+    background-repeat:no-repeat;
+}
+
+.pagebanner, .pagelinks {
+    clear: both;
+    color: #646463;
+}
+
+.pagelinks a, .pagelinks span{
+    border:1px solid #565656;
+    height:8px;
+    text-align:right;
+    padding: 5px 7px 5px 7px;
+    width:4px;
+    color: #646463;
+    margin-right: 3px;
+}
+
+.pagelinks a:hover {
+    border-color: #565656;
+    background: #9c9e9f;
+    color: #FFF;
+}
+
+.pagelinks span.current {
+    border: 1px solid #565656;
+    font-weight: bold;
+    background: #9c9e9f;
+    color: #646463;
+}
+

@@ -1,0 +1,396 @@
+/* 
+    Document   : plantillaPrincipal
+    Created on : 06-oct-2010, 13:18:28
+    Author     : gerardo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+body
+{
+    /*    max-width: 800px;*/
+    font-family: Times New Roman;
+    font-size: 12px;
+    background-color: #DADADA;
+    color:#515151;
+    margin:0;
+}
+div.principal
+{
+    margin-left:11%;
+    margin-right:auto;
+    margin-top:1em;
+    position:relative;
+    width:956px;
+    display: block;
+    background-color:white;
+    padding:1em;
+}
+
+div.encabezado
+{
+    background-image:url("../../imagenes/SE.jpg");
+    height:80px;
+    line-height:1.9;
+}
+div.encabezado .sesionLegen
+{
+    float:right;
+    margin-top:47px;
+    text-align:right;
+}
+div.menu
+{
+    height:51px;
+    line-height:1.9;
+}
+div.cuerpo
+{
+    background: #FFFFFF;    
+    width: 100%;
+    height: 100%;
+    display: inline-block;    
+}
+
+div.cuerpo .titulo
+{
+  
+   color: #ba2025;
+   font-size: 11px;
+   font-family: Trajan Pro;
+    line-height:18px;
+}
+
+div.titulo label.pagina/*Indica la página en la que está el usuario*/
+{
+    color: #ba2025;
+    font-family: Trajan Pro;
+    font-size: 12px;
+    left: 1.5em;
+    position: absolute;
+    margin-top: -4px;
+}
+
+div.titulo label.usuario
+{
+    position: absolute;
+    right: 1.5em;
+    font-family: Trajan Pro;
+    font-size: 12px;
+    color: #646463;
+    margin-top: -4px;
+}
+
+div.titulo label.usuario span.cerrarSesion
+{
+    text-align: left;
+    font-family: Trajan Pro;
+    font-size: 12px;
+    color: #646463;
+}
+
+div.pie
+{
+    height:80px;
+    line-height:1.9;
+}
+div.pieDePagina
+{
+    background-color: white;
+    display: table;
+    margin-left: -12px;
+    margin-top: 0px;
+    text-align: center;
+    width: 980px;
+}
+div.border
+{
+    background:none repeat scroll 0 0 #DADADA;
+    margin:15px;
+    padding:1px;
+}
+div.inner
+{
+    background:none repeat scroll 0 0 #FFFFFF;
+    margin:0;
+    padding:1px;
+}
+
+
+/* Configuracion de los divs*/
+div.content .left
+{
+    text-align: left;
+
+}
+
+div.content  label
+{
+    display: block;
+}
+
+div.content .contentform table
+{
+    width: 98%;
+}
+
+div.content .contentform table .right
+{
+    text-align: right;
+}
+div.content .contentform
+{
+    text-align: left;
+}
+div.content .contentform  .textArea
+{
+    width: 100%;
+}
+
+
+div.content .contentform .hasDatepicker
+{
+    width: 100px;
+}
+
+div.content div.inner div.contentform
+{
+    padding: 5px 10px;
+}
+div.content div.inner div.ayuda
+{
+    background:none repeat scroll 0 0 #DADADA;
+    float:right;
+    height:auto;
+    /*margin: 200% 20% 20% 10%;*/
+    margin:-235px 18px 2px 1px;
+    position:relative;
+    width:24%;
+    text-align: justify;
+    font-size: 10.5px;
+    border-style: dashed;
+    border-width: 2px;
+}
+div.content div.inner div.ayuda span.ayudaTexto
+{
+    color: #515151;
+    font-family:Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+}
+.imgayuda
+{
+    width: 25px;
+    height: 25px;
+    /*position: absolute;*/
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 40%;
+
+}
+.exitoMsg
+{
+    color: #1b6a3f;
+}	
+
+
+.btn_default_sl 
+{
+    background-color: #9c9e9f;
+    border: 1px solid  #565656;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    text-decoration: none;
+}
+.btn_default a:link 
+{
+    text-decoration: none
+}
+
+.btn_default_sl:hover /*sin linea de borde*/
+{
+    background-color: #ebeced;
+    border: 1px solid #565656;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    cursor: pointer;
+}
+
+.btn_default
+{
+    background-color: #9c9e9f;
+    border: 1px solid  #565656;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    text-decoration: none;
+}
+.btn_default a:link
+{
+    text-decoration: none
+}
+
+/*.btn_default:hover
+{
+    background-color: #ebeced;
+    border: 1px solid #565656;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+    cursor: pointer;
+}*/
+.ui-pdf-text
+{
+    background-color: #9c9e9f;
+    border: 1px solid  #565656;
+    color: #646463;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+}
+
+.btn_bck_claro
+{
+    background-color: #ebeced;
+    border: 1px solid  #565656;
+    color: #646463;
+    font-size: 12px;
+    font-weight: bold;
+font-family: Times New Roman;
+}
+
+.btn_bck_claro:hover
+{
+    background-color: #fafafa;
+    border: 1px solid #565656;
+    color: #646463;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Times New Roman;
+}
+
+.displaytag_titulo
+{
+    background-color: #dadada;
+    color: #BA2025;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Trajan Pro;
+}
+
+.upperCase {
+    text-transform: uppercase;
+}
+
+/*El puntero del mouse*/
+.mouseOver, a
+{
+    cursor: pointer;
+}
+
+.accordion h3
+{
+    background-color: #dadada;
+    border: 1px solid #565656;
+    height: auto;
+}
+.ui-state-default a
+{
+    color: #646363;
+    font-weight: bold;
+
+}
+
+.ui-accordion .ui-accordion-header a {
+    margin-left: 17px;
+    padding: 0.3em;
+}
+
+.area-empleado{
+	font-weight: bold;
+	font-size: 12px;	
+}
+
+.head-detalle-bold{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 8px;	
+}
+
+.icon-pdf-export
+{
+    background: url("../../imagenes/pdf.jpg") no-repeat left center;
+    padding-left: 20px;
+    line-height: 16px; 
+
+}
+
+.ui-pdf-text
+{
+    margin-left: 12px;
+}
+
+.icon-xls-export
+{
+    background: url("../../imagenes/xls.jpg") no-repeat left center;
+    padding-left: 20px;
+    line-height: 16px; 
+
+}
+
+.ui-xls-text
+{
+    margin-left: 12px;
+}
+
+.result-search
+{
+    color: #646463;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+input[type="text"], textarea, select,input[type="file"]
+{
+    background: url("../../imagenes/jquery-ui/ui-bg_flat_75_ffffff_40x100.png") repeat-x scroll 50% 50% #FFFFFF;
+    border: 1px solid #565656;
+    color: #646463;
+}
+.hidden
+{
+    display: none;
+}
+
+.message-confirm
+{
+    font: bold;
+    font-size: 12px;
+}
+.message-nofound
+{
+    font: bold;
+    font-size: 12px;
+    color: #ba2025;
+    border: 1px solid #565656;
+    text-align: center;
+    background: #dadada;
+}
+
+.campoRequerido
+{
+    text-align: left;
+    color: #ba2025; 
+    font-family: Times New Roman;
+    font-size: 9px;
+}

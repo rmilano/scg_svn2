@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Tema">
+    <select id="listTemas" resultClass="mx.gob.economia.scg.model.Tema" parameterClass="java.lang.Integer">
+		SELECT id_tema, id_tema_padre, id_area, tema, evento, activo FROM tema 
+		WHERE id_area = #id_area# AND  (ID_TEMA_PADRE IS NULL OR ID_TEMA_PADRE = -1) AND 
+                      activo = 1 AND id_tema>-1
+                ORDER BY tema
+    </select>
+    <select id="listTemasCriterio" resultClass="mx.gob.economia.scg.model.Tema" parameterClass="mx.gob.economia.scg.model.CriterioTema">
+        SELECT * FROM (
+         SELECT vista.*, rownum r FROM(
+          SELECT id_tema, id_tema_padre, id_area, tema, evento, activo, rownum fila FROM tema
+          WHERE id_tema>-1 AND (id_tema_padre is null OR id_tema_padre=-1) AND activo=1
+        <dynamic prepend="AND">
+            <isNotNull prepend="" property="tema.area.id_area">
+                <isNotEqual prepend="AND" property="tema.area.id_area" compareValue="-1">
+					id_area =  #tema.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="tema.tema">
+                <isNotEqual prepend="AND" property="tema.tema" compareValue="">
+					tema LIKE '%$tema.tema$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+               ) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+                ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#
+    </select>
+    <select id="countTemasCriterio" resultClass="java.lang.Integer" parameterClass="mx.gob.economia.scg.model.CriterioTema">        
+        SELECT count(*) FROM tema
+        WHERE id_tema>-1 AND (id_tema_padre is null OR id_tema_padre=-1) AND activo=1
+        <dynamic prepend="AND">
+            <isNotNull prepend="" property="tema.area.id_area">
+                <isNotEqual prepend="AND" property="tema.area.id_area" compareValue="-1">
+					id_area =  #tema.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="tema.tema">
+                <isNotEqual prepend="AND" property="tema.tema" compareValue="">
+					tema LIKE '%$tema.tema$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+    </select>
+    <select id="getTemasByIdPadre" resultClass="mx.gob.economia.scg.model.Tema" parameterClass="java.lang.Integer">
+		SELECT id_tema, id_tema_padre, id_area, tema, evento, activo, rownum fila FROM tema
+		WHERE id_tema_padre = #id_tema_padre# AND activo = 1 ORDER BY tema
+    </select>
+    <select id="getTema" resultClass="mx.gob.economia.scg.model.Tema" parameterClass="java.lang.Integer">
+		SELECT id_tema, id_tema_padre, id_area, tema, evento, activo FROM tema 
+		WHERE id_tema = #id_tema# AND activo = 1 ORDER BY id_area, id_tema
+    </select>
+    <select id="getById" resultClass="mx.gob.economia.scg.model.Tema" parameterClass="java.lang.Integer">
+		SELECT id_tema, id_tema_padre, id_area, tema, evento, activo FROM tema 
+		WHERE id_tema = #id_tema# 
+    </select>
+    <select id="getIdsTemaByRevisor" resultClass="java.lang.String" parameterClass="java.lang.Integer">
+            SELECT ID_TEMA FROM TEMA_REVISOR WHERE ID_EMPLEADO_REVI = #value#
+    </select>
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Tema">
+        <selectKey keyProperty="id_tema" resultClass="int">
+			SELECT seq_tema.nextval FROM dual
+        </selectKey>
+		INSERT INTO tema (id_tema, id_tema_padre, id_area, tema, evento, activo)
+		VALUES (#id_tema#, #id_tema_padre#, #id_area#, #tema#, #evento#, #activo#)
+    </insert>
+    <insert id="insertTemaRevisor" parameterClass="mx.gob.economia.scg.model.Tema">
+		INSERT INTO TEMA_REVISOR (id_tema, id_empleado_revi)
+		VALUES (#id_tema#, #revisor.id_empleado#)
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.Tema">
+	    UPDATE tema SET id_tema_padre = #id_tema_padre#, id_area = #id_area#, tema = #tema#, evento = #evento#, activo = #activo#
+	    WHERE id_tema=#id_tema#
+    </update>
+    <delete id="delete" parameterClass="java.lang.Integer" >
+		DELETE FROM  tema WHERE id_tema = #id_tema#
+    </delete >
+</sqlMap>

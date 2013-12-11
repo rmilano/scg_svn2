@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Instruccion">
+	<select id="listInstrucciones" resultClass="mx.gob.economia.scg.model.Instruccion" parameterClass="java.lang.Integer">
+		SELECT id_instruccion, id_area, id_empleado, instruccion, activo FROM instruccion 
+		WHERE id_area = #id_area# AND activo = 1 ORDER BY id_area, id_instruccion
+            <!--
+            select *
+            from instruccion
+            where id_area = #id_area#
+            and activo = 1
+            and id_empleado = (select max(id_empleado) from instruccion where id_area = #id_area#)
+            ORDER BY instruccion asc
+            -->
+	</select>
+        <select id="listInstruccionesByPagina" resultClass="mx.gob.economia.scg.model.Instruccion" parameterClass="mx.gob.economia.scg.model.CriterioInstruccion">
+        SELECT * FROM (
+         SELECT vista.*, rownum r FROM(
+          select id_instruccion,id_area,instruccion,activo,rownum fila from instruccion
+          WHERE id_instruccion>0 AND activo=1 
+        <dynamic prepend="AND">
+          
+            <isNotNull prepend="" property="instruccion.area.id_area">
+                <isNotEqual prepend="AND" property="instruccion.area.id_area" compareValue="-1">
+			  		id_area =  #instruccion.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="instruccion.instruccion">
+                <isNotEqual prepend="AND" property="instruccion.instruccion" compareValue="">
+					instruccion LIKE '%$instruccion.instruccion$%'
+                </isNotEqual>
+            </isNotNull>
+            
+        </dynamic>
+               ) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+                ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#
+	</select>
+        <select id="countInstruccionesByCriterio" resultClass="java.lang.Integer" parameterClass="mx.gob.economia.scg.model.CriterioInstruccion">        
+        SELECT count(*) FROM instruccion WHERE id_instruccion>0 AND activo=1 
+        <dynamic prepend="AND">
+            
+            <isNotNull prepend="" property="instruccion.area.id_area">
+                <isNotEqual prepend="AND" property="instruccion.area.id_area" compareValue="-1">
+					id_area =  #instruccion.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="instruccion.instruccion">
+                <isNotEqual prepend="AND" property="instruccion.instruccion" compareValue="">
+					instruccion LIKE '%$instruccion.instruccion$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>
+    </select>
+	<select id="getInstruccion" resultClass="mx.gob.economia.scg.model.Instruccion" parameterClass="java.lang.Integer">
+		SELECT id_instruccion, id_area, id_empleado, instruccion, activo FROM instruccion 
+		WHERE id_instruccion = #id_instruccion# AND activo = 1 ORDER BY id_area, id_instruccion
+	</select>
+	<select id="getById" resultClass="mx.gob.economia.scg.model.Instruccion" parameterClass="java.lang.Integer">
+		SELECT id_instruccion, id_area, id_empleado, instruccion, activo FROM instruccion 
+		WHERE id_instruccion = #id_instruccion# 
+	</select>
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Instruccion">
+		<selectKey keyProperty="id_instruccion" resultClass="int">
+			SELECT seq_instruccion.nextval FROM dual
+		</selectKey>
+		INSERT INTO instruccion (id_instruccion, id_area, id_empleado, instruccion, activo)
+		VALUES (#id_instruccion#, #id_area#, #id_empleado#, #instruccion#, #activo#)
+	</insert>
+	<update id="update" parameterClass="mx.gob.economia.scg.model.Instruccion">
+	    UPDATE instruccion SET id_instruccion=#id_instruccion#, id_area=#id_area#, id_empleado=#id_empleado#, instruccion=#instruccion#, activo=#activo#
+	    WHERE id_instruccion=#id_instruccion#
+	</update>
+	<delete id="delete" parameterClass="java.lang.Integer" >
+		DELETE FROM  instruccion WHERE id_instruccion = #id_instruccion#
+	</delete >
+</sqlMap>

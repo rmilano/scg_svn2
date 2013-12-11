@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/gestion/!svn/ver/596/V8/scg_svn2/src/mx/gob/economia/scg/action
+END
+ConsultaRevisionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaRevisionAction.java
+END
+ConsultaModificadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaModificadoAction.java
+END
+AreaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gestion/!svn/ver/557/V8/scg_svn2/src/mx/gob/economia/scg/action/AreaAction.java
+END
+ConsultaCapturaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/564/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaCapturaAction.java
+END
+ReporteVolanteAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/548/V8/scg_svn2/src/mx/gob/economia/scg/action/ReporteVolanteAction.java
+END
+AsuntoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/602/V8/scg_svn2/src/mx/gob/economia/scg/action/AsuntoAction.java
+END
+ConsultaArchivadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaArchivadoAction.java
+END
+InicioAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/InicioAction.java
+END
+PrioridadAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/PrioridadAction.java
+END
+ConsultaCcpAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaCcpAction.java
+END
+ReporteAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/607/V8/scg_svn2/src/mx/gob/economia/scg/action/ReporteAction.java
+END
+ConsultaRecepcionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaRecepcionAction.java
+END
+ConsultaTurnadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaTurnadoAction.java
+END
+ConsultaRevisadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaRevisadoAction.java
+END
+EmpleadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/587/V8/scg_svn2/src/mx/gob/economia/scg/action/EmpleadoAction.java
+END
+TemaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/TemaAction.java
+END
+ConsultaResumenAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaResumenAction.java
+END
+ConsultaConfidencialAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaConfidencialAction.java
+END
+ConsultaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/548/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaAction.java
+END
+ConsultaFinalizadoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaFinalizadoAction.java
+END
+TipoDocumentoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/TipoDocumentoAction.java
+END
+ExpedienteAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ExpedienteAction.java
+END
+ConsultaPorSupervisarAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaPorSupervisarAction.java
+END
+ConsultaBandejaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/603/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaBandejaAction.java
+END
+EstadisticaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/EstadisticaAction.java
+END
+CapturaAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/588/V8/scg_svn2/src/mx/gob/economia/scg/action/CapturaAction.java
+END
+ConsultaAtendidoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaAtendidoAction.java
+END
+ConsultaSupervisadosAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/ConsultaSupervisadosAction.java
+END
+EventoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/EventoAction.java
+END
+InstruccionAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/action/InstruccionAction.java
+END

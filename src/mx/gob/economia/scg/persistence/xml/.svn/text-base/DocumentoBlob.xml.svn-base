@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="DocumentoBlob">
+	<select id="getBlobByIdDocumento" resultClass="mx.gob.economia.scg.model.DocumentoBlob" parameterClass="java.lang.Integer">
+		SELECT * FROM documento_blob WHERE id_documento = #id_documento#
+	</select>
+	<insert id="insert" parameterClass="mx.gob.economia.scg.model.DocumentoBlob">
+		INSERT INTO documento_blob(id_documento, id_asunto, id_asunto_detalle, blob) 
+		VALUES (#id_documento#, #id_asunto#, #id_asunto_detalle#, #blob#)
+	</insert>
+	<delete id="deleteByIdAsunto" parameterClass="java.lang.Integer">
+		DELETE FROM documento_blob WHERE id_asunto = #id_asunto#
+	</delete>
+        <select id="getBlobAtenParByIdDocumento" resultClass="mx.gob.economia.scg.model.DocumentoBlob" parameterClass="mx.gob.economia.scg.model.Documento">
+		SELECT * FROM documento_att_parc
+                WHERE id_asunto_detalle = #id_asunto_detalle#
+                AND consecutivo = #id_documento#
+	</select>
+</sqlMap>

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/gestion/!svn/ver/597/V8/scg_svn2/WebContent/jsp/asunto
+END
+consulta.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/asunto/consulta.jsp
+END
+asunto.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/gestion/!svn/ver/548/V8/scg_svn2/WebContent/jsp/asunto/asunto.jsp
+END
+asuntos_resumen.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/asunto/asuntos_resumen.jsp
+END
+detalle.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/gestion/!svn/ver/557/V8/scg_svn2/WebContent/jsp/asunto/detalle.jsp
+END
+turnar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/gestion/!svn/ver/547/V8/scg_svn2/WebContent/jsp/asunto/turnar.jsp
+END
+finalizar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/gestion/!svn/ver/533/V8/scg_svn2/WebContent/jsp/asunto/finalizar.jsp
+END
+rechazar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/gestion/!svn/ver/557/V8/scg_svn2/WebContent/jsp/asunto/rechazar.jsp
+END
+editarTurno.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/gestion/!svn/ver/547/V8/scg_svn2/WebContent/jsp/asunto/editarTurno.jsp
+END
+atender.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/gestion/!svn/ver/558/V8/scg_svn2/WebContent/jsp/asunto/atender.jsp
+END
+returnar.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/gestion/!svn/ver/547/V8/scg_svn2/WebContent/jsp/asunto/returnar.jsp
+END
+asuntoEditable.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/gestion/!svn/ver/548/V8/scg_svn2/WebContent/jsp/asunto/asuntoEditable.jsp
+END

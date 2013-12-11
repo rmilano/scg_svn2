@@ -1,0 +1,88 @@
+/* 
+    Document   : reportes
+    Created on : 8/11/2010, 05:39:02 PM
+    Author     : carlos.rivera
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+/*
+    Document   : empleado
+    Created on : 16-nov-2010, 13:27:24
+    Author     : rodrigo
+    Description:
+        Purpose of the stylesheet follows.
+
+
+ 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+
+
+*/
+
+div #tree a
+{
+    color: #ebeced;
+    text-decoration: inherit;
+}
+
+div .tree
+{
+    width: 220px;
+}
+
+input.tree
+{
+    background-color: #ebeced;
+    font-weight: bold;
+    color: #646463;
+}
+
+.ui-widget .ui-widget
+{
+    font-size:9px;
+}
+.ui-widget-header
+{
+    background-image: url("../../../imagenes/barTituloPagina.png");
+    color: #646463;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    line-height: 1;
+    text-align: center;
+}
+div.content .contentform table.captura 
+{
+    width: 99%;
+    text-align: center;
+    border-collapse: collapse;
+}
+div.content .contentform table.captura td,div.content .contentform table.captura th
+{
+    border: 1px solid #565656;
+}
+div.content .contentform table.captura input.tree
+{
+    width: 90%;
+}
+div.content .contentform table.result
+{
+    font-size: 9px;
+    width: 99%;
+}
+
+#empleado span {
+    display: inline-block;
+}
+
+#select-temas, .captura select
+{
+    width: 98%;
+}

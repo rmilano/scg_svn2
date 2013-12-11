@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+   <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+   "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+	<!-- Definicion de la plantilla principal -->
+    <definition name="plantillaPrincipal" path="/jsp/plantillas/plantillaprincipal.jsp">
+        <put name="encabezado" value="/jsp/plantillas/encabezado.jsp" />
+        <put name="menu" value="/jsp/plantillas/menu.jsp" />
+        <put name="pie" value="/jsp/plantillas/pie.jsp" />
+    </definition>
+	<!-- Error -->
+    <definition name="error" extends="plantillaPrincipal">
+        <put name="titulo" value="Error" />
+        <put name="cuerpo" value="/jsp/error.jsp" />
+    </definition>
+	<!-- Autenticacion -->
+    <definition name="autenticacion" extends="plantillaPrincipal">
+        <put name="titulo" value="Autenticación" />
+        <put name="cuerpo" value="/jsp/autenticacion.jsp" />
+    </definition>
+	<!-- Denegado -->
+    <definition name="denegado" extends="plantillaPrincipal">
+        <put name="titulo" value="Acceso Denegado" />
+        <put name="cuerpo" value="/jsp/denegado.jsp" />
+    </definition>
+	<!-- Expirada -->
+    <definition name="expirada" extends="plantillaPrincipal">
+        <put name="titulo" value="Sesión Expirada" />
+        <put name="cuerpo" value="/jsp/expirada.jsp" />
+    </definition>
+	<!-- Firma -->
+    <definition name="firma" extends="plantillaPrincipal">
+        <put name="titulo" value="Firma Electrónica" />
+        <put name="cuerpo" value="/jsp/captura/firma.jsp" />
+    </definition>
+	<!-- Inicio -->
+    <definition name="inicio" extends="plantillaPrincipal">
+        <put name="titulo" value="Bienvenido" />
+        <put name="cuerpo" value="/jsp/inicio/inicio.jsp" />
+    </definition>
+	<!-- Detalle de asunto -->
+    <definition name="asunto" extends="plantillaPrincipal">
+        <put name="titulo" value="Detalle" />
+        <put name="cuerpo" value="/jsp/asunto/detalle.jsp" />
+    </definition>
+	<!-- Consulta -->
+    <definition name="consulta" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta" />
+        <put name="cuerpo" value="/jsp/asunto/consulta.jsp" />
+    </definition>
+	<!-- Captura -->
+    <definition name="captura" extends="plantillaPrincipal">
+        <put name="titulo" value="Captura del documento" />
+        <put name="cuerpo" value="/jsp/captura/captura.jsp" />
+    </definition>
+    <definition name="vista-previa" extends="plantillaPrincipal">
+        <put name="titulo" value="Vista previa" />
+        <put name="cuerpo" value="/jsp/captura/vista-previa.jsp" />
+    </definition>
+
+	<!-- Consulta Captura-->
+    <definition name="consulta-captura" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta en captura" />
+        <put name="cuerpo" value="/jsp/captura/consulta.jsp" />
+    </definition>
+	<!-- Consulta en Revision-->
+	<definition name="consulta-revision" extends="plantillaPrincipal">
+		<put name="titulo" value="Consulta en revision" />
+		<put name="cuerpo" value="/jsp/revision/consulta.jsp" />
+	</definition>
+	<!-- Consulta Revisado-->
+	<definition name="consulta-revisado" extends="plantillaPrincipal">
+		<put name="titulo" value="Consulta Revisados" />
+		<put name="cuerpo" value="/jsp/revision/consulta-revisado.jsp" />
+	</definition>
+	<!-- Consulta Supervisar-->
+	<definition name="consulta-supervisar" extends="plantillaPrincipal">
+		<put name="titulo" value="Consulta Por Supervisar" />
+		<put name="cuerpo" value="/jsp/revision/consulta-supervisar.jsp" />
+	</definition>
+	<!-- Consulta Supervisados -->
+	<definition name="consulta-supervisados" extends="plantillaPrincipal">
+		<put name="titulo" value="Consulta Supervisados" />
+		<put name="cuerpo" value="/jsp/revision/consulta-supervisados.jsp" />
+	</definition>
+	<!-- Consulta Archivado -->
+    <definition name="consulta-archivado" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta archivados" />
+        <put name="cuerpo" value="/jsp/archivado/consulta.jsp" />
+    </definition>
+	<!-- Consulta de asuntos confidenciales -->
+    <definition name="consulta-confidencial" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta confidenciales" />
+        <put name="cuerpo" value="/jsp/confidencial/pendientes.jsp" />
+    </definition>
+	<!-- Consulta Bandeja-->
+    <definition name="consulta-bandeja" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Bandeja" />
+        <put name="cuerpo" value="/jsp/bandeja/consulta.jsp" />
+    </definition>
+	<!-- Consulta Atendido-->
+    <definition name="consulta-atendido" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Atendidos" />
+        <put name="cuerpo" value="/jsp/atendido/consulta.jsp" />
+    </definition>
+	<!-- Consulta Turnado-->
+    <definition name="consulta-turnado" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Turnados" />
+        <put name="cuerpo" value="/jsp/turnado/consulta.jsp" />
+    </definition>
+    <!-- Consulta Modificado-->
+    <definition name="consulta-modificado" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Modificados" />
+        <put name="cuerpo" value="/jsp/modificado/consulta.jsp" />
+    </definition>
+	<!-- Consulta Finalizado-->
+    <definition name="consulta-finalizado" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Concluidos" />
+        <put name="cuerpo" value="/jsp/finalizado/consulta.jsp" />
+    </definition>
+	<!-- Consulta Recepcion-->
+    <definition name="consulta-recepcion" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta en Recepción" />
+        <put name="cuerpo" value="/jsp/recepcion/consulta.jsp" />
+    </definition>
+	<!-- Consulta Con Copia Para-->
+    <definition name="consulta-ccp" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta Con Copia Para" />
+        <put name="cuerpo" value="/jsp/ccp/consulta.jsp" />
+    </definition>
+	
+	
+	
+	
+	<!-- Atender -->
+    <definition name="atender" extends="plantillaPrincipal">
+        <put name="titulo" value="Atender" />
+        <put name="cuerpo" value="/jsp/asunto/atender.jsp" />
+    </definition>
+	<!-- Turnar -->
+    <definition name="turnar" extends="plantillaPrincipal">
+        <put name="titulo" value="Turnar" />
+        <put name="cuerpo" value="/jsp/asunto/turnar.jsp" />
+    </definition>
+        <!-- Returnar -->
+    <definition name="returnar" extends="plantillaPrincipal">
+        <put name="titulo" value="Re Turnar" />
+        <put name="cuerpo" value="/jsp/asunto/returnar.jsp" />
+    </definition>
+    <!-- Finalizar -->
+    <definition name="editarTurno" extends="plantillaPrincipal">
+        <put name="titulo" value="Editar turno" />
+        <put name="cuerpo" value="/jsp/asunto/editarTurno.jsp" />
+    </definition>
+	<!-- Finalizar -->
+    <definition name="finalizar" extends="plantillaPrincipal">
+        <put name="titulo" value="Finalizar" />
+        <put name="cuerpo" value="/jsp/asunto/finalizar.jsp" />
+    </definition>
+	<!-- Rechazar -->
+    <definition name="rechazar" extends="plantillaPrincipal">
+        <put name="titulo" value="Rechazar" />
+        <put name="cuerpo" value="/jsp/asunto/rechazar.jsp" />
+    </definition>
+	
+	<!-- Areas -->
+    <definition name="areas" extends="plantillaPrincipal">
+        <put name="titulo" value="Catálogo de Áreas" />
+        <put name="cuerpo" value="/jsp/areas/inicio.jsp" />
+    </definition>
+	<!-- Catalogo de Areas -->
+    <definition name="regmod_area" extends="plantillaPrincipal">
+        <put name="titulo" value="Registro y Modificación de Áreas" />
+        <put name="cuerpo" value="/jsp/areas/registro_areas.jsp" />
+    </definition>
+	<!-- Catalogo de Empleados -->
+    <definition name="regmod_empleado" extends="plantillaPrincipal">
+        <put name="titulo" value="Registro y Modificación de Empleados" />
+        <put name="cuerpo" value="/jsp/empleados/registro_empleados.jsp" />
+    </definition>
+	<!-- Catalogo de Empleados -->
+    <definition name="inicio-empleado" extends="plantillaPrincipal">
+        <put name="titulo" value="Catálogo de empleados" />
+        <put name="cuerpo" value="/jsp/empleados/consulta-eliminar-empleado.jsp" />
+    </definition>
+    <definition name="editar-empleado" extends="plantillaPrincipal">
+        <put name="titulo" value="Catálogo de empleados" />
+        <put name="cuerpo" value="/jsp/empleados/editar-empleado.jsp" />
+    </definition>
+	<!-- Catalogo Tipos de Documento-->
+    <definition name="tipo-documento" extends="plantillaPrincipal">
+        <put name="titulo" value="Catálogo de Tipos de Documento" />
+        <put name="cuerpo" value="/jsp/tipo_documento/tipo_documento.jsp" />
+    </definition>
+	<!-- Catalogo Prioridades-->
+    <definition name="prioridad" extends="plantillaPrincipal">
+        <put name="titulo" value="Catálogo de Prioridades" />
+        <put name="cuerpo" value="/jsp/prioridades/prioridad.jsp" />
+    </definition>
+	<!-- Resumen de asuntos -->
+    <definition name="resumen" extends="plantillaPrincipal">
+        <put name="titulo" value="Resumen" />
+        <put name="cuerpo" value="/jsp/asunto/asuntos_resumen.jsp" />
+    </definition>
+	<!-- Reportes -->
+    <definition name="reporte-general-asuntos" extends="plantillaPrincipal">
+        <put name="titulo" value="Reporte General" />
+        <put name="cuerpo" value="/jsp/reportes/reporteGeneralAsuntos.jsp" />
+    </definition>
+    <definition name="reporte-general-detalle" extends="plantillaPrincipal">
+        <put name="titulo" value="Reporte a Detalle" />
+        <put name="cuerpo" value="/jsp/reportes/reporteGeneralDetalle.jsp" />
+    </definition>        
+    <definition name="reporte-volante-busqueda" extends="plantillaPrincipal">
+        <put name="titulo" value="Archivo de Volantes" />
+        <put name="cuerpo" value="/jsp/reportevolante/reporteVolantes.jsp" />
+    </definition>         
+    <definition name="reporte-volante-confirmacion" extends="plantillaPrincipal">
+        <put name="titulo" value="Archivo de Volantes" />
+        <put name="cuerpo" value="/jsp/reportevolante/reporteVolantesConfirmacion.jsp" />
+    </definition>         
+    <definition name="error-reporte" extends="plantillaPrincipal">
+        <put name="titulo" value="Error en la generación del Reporte general de asuntos" />
+        <put name="cuerpo" value="/jsp/reportes/reporteGeneralAsuntos.jsp" />
+    </definition>
+    <definition name="concentrado" extends="plantillaPrincipal">
+        <put name="titulo" value="Resumen" />
+        <put name="cuerpo" value="/jsp/reportes/concentrado.jsp" />
+    </definition>
+    <definition name="incio-estadistica" extends="plantillaPrincipal">
+        <put name="titulo" value="Reporte" />
+        <put name="cuerpo" value="/jsp/reportes/estadistica.jsp" />
+    </definition>
+    <definition name="inicio-tema" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta de temas" />
+        <put name="cuerpo" value="/jsp/tema/consulta-eliminar.jsp" />
+    </definition>
+    <definition name="editar-tema" extends="plantillaPrincipal">
+        <put name="titulo" value="Editar Tema" />
+        <put name="cuerpo" value="/jsp/tema/editar.jsp" />
+    </definition>
+    <definition name="registrar-tema" extends="plantillaPrincipal">
+        <put name="titulo" value="Registrar Tema" />
+        <put name="cuerpo" value="/jsp/tema/alta.jsp" />
+    </definition>
+	<definition name="inicio-evento" extends="plantillaPrincipal">
+        <put name="titulo" value="Consulta de eventos" />
+        <put name="cuerpo" value="/jsp/evento/consulta-eliminar.jsp" />
+    </definition>
+    <definition name="editar-evento" extends="plantillaPrincipal">
+        <put name="titulo" value="Editar Evento" />
+        <put name="cuerpo" value="/jsp/evento/editar.jsp" />
+    </definition>
+    <definition name="registrar-evento" extends="plantillaPrincipal">
+        <put name="titulo" value="Registrar Evento" />
+        <put name="cuerpo" value="/jsp/evento/alta.jsp" />
+    </definition>
+    <definition name="instruccion" extends="plantillaPrincipal">
+        <put name="titulo" value="Administración de Instrucciones" />
+        <put name="cuerpo" value="/jsp/instruccion/instruccion.jsp" />
+    </definition>
+    <definition name="expediente" extends="plantillaPrincipal">
+        <put name="titulo" value="Administración de Expedientes" />
+        <put name="cuerpo" value="/jsp/expediente/expediente.jsp" />
+    </definition>
+    <definition name="editar-expediente" extends="plantillaPrincipal">
+        <put name="titulo" value="Nuevo expediente" />
+        <put name="cuerpo" value="/jsp/expediente/nuevo-editar.jsp" />
+    </definition>
+    <definition name="actualizar-expediente" extends="plantillaPrincipal">
+        <put name="titulo" value="Nuevo expediente" />
+        <put name="cuerpo" value="/jsp/expediente/editar.jsp" />
+    </definition>
+</tiles-definitions>

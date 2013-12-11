@@ -1,0 +1,114 @@
+/* 
+    Document   : fg.custum.menu
+    Created on : 07-oct-2010, 10:35:36
+    Author     : gerardo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.ui-widget-header
+{
+
+color: #ba2025;
+
+    font-size:11px;
+    font-family: Trajan Pro;
+    font-style:normal;
+    font-variant:bold;
+    line-height:normal;
+    text-decoration:none;
+    text-transform:none;
+    background-color: #C6C7C8;
+}
+.ui-dialog .ui-dialog-buttonpane
+{
+    height: 26px;    
+    border-width:0px 0 0;
+    margin:0.5em 0 0;
+    padding:0.3em 1em 0.5em 0.4em;
+    text-align:left;
+}
+
+
+div.menu_principal  .hidden
+{
+    position:absolute;
+    top:0;
+    left:-9999px;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+div.menu_principal .fg-button
+{
+    clear:left;
+    margin:0 4px 40px 20px;
+    /*    padding: .4em 1em;*/
+    text-decoration:none !important;
+    cursor:pointer;
+    position: relative;
+    text-align: center;
+}
+div.menu_principal .fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+div.menu_principal  a.fg-button
+{
+    float:none;
+    background: transparent;
+}
+div.menu_principal button.fg-button { width:auto; overflow:visible; } /* removes extra button width in IE */
+
+div.menu_principal .fg-button-icon-left { padding-left: 2.1em; }
+div.menu_principal .fg-button-icon-right { padding-right: 2.1em; }
+div.menu_principal .fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+div.menu_principal .fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+div.menu_principal .fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; }	 /* solo icon buttons must have block properties for the text-indent to work */
+
+div.menu_principal .fg-button.ui-state-loading .ui-icon { background: url(../../imagenes/menu/spinner_bar.gif) no-repeat 0 0; }
+
+div.menu_principal {
+    background-image:url("../../imagenes/menu/fondo_menu.jpg");
+    width: 980;
+    height: 80px;
+    display:block;
+    height:2.5em;
+    margin-top:0;
+    overflow:hidden;
+
+}
+div.menu_principal .ui-state-default, div.menu_principal .ui-state-focus
+{
+    color: #646463;
+    font-family: Trajan Pro;
+    font-size: 12px;
+    font-weight: normal;
+    border: none;
+ 
+}
+.fg-menu-container, .fg-menu-container ul ul
+{
+    background: none repeat scroll 0 0 #DADADA;
+    color:#646463;
+    font-size: 11px;
+    border:none;
+    font-family: Trajan Pro;
+}
+.fg-menu-container a
+{
+    color:#646463;
+    border:none;
+    font-size: 11px;
+    font-family: Trajan Pro;
+}
+.fg-menu-container .ui-state-hover
+{
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 11px;
+    border:none;
+    font-family: Trajan Pro;
+}

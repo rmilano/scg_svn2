@@ -1,0 +1,4 @@
+
+$(function(){
+  crearArbol("empleado");    
+});

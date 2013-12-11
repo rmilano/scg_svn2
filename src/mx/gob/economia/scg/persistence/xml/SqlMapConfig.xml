@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings enhancementEnabled="true" useStatementNamespaces="true" />
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Empleado.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Area.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Rol.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Asunto.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/AsuntoDetalle.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Prioridad.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Documento.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/TipoDocumento.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/TipoAsunto.xml"/>
+        <sqlMap resource="mx/gob/economia/scg/persistence/xml/Reporte.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Tema.xml"/>
+        <sqlMap resource="mx/gob/economia/scg/persistence/xml/Evento.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Instruccion.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/Expediente.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/AsuntoCapturaActualizacion.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/AsuntoRevision.xml"/>
+	<sqlMap resource="mx/gob/economia/scg/persistence/xml/TipoSeguimiento.xml"/>
+</sqlMapConfig>

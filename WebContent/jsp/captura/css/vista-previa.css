@@ -1,0 +1,29 @@
+/* 
+    Document   : vista-previa
+    Created on : 28-dic-2010, 15:54:21
+    Author     : gerardo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.justify
+{
+    text-align: justify;
+}
+.center
+{
+    text-align: center;
+}
+.preview table tbody td
+{
+     background: url("../../../imagenes/jquery-ui/ui-bg_glass_95_fef1ec_1x400.png") repeat-x scroll 50% 50% #c6c7c8;
+     color: #646463;
+}
+.captura td, .captura th {
+    width: 40%;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Prioridad">
+
+    <select id="listPrioridades" resultClass="mx.gob.economia.scg.model.Prioridad">
+            SELECT p.id_prioridad, p.prioridad, p.dias, case when p.DIAS > 0 then (p.prioridad|| ' (' || p.dias || ' DIAS)')
+            else p.PRIORIDAD end prioridad_dias FROM prioridad p ORDER BY p.DIAS desc
+    </select>
+    <select id="getPrioridad" resultClass="mx.gob.economia.scg.model.Prioridad"
+    	parameterClass="java.lang.Integer">
+		SELECT p.id_prioridad, p.prioridad, p.dias, p.prioridad|| ' (' || p.dias || ' DIAS)' prioridad_dias 
+        FROM prioridad p
+        WHERE p.id_prioridad = #id_prioridad#
+    </select>
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Prioridad">
+        <selectKey keyProperty="id_prioridad" resultClass="int">
+			SELECT seq_prioridad.nextval FROM dual
+        </selectKey>
+		INSERT INTO PRIORIDAD (id_prioridad, prioridad, dias)
+		VALUES (#id_prioridad#, #prioridad#, #dias#)
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.Prioridad">
+		UPDATE prioridad set prioridad = #prioridad#, dias = #dias#  
+		WHERE id_prioridad = #id_prioridad#
+    </update>
+    <delete id="delete" parameterClass="java.lang.Integer" >
+		delete from prioridad where ID_prioridad=#id_prioridad#
+    </delete >
+</sqlMap>

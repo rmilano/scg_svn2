@@ -1,0 +1,28 @@
+.contentform div
+{
+    text-align: center;
+    line-height: 38px;
+    background-color: #dadada;
+}
+
+.hr_subtitulo
+{
+    width: 100%;
+    background-color: #9c9e9f;
+    height: 3px;
+    border-color: #565656;
+    border-style: solid;
+}
+
+.asuntos {
+    font-weight: bold;
+    color: #646363;
+}
+
+
+.content{
+   background-color: #fff; /*background color of content*/
+   color: #646463; /*text color of content*/
+   border: 1px solid #565656; /*border color*/
+   padding: .5em 2ex;
+}

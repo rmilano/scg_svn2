@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TipoSeguimiento">
+
+    <resultMap id="tipoSeguimientoMap" class="mx.gob.economia.scg.model.TipoSeguimiento">
+        <result property="idTipoSeguimiento" column="id_tipo_seguimiento"/>
+        <result property="tipoSeguimiento" column="tipo_seguimiento"/>
+        <result property="activo" column="activo"/>
+    </resultMap>
+
+    <select id="listTipoSeguimiento" resultMap="tipoSeguimientoMap">
+        SELECT ID_TIPO_SEGUIMIENTO, TIPO_SEGUIMIENTO, ACTIVO FROM TIPO_SEGUIMIENTO WHERE ACTIVO = 1
+    </select>
+    <select id="getTipoSeguimientoById" resultMap="tipoSeguimientoMap"  parameterClass="java.lang.Integer">
+        SELECT ID_TIPO_SEGUIMIENTO, TIPO_SEGUIMIENTO, ACTIVO FROM TIPO_SEGUIMIENTO WHERE id_tipo_seguimiento=#value# and ACTIVO = 1
+    </select>
+    
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.TipoSeguimiento">
+        <selectKey keyProperty="idTipoSeguimiento" resultClass="int">
+			SELECT SEQ_TIPO_SEGUIMIENTO.NEXTVAL FROM dual
+        </selectKey>
+                INSERT INTO TIPO_SEGUIMIENTO (ID_TIPO_SEGUIMIENTO, TIPO_SEGUIMIENTO, ACTIVO)
+                VALUES(#idTipoSeguimiento#, #tipoSeguimiento#,#activo#);
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.TipoSeguimiento">
+            UPDATE TIPO_SEGUIMIENTO SET TIPO_SEGUIMIENTO = #tipoSeguimiento#, ACTIVO = #activo#
+	    WHERE ID_TIPO_SEGUIMIENTO=#idTipoSeguimiento#
+    </update>
+    <delete id="delete" parameterClass="java.lang.Integer" >
+		DELETE FROM  TIPO_SEGUIMIENTO WHERE id_tipo_seguimiento = #idTipoSeguimiento#
+    </delete >
+</sqlMap>

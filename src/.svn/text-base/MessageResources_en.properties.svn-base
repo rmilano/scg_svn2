@@ -1,0 +1,21 @@
+#labels
+titulo.aplicacion=Management Control System
+label.borrar=Delete
+label.editar=Edit
+label.autenticacion=Authentication
+label.usuario=User
+label.contrasenna=Password
+
+#button labels
+button.label.submit=Submit
+button.label.cancel=Cancel
+
+#errors
+errors.prefix=<span style="color:red;font-weight:bold;">
+errors.suffix=</span>
+errors.general=An Error Has Occcured
+errors.custom={0}
+errors.required={0} is required.
+errors.number={0} must be a number.
+errors.denied=Access denied.
+errors.sessionExpired=Session expired.

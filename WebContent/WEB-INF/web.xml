@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name> scg</display-name>
+		<!-- Pagina de inicio -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+<!--
+    <filter>
+        <filter-name>Agent</filter-name>
+        <filter-class>com.sun.identity.agents.filter.AmAgentFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Agent</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>-->
+
+
+ <!--CharsetFilter start. Filtro de codificacion de caracteres utf-8-->
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>mx.gob.economia.scg.util.SetCharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>Acegi Filter Chain Proxy</filter-name>
+        <filter-class>org.acegisecurity.util.FilterToBeanProxy</filter-class>
+        <init-param>
+            <param-name>targetClass</param-name>
+            <param-value> org.acegisecurity.util.FilterChainProxy </param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Acegi Filter Chain Proxy</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+		
+	<!-- Configuracion Standard Action Servlet -->
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts/struts-config.xml</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+	
+    <servlet>
+        <servlet-name>DocumentDispatcherServlet</servlet-name>
+        <servlet-class>
+		mx.gob.economia.scg.util.DocumentDispatcherServlet
+        </servlet-class>
+        <load-on-startup>3</load-on-startup>
+		
+    </servlet>
+        
+	<!-- Standard Action Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DocumentDispatcherServlet</servlet-name>
+        <url-pattern>/DocumentDispatcherServlet</url-pattern>
+    </servlet-mapping>
+	<!-- Configuracion Spring -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/applicationContext*.xml</param-value>
+    </context-param>
+	
+	<!-- Configuracion ContextLoaderListener Spring-->
+    <listener>
+        <listener-class>
+			org.acegisecurity.ui.session.HttpSessionEventPublisher
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+</web-app>

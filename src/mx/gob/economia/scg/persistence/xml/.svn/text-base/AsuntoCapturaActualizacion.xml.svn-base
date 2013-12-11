@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="AsuntoCapturaActualizacion">
+
+    <resultMap id="asuntoCapturaActMap" class="mx.gob.economia.scg.model.AsuntoCapturaActualizacion">
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="fh_actualizacion" column="fh_actualizacion"/>
+        <result property="id_empleado_act" column="id_empleado_act"/>
+        <result property="ip_act" column="ip_act"/>
+        <result property="asunto" column="asunto"/>
+        <result property="descripcion" column="descripcion"/>
+        <result property="no_oficio" column="no_oficio"/>
+        <result property="fh_oficio" column="fh_oficio"/>
+        <result property="id_empleado_capt" column="id_empleado_capt"/>
+        <result property="id_empleado_remi" column="id_empleado_remi"/>
+        <result property="id_empleado_dest" column="id_empleado_dest"/>
+        <result property="id_asunto_ref" column="id_asunto_ref"/>
+        <result property="estatus" column="estatus"/>
+        <result property="estatus_desc" column="estatus_desc"/>
+        <result property="tipo_actualizacion" column="tipo_actualizacion"/>
+        <result property="fh_recepcion" column="fh_recepcion"/>
+        <result property="id_tema" column="id_tema"/>
+        <result property="id_expediente" column="id_expediente"/>
+        <result property="id_instruccion" column="id_instruccion"/>
+        <result property="folio" column="folio"/>
+        <result property="id_asunto_padre" column="id_asunto_padre"/>
+        <result property="fh_limite" column="fh_limite"/>
+        <result property="fh_registro" column="fh_registro"/>
+        <result property="id_empleado_ini" column="id_empleado_ini"/>
+        <result property="comentario" column="comentario"/>
+        <result property="id_empleado_firma" column="id_empleado_firma"/>
+        <result property="firma" column="firma"/>
+        <result property="ids_empleados_ccp" column="ids_empleados_ccp"/>
+        <result property="documentos" column="documentos"/>
+        <result property="empleado_act" column="id_empleado_act" select="Empleado.getById"/>
+        <result property="empleado_capt" column="id_empleado_capt" select="Empleado.getById"/>
+        <result property="empleado_remi" column="id_empleado_remi" select="Empleado.getById"/>
+        <result property="empleado_dest" column="id_empleado_dest" select="Empleado.getById"/>
+        <result property="empleado_ini" column="id_empleado_ini" select="Empleado.getById"/>
+        <result property="tema" column="id_tema" select="Tema.getById"/>
+        <result property="expediente" column="id_expediente" select="Expediente.getById"/>
+        <result property="instruccion" column="id_instruccion" select="Instruccion.getById"/>
+        <result property="confidencial" column="confidencial"/>
+    </resultMap>
+	
+    <select id="listByIdAsunto" resultMap="asuntoCapturaActMap" parameterClass="java.lang.Integer">
+		SELECT 
+			id_asunto, fh_actualizacion, id_empleado_act, ip_act, asunto, descripcion,
+			no_oficio, fh_oficio, id_empleado_capt, id_empleado_remi, id_empleado_dest,
+			id_asunto_ref, estatus, fh_recepcion, id_tema, id_expediente, id_instruccion,
+			folio, id_asunto_padre, fh_limite, fh_registro, id_empleado_ini, comentario,
+			id_empleado_firma, firma, ids_empleados_ccp, documentos, confidencial,
+                        decode(estatus,1,'PENDIENTE',0,'INICIAL',2,'ATENDIDO',3,'CONCLUIDO',7,'EN CAPTURA',10,'ARCHIVADO',estatus) estatus_desc,
+                        tipo_actualizacion
+		FROM asunto_captura_actualizacion a
+		WHERE a.id_asunto = #id_asunto# ORDER BY a.fh_actualizacion DESC
+    </select>
+
+    <select id="listIniciadosByIdAsunto" resultMap="asuntoCapturaActMap" parameterClass="java.lang.Integer">
+		SELECT
+			id_asunto, fh_actualizacion, id_empleado_act, ip_act, asunto, descripcion,
+			no_oficio, fh_oficio, id_empleado_capt, id_empleado_remi, id_empleado_dest,
+			id_asunto_ref, estatus, fh_recepcion, id_tema, id_expediente, id_instruccion,
+			folio, id_asunto_padre, fh_limite, fh_registro, id_empleado_ini, comentario,
+			id_empleado_firma, firma, ids_empleados_ccp, documentos, confidencial,
+                        decode(estatus,1,'PENDIENTE',0,'INICIAL',2,'ATENDIDO',3,'CONCLUIDO',7,'INICIAL',10,'ARCHIVADO',14,'ATENCION PARCIAL',estatus) estatus_desc,
+                        tipo_actualizacion
+		FROM asunto_captura_actualizacion a
+		WHERE a.id_asunto = #id_asunto#
+                ORDER BY a.fh_actualizacion DESC
+    </select>
+	
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.AsuntoCapturaActualizacion">
+		INSERT INTO asunto_captura_actualizacion
+			(id_asunto, fh_actualizacion, id_empleado_act, ip_act, asunto, descripcion,
+			no_oficio, fh_oficio, id_empleado_capt, id_empleado_remi, id_empleado_dest,
+			id_asunto_ref, estatus, fh_recepcion, id_tema, id_expediente, id_instruccion,
+			folio, id_asunto_padre, fh_limite, fh_registro, id_empleado_ini, comentario,
+			id_empleado_firma, firma, ids_empleados_ccp, documentos, confidencial, tipo_actualizacion)
+ 		VALUES(#id_asunto#, #fh_actualizacion#, #id_empleado_act#, #ip_act#, #asunto#, #descripcion#,
+			#no_oficio#, #fh_oficio#, #id_empleado_capt#, #id_empleado_remi#, #id_empleado_dest#,
+			#id_asunto_ref#, #estatus#, #fh_recepcion#, #id_tema#, #id_expediente#, #id_instruccion#,
+			#folio#, #id_asunto_padre#, #fh_limite#, #fh_registro#, #id_empleado_ini#, #comentario#,
+			#id_empleado_firma#, #firma#, #ids_empleados_ccp#, #documentos#, #confidencial#, #tipo_actualizacion#)
+    </insert>
+
+    <delete id="delete" parameterClass="java.lang.Integer">
+		DELETE FROM asunto_captura_actualizacion WHERE id_asunto = #id_asunto#
+    </delete>
+
+    <delete id="deleteConcentradoAsunto" parameterClass="java.lang.Integer">
+		DELETE FROM CONCENTRADO_ASUNTO WHERE id_asunto = #id_asunto#
+    </delete>
+
+    <update id="updateEstatusAsuntoCapAct" parameterClass="mx.gob.economia.scg.model.Asunto">
+        UPDATE asunto_captura_actualizacion
+        SET estatus = #estatus#,
+            tipo_actualizacion = 1
+         WHERE id_asunto=#id_asunto#
+           AND fh_actualizacion = (SELECT MAX(fh_actualizacion)
+                                  FROM asunto_captura_actualizacion
+                                   WHERE id_asunto = #id_asunto#)
+    </update>
+
+</sqlMap>

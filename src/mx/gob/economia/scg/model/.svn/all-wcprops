@@ -1,0 +1,227 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/gestion/!svn/ver/594/V8/scg_svn2/src/mx/gob/economia/scg/model
+END
+ReportePendientes.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/ReportePendientes.java
+END
+TemaRevisor.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/TemaRevisor.java
+END
+CriterioEvento.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioEvento.java
+END
+Paginador.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Paginador.java
+END
+EstadoAsunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/EstadoAsunto.java
+END
+Asunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/gestion/!svn/ver/601/V8/scg_svn2/src/mx/gob/economia/scg/model/Asunto.java
+END
+CriterioReporteVolante.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioReporteVolante.java
+END
+FirmaDocumento.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/FirmaDocumento.java
+END
+Prioridad.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Prioridad.java
+END
+Reporte.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/gestion/!svn/ver/548/V8/scg_svn2/src/mx/gob/economia/scg/model/Reporte.java
+END
+CriterioReporte.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioReporte.java
+END
+TipoSeguimiento.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/TipoSeguimiento.java
+END
+RolDocto.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/RolDocto.java
+END
+Empleado.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/gestion/!svn/ver/569/V8/scg_svn2/src/mx/gob/economia/scg/model/Empleado.java
+END
+AsuntosPorEstatus.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/AsuntosPorEstatus.java
+END
+Tema.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Tema.java
+END
+FirmaAsunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/FirmaAsunto.java
+END
+CriterioExpediente.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioExpediente.java
+END
+DocumentoBlob.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/DocumentoBlob.java
+END
+EmpleadoAreaRol.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/EmpleadoAreaRol.java
+END
+Documento.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Documento.java
+END
+Firma.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Firma.java
+END
+AsuntoCapturaActualizacion.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/AsuntoCapturaActualizacion.java
+END
+Evento.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Evento.java
+END
+Instruccion.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Instruccion.java
+END
+CriterioInstruccion.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioInstruccion.java
+END
+AsuntoDetalle.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/548/V8/scg_svn2/src/mx/gob/economia/scg/model/AsuntoDetalle.java
+END
+TipoAsunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/TipoAsunto.java
+END
+VolanteCorrespondencia.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/587/V8/scg_svn2/src/mx/gob/economia/scg/model/VolanteCorrespondencia.java
+END
+Area.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/gestion/!svn/ver/569/V8/scg_svn2/src/mx/gob/economia/scg/model/Area.java
+END
+CriterioAsunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/607/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioAsunto.java
+END
+BitacoraAsunto.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/BitacoraAsunto.java
+END
+CriterioEmpleado.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioEmpleado.java
+END
+CriterioTema.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/CriterioTema.java
+END
+TipoDocumento.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/TipoDocumento.java
+END
+Expediente.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Expediente.java
+END
+Rol.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/model/Rol.java
+END

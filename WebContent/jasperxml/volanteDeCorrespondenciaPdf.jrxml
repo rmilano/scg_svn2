@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coffet" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.9487171000000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="979"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="SansSerif" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="SansSerif" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="SansSerif" fontSize="12"/>
+	<style name="Arial_Bold" fontName="SansSerif" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="LOGO" class="java.io.InputStream"/>
+	<parameter name="SUB_REPORT_DS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="SUBREPORT_JASPER" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="CCP" class="java.lang.String"/>
+	<field name="areaRemitente.area" class="java.lang.String"/>
+	<field name="destinatario.nombre_completo" class="java.lang.String"/>
+	<field name="destinatario.puesto" class="java.lang.String"/>
+	<field name="fechaVolante" class="java.lang.String"/>
+	<field name="folio" class="java.lang.String"/>
+	<field name="prioridad.prioridad" class="java.lang.String"/>
+	<field name="fechaLimiteAtencion" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="areaProcedencia.area" class="java.lang.String"/>
+	<field name="firmanteProcedencia.nombre_completo" class="java.lang.String"/>
+	<field name="firmanteProcedencia.puesto" class="java.lang.String"/>
+	<field name="documento" class="java.lang.String"/>
+	<field name="comentario" class="java.lang.String"/>
+	<field name="instruccion.instruccion" class="java.lang.String"/>
+	<field name="firmanteRemitente.nombre_completo" class="java.lang.String"/>
+	<field name="firmanteRemitente.puesto" class="java.lang.String"/>
+	<field name="logo" class="java.io.InputStream"/>
+	<field name="ccps" class="java.lang.String"/>
+	<field name="confidencial_img" class="java.lang.String"/>
+	<field name="confidencial" class="java.lang.Integer"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="logo_img" class="java.lang.String"/>
+	<field name="instruccionAdicional" class="java.lang.String"/>
+	<background>
+		<band height="752">
+			<image scaleImage="FillFrame" isLazy="true" onErrorType="Blank">
+				<reportElement mode="Transparent" x="8" y="50" width="560" height="612">
+					<printWhenExpression><![CDATA[$F{confidencial}.equals( 1 )]]></printWhenExpression>
+				</reportElement>
+				<imageExpression class="java.lang.String"><![CDATA[$F{confidencial_img}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="10" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="11" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="97" y="12" width="383" height="15" forecolor="#003D71"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Control de Gestión de la Secretaría de Economía]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="4" y="89" width="565" height="1" forecolor="#CCCCCC"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="3" y="54" width="125" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE ECONOMIA]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="390" y="52" width="178" height="19"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{areaRemitente.area}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="174" y="72" width="223" height="13" forecolor="#003333" backcolor="#63BBDE"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" lineSpacing="Single">
+					<font size="10" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Volante de correspondencia]]></text>
+			</staticText>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="5" y="66" width="72" height="22"/>
+				<imageExpression class="java.lang.String"><![CDATA[$F{logo_img}]]></imageExpression>
+			</image>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="341" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" positionType="Float" mode="Transparent" x="8" y="199" width="155" height="11">
+					<printWhenExpression><![CDATA[$F{instruccion.instruccion}.indexOf( "URGENTE" )<1]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{instruccion.instruccion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" mode="Transparent" x="3" y="7" width="200" height="13"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatario.nombre_completo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="3" y="21" width="288" height="13"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{destinatario.puesto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="36" width="53" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[P R E S E N T E.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="352" y="8" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="352" y="17" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="352" y="26" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seguimiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="352" y="35" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Responder antes del:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="352" y="44" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Referencia:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="455" y="35" width="107" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechaLimiteAtencion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="455" y="8" width="107" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechaVolante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="455" y="26" width="107" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prioridad.prioridad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="455" y="17" width="107" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="455" y="45" width="107" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="57" y="60" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{areaProcedencia.area}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="57" y="73" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{firmanteProcedencia.nombre_completo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="5" y="60" width="52" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Área remitente:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="57" y="97" width="106" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{documento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="57" y="85" width="221" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{firmanteProcedencia.puesto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="5" y="73" width="52" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remitente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="5" y="97" width="52" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Documento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="5" y="85" width="52" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cargo:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="8" y="260" width="225" height="35"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ccps}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" positionType="Float" mode="Transparent" x="8" y="210" width="304" height="15">
+					<printWhenExpression><![CDATA[$F{instruccion.instruccion}.indexOf( "URGENTE" )>=0]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="10" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{instruccion.instruccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" positionType="Float" x="7" y="118" width="551" height="81"/>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="7" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{comentario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="339" y="269" width="113" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Atentamente,]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" positionType="Float" mode="Transparent" x="250" y="314" width="290" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{firmanteRemitente.nombre_completo}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="218" y="327" width="353" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{firmanteRemitente.puesto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Arial_Bold" x="8" y="233" width="550" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{instruccionAdicional}.equals(null) ? "" : $F{instruccionAdicional} )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="207" splitType="Stretch">
+			<line>
+				<reportElement positionType="Float" mode="Transparent" x="5" y="7" width="567" height="1" forecolor="#D2DBDE" backcolor="#E8E7E7"/>
+				<graphicElement>
+					<pen lineWidth="1.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Arial_Bold" mode="Transparent" x="5" y="23" width="228" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{areaRemitente.area}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="233" y="13" width="79" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Requiere respuesta]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="457" y="23" width="114" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prioridad.prioridad}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="457" y="14" width="114" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="359" y="14" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volante:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="457" y="32" width="114" height="10"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechaLimiteAtencion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="359" y="32" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de contestación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="359" y="23" width="93" height="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Seguimiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="215" y="170" width="134" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="7" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Nombre y firma del responsable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="185" width="566" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Favor de regresar este volante con la información correspondiente a la atención impartida al asunto, anexando copia de la contestación al interesado si la hubiere.]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="Float" mode="Transparent" x="5" y="196" width="563" height="1" forecolor="#999999" backcolor="#E8E7E7"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="197" width="92" height="8"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false" isItalic="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Sistema de Control de Gestión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Arial_Bold" mode="Transparent" x="6" y="13" width="122" height="10"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARÍA DE ECONOMIA]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="2" y="24" width="564" height="15" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+			</frame>
+			<staticText>
+				<reportElement mode="Transparent" x="2" y="7" width="566" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Alfonso Reyes No. 30 Colonia Hipódromo Condesa, Delegación Cuauhtémoc, C.P.  06140  Teléfono 57 29 91 00.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

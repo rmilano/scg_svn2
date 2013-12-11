@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Rol">
+	
+	<select id="listRolesByIdEmpleado" resultClass="mx.gob.economia.scg.model.Rol" parameterClass="int">
+		SELECT r.id_rol, r.rol FROM empleado_rol e LEFT JOIN rol r ON r.id_rol = e.id_rol
+		WHERE e.id_empleado=#value#
+	</select>
+        <select id="listRoles" resultClass="mx.gob.economia.scg.model.Rol">
+		SELECT r.id_rol, r.rol FROM rol r where not r.id_rol=1
+	</select>
+        <insert id="insert" parameterClass="java.util.HashMap">
+		insert into empleado_rol(id_empleado,id_rol)
+ 		values(#id_empleado#,#id_rol#)
+	</insert>
+        <delete id="deleteAll" parameterClass="java.lang.Integer" >
+               delete from empleado_rol where id_empleado=#id_empleado#
+        </delete >
+</sqlMap>

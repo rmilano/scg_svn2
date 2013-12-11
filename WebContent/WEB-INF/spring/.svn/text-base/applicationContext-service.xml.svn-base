@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<!-- Configuracion de las clases de servicio -->
+	
+	<!-- Configuracion del servicio de Spring MailSender -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host}" />
+        <property name="port" value="${mail.port}" />
+        <property name="username" value="${mail.username}" />
+        <property name="password" value="${mail.password}" />
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="javaMailProperties">
+            <value>
+				mail.debug=true 
+				mail.smtp.auth=true
+				mail.smtp.starttls.enable=true
+            </value>
+        </property>
+    </bean>
+
+	<!-- Autenticacion de usuarios con Acegi -->
+    <bean name="autenticacionService" class="mx.gob.economia.scg.service.AutenticacionServiceImpl">
+        <property name="ldapService" ref="ldapService" />
+        <property name="empleadoService" ref="empleadoService" />
+    </bean>
+	
+	<!-- Envio de correos electronicos -->
+    <bean id="correoService" class="mx.gob.economia.scg.service.CorreoServiceImpl">
+        <property name="active" value="false" />
+        <property name="mailSender" ref="mailSender" />
+        <property name="from" value="turbinux@gmail.com" />
+    </bean>
+	<!-- Configuracion del programador de tareas con Quartz -->
+    <bean id="detalleTarea" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="notificacionService" />
+        <property name="targetMethod" value="notificar" />
+        <property name="concurrent" value="false" />
+    </bean>
+	<!-- Dar de baja los asuntos del contexto del servidor -->
+    <bean id="bajaAsuntosContextoServidor" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="notificacionService" />
+        <property name="targetMethod" value="bajaAsuntosContextoServer" />
+        <property name="concurrent" value="false" />
+    </bean>
+    <bean id="simpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+        <property name="jobDetail" ref="detalleTarea" />
+        <property name="repeatInterval" value="60000" />
+    </bean>
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="detalleTarea" />
+        <property name="cronExpression" value="0 00 7 * * ?" />
+    </bean>
+    <!--    El cron job para el borrado de asuntos del contexto del servidor-->
+    <bean id="cronBajaAsuntoContextoServidor" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="bajaAsuntosContextoServidor" />
+        <property name="cronExpression" value="0 2 * * * ?" />
+    </bean>
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <!-- ref bean="simpleTrigger" /-->
+                <ref bean="cronTrigger" />
+                <ref bean="cronBajaAsuntoContextoServidor" />
+            </list>
+        </property>
+    </bean>
+	<!-- Notificacion -->
+    <bean name="notificacionService" class="mx.gob.economia.scg.service.NotificacionServiceImpl">
+        <property name="correoService" ref="correoService" />        
+        <property name="servletConfig" ref="servletConfig" />
+    </bean>
+    <bean name="servletConfig" class="mx.gob.economia.scg.service.ServerConfigImpl" />
+	<!-- Estado del asunto -->
+    <bean name="asuntoEstadoService" class="mx.gob.economia.scg.service.AsuntoEstadoServiceImpl">
+        <property name="estado" value="false" />
+    </bean>
+	<!-- Empleado -->
+    <bean name="empleadoService" class="mx.gob.economia.scg.service.EmpleadoServiceImpl">
+        <property name="empleadoDao" ref="empleadoDao" />
+    </bean>
+	<!-- Asunto -->
+    <bean name="asuntoService" class="mx.gob.economia.scg.service.AsuntoServiceImpl">
+        <property name="asuntoDao" ref="asuntoDao" />
+        <property name="correoService" ref="correoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="instruccionService" ref="instruccionService" />
+        <property name="temaService" ref="temaService" />
+	<property name="eventoService" ref="eventoService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="documentoService" ref="documentoService" />
+        <property name="asuntoCapturaActualizacionService" ref="asuntoCapturaActualizacionService" />
+        <property name="areaService" ref="areaService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+    </bean>
+	<!-- Area -->
+    <bean name="areaService" class="mx.gob.economia.scg.service.AreaServiceImpl">
+        <property name="areaDao" ref="areaDao" />
+    </bean>
+	<!-- Arbol -->
+    <bean name="arbolService" class="mx.gob.economia.scg.service.ArbolServiceImpl">
+        <property name="areaDao" ref="areaDao" />
+    </bean>
+	<!-- Documento -->
+    <bean name="documentoService" class="mx.gob.economia.scg.service.DocumentoServiceImpl">
+        <property name="documentoDao" ref="documentoDao" />
+        <property name="documentoBlobDao" ref="documentoBlobDao" />
+    </bean>
+    <!-- Tipo Documento -->
+    <bean name="tipoDocumentoService" class="mx.gob.economia.scg.service.TipoDocumentoServiceImpl">
+        <property name="tipoDocumentoDao" ref="tipoDocumentoDao" />
+    </bean>
+	<!-- Prioridad -->
+    <bean name="prioridadService" class="mx.gob.economia.scg.service.PrioridadServiceImpl">
+        <property name="prioridadDao" ref="prioridadDao" />
+    </bean>
+	<!-- Reporte -->
+    <bean name="reporteService" class="mx.gob.economia.scg.service.ReporteServiceImpl">
+        <property name="reporteDao" ref="reporteDao" />
+        <property name="areaService" ref="areaService" />
+        <property name="arbolService" ref="arbolService" />
+    </bean>
+	<!-- Tema -->
+    <bean name="temaService" class="mx.gob.economia.scg.service.TemaServiceImpl">
+        <property name="temaDao" ref="temaDao" />
+        <property name="arbolService" ref="arbolService" />
+    </bean>
+	<!-- Evento -->
+    <bean name="eventoService" class="mx.gob.economia.scg.service.EventoServiceImpl">
+        <property name="eventoDao" ref="eventoDao" />        
+    </bean>
+	<!-- Instruccion -->
+    <bean name="instruccionService" class="mx.gob.economia.scg.service.InstruccionServiceImpl">
+        <property name="instruccionDao" ref="instruccionDao" />
+        <property name="arbolService" ref="arbolService" />
+    </bean>
+	<!-- Expediente -->
+    <bean name="expedienteService" class="mx.gob.economia.scg.service.ExpedienteServiceImpl">
+        <property name="expedienteDao" ref="expedienteDao" />
+        <property name="arbolService" ref="arbolService" />
+    </bean>
+    <!-- Asunto Captura Actualizacion -->
+    <bean id="asuntoCapturaActualizacionService" class="mx.gob.economia.scg.service.AsuntoCapturaActualizacionServiceImpl">
+        <property name="asuntoCapturaActualizacionDao" ref="asuntoCapturaActualizacionDao" />
+    </bean>
+    <!-- El servicion para la revision -->
+    <bean id="asuntoRevisionService" class="mx.gob.economia.scg.service.AsuntoRevisionServiceImpl">
+        <property name="asuntoDao" ref="asuntoDao" />
+        <property name="empleadoDao" ref="empleadoDao" />
+        <property name="temaService" ref="temaService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="asuntoCapturaActualizacionDao" ref="asuntoCapturaActualizacionDao" />
+    </bean>
+    <!-- El servicion para la revision -->
+    <bean id="consultaConfidencialService" class="mx.gob.economia.scg.service.ConsultaConfidencialServiceImpl">
+        <property name="asuntoDao" ref="asuntoDao" />
+    </bean>
+     <!-- Tipos de asuntos -->
+    <bean id="tipoAsuntoService" class="mx.gob.economia.scg.service.TipoAsuntoServiceImpl">
+        <property name="tipoAsuntoDao" ref="tipoAsuntoDao" />
+    </bean>
+     <!-- Tipos de seguimiento -->
+    <bean id="tipoSeguimientoService" class="mx.gob.economia.scg.service.TipoSeguimientoServiceImpl">
+        <property name="tipoSeguimientoDao" ref="tipoSeguimientoDao" />
+    </bean>
+     <!-- Los estatus -->
+    <bean id="estatusService" class="mx.gob.economia.scg.service.EstatusServiceImpl">
+        
+    </bean>     
+    <bean id="reporteVolanteService" class="mx.gob.economia.scg.service.ReporteVolanteServiceImpl">
+        <property name="asuntoDao" ref="asuntoDao" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="areaService" ref="areaService" />
+        <property name="instruccionService" ref="instruccionService" />
+        <property name="tipoSeguimientoService" ref="tipoSeguimientoService" />
+    </bean>
+</beans>

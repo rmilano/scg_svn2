@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<!-- Configuracion de Form Bean -->
+	<form-beans>
+		<form-bean name="areaForm" type="mx.gob.economia.scg.form.AreaForm" />
+		<form-bean name="asuntoForm" type="mx.gob.economia.scg.form.AsuntoForm" />
+		<form-bean name="capturaForm" type="mx.gob.economia.scg.form.CapturaForm" />
+		<form-bean name="consultaAtendidoForm" type="mx.gob.economia.scg.form.ConsultaAtendidoForm" />
+		<form-bean name="consultaBandejaForm" type="mx.gob.economia.scg.form.ConsultaBandejaForm" />
+		<form-bean name="consultaCapturaForm" type="mx.gob.economia.scg.form.ConsultaCapturaForm" />
+		<form-bean name="consultaCcpForm" type="mx.gob.economia.scg.form.ConsultaCcpForm" />
+		<form-bean name="consultaFinalizadoForm" type="mx.gob.economia.scg.form.ConsultaFinalizadoForm" />
+		<form-bean name="consultaForm" type="mx.gob.economia.scg.form.ConsultaForm" />                
+		<form-bean name="consultaRecepcionForm" type="mx.gob.economia.scg.form.ConsultaRecepcionForm" />
+		<form-bean name="ConsultaResumenForm" type="mx.gob.economia.scg.form.ConsultaResumenForm" />
+		<form-bean name="consultaTurnadoForm" type="mx.gob.economia.scg.form.ConsultaTurnadoForm" />
+                <form-bean name="consultaModificadoForm" type="mx.gob.economia.scg.form.ConsultaModificadoForm" />
+		<form-bean name="consultaArchivadoForm" type="mx.gob.economia.scg.form.ConsultaArchivadoForm" />	
+		<form-bean name="consultaConfidencialForm" type="mx.gob.economia.scg.form.ConsultaConfidencialForm" />	
+		<form-bean name="inicioForm" type="mx.gob.economia.scg.form.InicioForm" />
+		<form-bean name="reporteForm" type="mx.gob.economia.scg.form.ReporteForm" />
+		<form-bean name="tipoDocumentoForm" type="mx.gob.economia.scg.form.TipoDocumentoForm" />
+		<form-bean name="prioridadForm" type="mx.gob.economia.scg.form.PrioridadForm" />	
+		<form-bean name="estadisticaForm" type="mx.gob.economia.scg.form.EstadisticaForm" />
+       		<form-bean name="consultaRevisionForm" type="mx.gob.economia.scg.form.ConsultaRevisionForm" />
+                <form-bean name="reporteVolanteForm" type="mx.gob.economia.scg.form.ReporteVolanteForm" />
+                <form-bean name="consultaRevisadoForm" type="mx.gob.economia.scg.form.ConsultaRevisadoForm" />
+                <form-bean name="consultaSupervisarForm" type="mx.gob.economia.scg.form.ConsultaPorSupervisarForm" />
+                <form-bean name="consultaSupervisadosForm" type="mx.gob.economia.scg.form.ConsultaSupervisadosForm" />
+                <form-bean name="temaForm" type="mx.gob.economia.scg.form.TemaForm" />
+		<form-bean name="eventoForm" type="mx.gob.economia.scg.form.EventoForm" />
+                <form-bean name="instruccionForm" type="mx.gob.economia.scg.form.InstruccionForm" />
+                <form-bean name="expedienteForm" type="mx.gob.economia.scg.form.ExpedienteForm" />
+                <form-bean name="empleadoForm" type="mx.gob.economia.scg.form.EmpleadoForm" />
+	</form-beans>
+	<global-exceptions />
+	
+	<!-- Configuracion de Global Forwards -->
+	<global-forwards>
+		<forward name="ERROR" path="error" />
+	</global-forwards>
+
+	<!-- Configuracion de Actions Mappings -->
+	<action-mappings>
+		<action path="/autenticacion" forward="autenticacion" />
+		<action path="/denegado" forward="denegado" />
+		<action path="/expirada" forward="expirada" />
+		<action path="/firma" forward="firma" />
+		<!-- DispatchAction para el tablero de la pagina inicial -->
+		<action path="/inicio" name="inicioForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method" scope="request">
+			<forward name="SUCCESS" path="inicio" />
+		</action>
+		<!--  DispatchAction para el tratamiento de asuntos -->
+		<action path="/asunto" name="asuntoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="DETALLE" path="asunto" />
+			<forward name="ATENDER" path="atender" />
+			<forward name="RETURNAR" path="returnar" />
+                        <forward name="EDITARTURNO" path="editarTurno" />
+                        <forward name="TURNAR" path="turnar" />
+			<forward name="FINALIZAR" path="finalizar" />
+			<forward name="RECHAZAR" path="rechazar" />
+		</action>
+		<!--  DispatchAction para consultar asuntos -->
+		<action path="/consulta" name="consultaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta" />
+		</action>
+		<!--  DispatchAction para la captura de asuntos -->
+		<action path="/captura" name="capturaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="captura" />
+			<forward name="VISTAPREVIA" path="vista-previa" />
+			<forward name="FIRMA" path="firma" />
+		</action>
+		<!--  DispatchAction para consultar asuntos capturados -->
+		<action path="/consulta-captura" name="consultaCapturaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-captura" />
+		</action>
+		<!--  DispatchAction para consultar asuntos en revision -->
+		<action path="/consulta-revision" name="consultaRevisionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-revision" />
+		</action>
+		<!--  DispatchAction para consultar asuntos que fueron revisado -->
+		<action path="/consulta-revisado" name="consultaRevisadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-revisado" />
+		</action>
+		<!--  DispatchAction para consultar que se tienen que supervisar -->
+		<action path="/consulta-supervisar" name="consultaSupervisarForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-supervisar" />
+		</action>
+		<!--  DispatchAction para consultar que se tienen que supervisados -->
+		<action path="/consulta-supervisados" name="consultaSupervisadosForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-supervisados" />
+		</action>
+		<!--  DispatchAction para consultar asuntos archivados -->
+		<action path="/consulta-archivado" name="consultaArchivadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-archivado" />
+		</action>
+		<!--  DispatchAction para consultar asuntos de caracter confidencial -->
+		<action path="/consulta-confidencial" name="consultaConfidencialForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-confidencial" />
+		</action>
+		<!--  DispatchAction para consultar asuntos pendientes -->
+		<action path="/consulta-bandeja" name="consultaBandejaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-bandeja" />
+		</action>
+		<!--  DispatchAction para consultar asuntos atendidos -->
+		<action path="/consulta-atendido" name="consultaAtendidoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-atendido" />
+		</action>
+		<!--  DispatchAction para consultar asuntos turnados -->
+		<action path="/consulta-turnado" name="consultaTurnadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-turnado" />
+		</action>
+                <!--  DispatchAction para consultar asuntos modificados -->
+		<action path="/consulta-modificado" name="consultaModificadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-modificado" />
+		</action>
+		<!--  DispatchAction para consultar asuntos finalizados -->
+		<action path="/consulta-finalizado" name="consultaFinalizadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-finalizado" />
+		</action>
+		<!--  DispatchAction para consultar asuntos en recepcion -->
+		<action path="/consulta-recepcion" name="consultaRecepcionForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-recepcion" />
+		</action>
+		<!--  DispatchAction para consultar asuntos ccp -->
+		<action path="/consulta-ccp" name="consultaCcpForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="consulta-ccp" />
+		</action>
+       	<!-- DispatchAction para la administracion del catalogo de areas -->
+		<action path="/areas" name="areaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="areas" />
+			<forward name="REGMOD" path="regmod_area" />
+		</action>
+		<!-- DispatchAction para la administracion del catalogo de empleados -->
+		<action path="/empleados" name="empleadoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="regmod_empleado" />
+			<forward name="INICIO" path="inicio-empleado" />
+			<forward name="EDITAR" path="editar-empleado" />
+		</action>
+		<!-- DispatchAction para el catalogo de tipos de documentos -->
+		<action path="/tipo-documento" name="tipoDocumentoForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="tipo-documento" />
+		</action>
+		<!-- DispatchAction para el catalogo de tipos de documentos -->
+		<action path="/prioridad" name="prioridadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="prioridad" />
+		</action>
+        <!-- DispatchAction para la generacion de reportes -->
+		<action path="/reportes" name="reporteForm"
+			 	type="org.springframework.web.struts.DelegatingActionProxy"
+				parameter="method">
+			<forward name="SUCCESS" path="reporte-general-asuntos" />
+                        <forward name="DETALLE" path="reporte-general-detalle" />
+			<forward name="ERROR" path="error-reporte" />
+		</action>
+        <!-- DispatchAction para la generacion de reporte de volantes -->
+		<action path="/reportevolantes" name="reporteVolanteForm"
+			 	type="org.springframework.web.struts.DelegatingActionProxy"
+				parameter="method">
+			<forward name="SUCCESS" path="reporte-volante-busqueda" />
+                        <forward name="CONFIRMACION" path="reporte-volante-confirmacion" />
+                        <forward name="TERMINO" redirect="true" path="/inicio.do" />
+			<forward name="ERROR" path="error-reporte" />
+		</action>                
+        <!-- DispatchAction para la generacion del resumen de asuntos -->
+		<action path="/resumen" name="ConsultaResumenForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="RESUMEN" path="resumen" />
+		</action>
+
+        <!-- La generacion de reportes -->
+		<action path="/estadisticas" name="estadisticaForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="INICIO" path="incio-estadistica" />
+		</action>
+        <!-- El catalogo de temas -->
+		<action path="/temas" name="temaForm" 
+                        type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="INICIO" path="inicio-tema" />
+			<forward name="EDITAR" path="editar-tema" />
+			<forward name="REGISTRAR" path="registrar-tema" />
+		</action>  
+                <action path="/instruccion" name="instruccionForm" 
+                        type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="instruccion" />
+		</action>
+                <action path="/expediente" name="expedienteForm" 
+                        type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="SUCCESS" path="expediente" />
+			<forward name="EDITAR" path="editar-expediente" />
+			<forward name="ACTUALIZAR" path="actualizar-expediente" />
+		</action>
+		<!-- El catalogo de eventos -->
+		<action path="/eventos" name="eventoForm"
+                        type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="INICIO" path="inicio-evento" />
+			<forward name="EDITAR" path="editar-evento" />
+			<forward name="REGISTRAR" path="registrar-evento" />
+		</action>
+	</action-mappings>
+	
+	<!-- Configuracion de Message Resources -->
+	<message-resources parameter="MessageResources" null="false" />
+	<message-resources key="error" parameter="error" />
+	
+	<!-- Configuracion de Spring plug in -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/spring/applicationContext*.xml" />
+	</plug-in>
+
+    <!-- Configuracion del Tiles plug in -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/struts/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+</struts-config>

@@ -1,0 +1,10 @@
+.captura-catalog-dialog label, .captura-catalog-dialog input.bock
+{ 
+    display:block;    
+}
+.captura-catalog-dialog input.block { margin-bottom:12px; width:95%; padding: .4em; }
+.captura-catalog-dialog input.tree { margin-bottom:12px; width:80%; padding: .4em; }
+.captura-catalog-dialog fieldset { padding:0; border:0; margin-top:25px; }
+.captura-catalog-dialog .ui-dialog .ui-state-error { padding: .3em; }
+.captura-catalog-dialog .area-tipo { border: 1px solid #565656;margin:12px 1px 12px 1px; height: 26px}
+.captura-catalog-dialog h3 { font-size: 10px; font-weight: bold}

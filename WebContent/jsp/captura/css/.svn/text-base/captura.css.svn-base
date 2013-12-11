@@ -1,0 +1,351 @@
+
+.forma
+{
+    margin-left: 40px;
+}
+
+
+.rst
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    /*font-weight: bold;*/
+    color: #646463;
+}
+
+
+.td_concepto_izq_gde
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 14px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_izq_peq
+{
+    text-align: left;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+.td_concepto_der_peq
+{
+    text-align: right;
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463;
+}
+
+hr
+{
+    width: 98%;
+    background-color: #c6c7c8;
+    height: 5px;
+    border: 1px solid #565656;
+    padding: 2px 3px 4px;
+    margin-top: 20px;
+}
+
+div.content div.inner div.ayuda
+{
+    background:none repeat scroll 0 0 #FAFAFA;
+    float:right;
+    height:auto;
+    /*margin: 200% 20% 20% 10%;*/
+    margin:-180px -270px 2px 1px;
+    position:relative;
+    width:40%;
+    text-align: justify;
+    font-size: 10.5px;
+    border: 2px dashed #565656;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.imgayuda
+{
+    width: 25px;
+    height: 25px;
+    /*position: absolute;*/
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 20%;
+
+}
+
+.btn_cntr {
+    text-align:center;
+}
+
+div.contentDocs
+{
+    border:1px solid #565656;
+}
+
+.msgError
+{
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #BA2025;
+}
+
+
+.campoVacio
+{
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-weight: bold;
+    color: #646463; 
+}
+
+.input_docsAdj
+{
+    font-size: 14px;
+    color: #646463;
+}
+
+
+/* Formato de tablas*/
+.historico { margin: 1em 0; border-collapse: collapse; width: 100%; }
+.historico td, .historico th { border: 1px solid #565656;  text-align: center; }
+/*.historico tbody { background-color: #f1f1f1}*/
+.captura .ui-widget-header
+{
+    background-color: #c6c7c8;
+    color: #ba2025;
+}
+div.content div.inner div.contentform {
+    width: 100%;
+}
+
+.captura input.autowidth
+{
+    width: 98%;
+}
+
+.ui-widget-separator
+{
+    background-color: #c6c7c8;
+    border: 1px solid #565656;
+    color: white;
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.captura-ui-widget-content
+{
+    padding: 11px 12px 14px;
+    width: 85%;
+    border: 1px solid #565656;
+    color: #646463;
+}
+
+div.content .contentform table
+{
+    padding: 7px 8px 18px;
+    margin-top: 9px;
+}
+div.content .contentform
+{
+    padding: 7px 8px 18px;
+}
+#arbolA input,#arbolB input
+{
+    width: 50%;
+}
+#arbolC input[type="text"]
+{
+    width: 50%;
+}
+
+#arbolD input
+{
+    width: 40%;
+}
+
+.captura
+{
+    border-collapse: collapse;
+    margin: 1em 0;
+    width: 100%;
+}
+.captura td, .captura th {
+    border: 1px solid #565656;
+}
+.captura-asunto table thead th,.captura-asunto table tbody td
+{
+    text-align: center;
+    
+}
+
+
+.ui-icon-catalog
+{
+    height: 16px;
+    margin-top: -1px;
+    position: absolute;    
+    width: 16px;
+    cursor: pointer;
+}
+
+.icon-area
+{
+    background-position: -31px 112px;
+    right: 11em;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+}
+.icon-empleado
+{
+    background-position: -144px 144px;
+    right:  22em;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+}
+.icon-tema
+{
+    background-position: -33px 144px;
+    right:  30em;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+}
+.icon-subtema
+{
+    background-position: -50px 144px;
+    right:  18em;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+    
+}
+.icon-evento
+{
+    background-position: -83px 127px;
+    right:  14.5em;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+    
+}
+.icon-reload
+{
+    display: inline-block;
+    background-position: -46px 177px;
+    right:  5px;
+    background-image: url("../../../imagenes/jquery-ui/ui-icons_222222_256x240.png");
+    margin-top: 17px;
+    position: relative;
+}
+
+select.tree,.scg-listado-destinatario, .scg-listado-ccp
+{
+    width: 238px;
+}
+
+.captura .descripcion-asunto
+{
+    width: 99%;
+    height: 190px;
+}
+
+.captura .comentario-general
+{
+    width: 99%;
+    height: 40px;
+}
+
+#select-prioridades, #select-temas
+{
+    width: 80%;
+}
+
+.select-subtemas
+{
+    width: 250px;
+}
+#asunto-nuevo .btn_default
+{
+    text-decoration: none;
+    color: #646463;
+}
+#asunto-nuevo
+{
+    display: inline;
+}
+.comentario-personalizado
+{
+    height: 48px;
+    width: 98%;
+}
+
+.tem-disabled
+{
+    border:1px dotted #BA2025;
+}
+
+.texto-igual
+{
+    font-family: Times New Roman;
+    font-size: 12px;
+    font-variant: normal;
+}
+.scg-table-busqueda
+{
+    background-color: #c6c7c8;
+}
+.scg-div-busqueda
+{
+    background-color: #FFFFFF;
+}
+
+.scg-list-areas,.list-form-remitente
+{
+    width: 310px;
+}
+.scg-listado-destinatario
+{
+    width: 250px;
+}
+#select-expedientes
+{
+	width: 99%;
+}
+.item-menu-tema
+{
+    margin-left: 10px;
+    display: inline;
+}
+.ui-icon-catalog ins
+{
+    text-decoration: none;
+    margin-left: 15px;
+}
+#select-catalogo-temas
+{
+    width: 270px;
+}
+.scg-list-areas-ccp
+{
+    width: 500px;
+}
+#calendario-evento
+{
+    width: 150px;
+}
+#arbolE input[type="text"],#arbol-remitente input[type="text"]
+{
+    width: 260px;
+}
+#prioridad
+{
+    width: 90%;
+}
+#list-firmantes
+{
+    width: 98%;
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="TipoDocumento">
+
+	<select id="listTiposDocumento" resultClass="mx.gob.economia.scg.model.TipoDocumento">
+		select t.id_tipo_documento,t.TIPO_DOCUMENTO,t.FIRMA,t.activo
+                from tipo_documento t where t.activo=1
+                order by t.ID_TIPO_DOCUMENTO
+		
+	</select>
+        <select id="getTipoDocumento" resultClass="mx.gob.economia.scg.model.TipoDocumento" parameterClass="java.lang.Integer">
+		select t.id_tipo_documento,t.TIPO_DOCUMENTO,t.FIRMA,t.activo
+                from tipo_documento t 
+                where t.id_tipo_documento=#id_tipo_documento# AND t.activo=1
+                order by t.ID_TIPO_DOCUMENTO
+	</select>
+        <insert id="insert" parameterClass="mx.gob.economia.scg.model.TipoDocumento">
+		<selectKey keyProperty="id_tipo_documento" resultClass="int">
+			SELECT seq_tipo_documento.nextval FROM dual
+		</selectKey>
+                insert into TIPO_DOCUMENTO (ID_TIPO_DOCUMENTO,TIPO_DOCUMENTO,FIRMA,ACTIVO)
+                values(#id_tipo_documento#,#tipo_documento#,#firma#,#activo#)
+	</insert>
+        <update id="update" parameterClass="mx.gob.economia.scg.model.TipoDocumento">
+            update TIPO_DOCUMENTO set TIPO_DOCUMENTO=#tipo_documento#,FIRMA=#firma#,activo=#activo#
+            where ID_TIPO_DOCUMENTO=#id_tipo_documento#
+        </update>
+        <delete id="delete" parameterClass="java.lang.Integer" >
+              delete from TIPO_DOCUMENTO where ID_TIPO_DOCUMENTO=#id_tipo_documento#
+        </delete >
+        <select id="listUsado" resultClass="mx.gob.economia.scg.model.TipoDocumento" parameterClass="java.lang.Integer">
+		select distinct(t.ID_TIPO_DOCUMENTO) from tipo_documento t join documento d
+                on  t.ID_TIPO_DOCUMENTO=d.ID_TIPO_DOCUMENTO
+                where t.ID_TIPO_DOCUMENTO=#id_tipo_documento#
+	</select>
+</sqlMap>

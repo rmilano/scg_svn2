@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean name="/inicio" class="mx.gob.economia.scg.action.InicioAction">
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+        <property name="consultaConfidencialService" ref="consultaConfidencialService" />
+    </bean>
+    <bean name="/consulta-atendido" class="mx.gob.economia.scg.action.ConsultaAtendidoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-turnado" class="mx.gob.economia.scg.action.ConsultaTurnadoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-modificado" class="mx.gob.economia.scg.action.ConsultaModificadoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-captura" class="mx.gob.economia.scg.action.ConsultaCapturaAction">
+        <property name="areaService" ref="areaService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="eventoService" ref="eventoService" />
+        <property name="prioridadService" ref="prioridadService" />                
+	<property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="estatusService" ref="estatusService" />                
+    </bean>
+    <bean name="/consulta-recepcion" class="mx.gob.economia.scg.action.ConsultaRecepcionAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="prioridadService" ref="prioridadService" />
+	<property name="tipoDocumentoService" ref="tipoDocumentoService" />
+    </bean>
+    <bean name="/consulta-bandeja" class="mx.gob.economia.scg.action.ConsultaBandejaAction">
+        <property name="areaService" ref="areaService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="eventoService" ref="eventoService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+    </bean>
+    <bean name="/consulta-ccp" class="mx.gob.economia.scg.action.ConsultaCcpAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-finalizado" class="mx.gob.economia.scg.action.ConsultaFinalizadoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-archivado" class="mx.gob.economia.scg.action.ConsultaArchivadoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-confidencial" class="mx.gob.economia.scg.action.ConsultaConfidencialAction">
+        <property name="consultaConfidencialService" ref="consultaConfidencialService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/captura" class="mx.gob.economia.scg.action.CapturaAction">        
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+        <property name="empleadoService" ref="empleadoService" />        
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="temaService" ref="temaService" />
+        <property name="eventoService" ref="eventoService" />
+        <property name="instruccionService" ref="instruccionService" />
+        <property name="areaService" ref="areaService" />
+        <property name="tipoAsuntoService" ref="tipoAsuntoService" />  
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="tipoSeguimientoService" ref="tipoSeguimientoService" />
+        <property name="reporteVolanteService" ref="reporteVolanteService" />
+    </bean>
+    <bean name="/consulta" class="mx.gob.economia.scg.action.ConsultaAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+    </bean>
+    <bean name="/asunto" class="mx.gob.economia.scg.action.AsuntoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="documentoService" ref="documentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="instruccionService" ref="instruccionService" />
+        <property name="areaService" ref="areaService" />
+        <property name="asuntoEstadoService" ref="asuntoEstadoService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+        <property name="tipoSeguimientoService" ref="tipoSeguimientoService" />
+        <property name="reporteVolanteService" ref="reporteVolanteService" />
+    </bean>
+    <bean name="/areas" class="mx.gob.economia.scg.action.AreaAction">
+        <property name="arbolService" ref="arbolService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="areaService" ref="areaService"/>        
+    </bean>
+    <bean name="/tipo-documento" class="mx.gob.economia.scg.action.TipoDocumentoAction">
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+    </bean>
+    <bean name="/prioridad" class="mx.gob.economia.scg.action.PrioridadAction">
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/empleados" class="mx.gob.economia.scg.action.EmpleadoAction">
+        <property name="arbolService" ref="arbolService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="areaService" ref="areaService"/>        
+        <property name="instruccionService" ref="instruccionService"/>
+        <property name="prioridadService" ref="prioridadService"/>
+	</bean>
+
+    <bean name="/reportes" class="mx.gob.economia.scg.action.ReporteAction">
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="reporteService" ref="reporteService" />
+        <property name="areaService" ref="areaService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+    </bean>
+    
+    <bean name="/reportevolantes" class="mx.gob.economia.scg.action.ReporteVolanteAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="correoService" ref="correoService" />
+    </bean>    
+
+    <bean name="/resumen" class="mx.gob.economia.scg.action.ConsultaResumenAction">
+        <property name="asuntoService" ref="asuntoService" />
+    </bean>
+
+    <bean name="/estadisticas" class="mx.gob.economia.scg.action.EstadisticaAction">
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+    </bean>
+    <bean name="/consulta-revision" class="mx.gob.economia.scg.action.ConsultaRevisionAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+    </bean>
+    <bean name="/consulta-revisado" class="mx.gob.economia.scg.action.ConsultaRevisadoAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+    </bean>
+
+    <bean name="/consulta-supervisar" class="mx.gob.economia.scg.action.ConsultaPorSupervisarAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+    </bean>
+
+    <bean name="/consulta-supervisados" class="mx.gob.economia.scg.action.ConsultaSupervisadosAction">
+        <property name="asuntoService" ref="asuntoService" />
+        <property name="empleadoService" ref="empleadoService" />
+        <property name="arbolService" ref="arbolService" />
+        <property name="temaService" ref="temaService" />
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="tipoDocumentoService" ref="tipoDocumentoService" />
+        <property name="prioridadService" ref="prioridadService" />
+        <property name="asuntoRevisionService" ref="asuntoRevisionService" />
+    </bean>
+    
+    <bean name="/temas" class="mx.gob.economia.scg.action.TemaAction">
+        <property name="temaService" ref="temaService" />
+        <property name="areaService" ref="areaService" />
+    </bean>
+	<bean name="/eventos" class="mx.gob.economia.scg.action.EventoAction">
+        <property name="eventoService" ref="eventoService" />
+        <property name="areaService" ref="areaService" />
+    </bean>
+    
+     <bean name="/instruccion" class="mx.gob.economia.scg.action.InstruccionAction">
+        <property name="instruccionService" ref="instruccionService" />
+        <property name="areaService" ref="areaService" />
+    </bean>
+    
+    <bean name="/expediente" class="mx.gob.economia.scg.action.ExpedienteAction">
+        <property name="expedienteService" ref="expedienteService" />
+        <property name="areaService" ref="areaService" />
+    </bean>
+</beans>

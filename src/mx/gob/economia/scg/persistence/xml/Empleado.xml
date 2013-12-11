@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Empleado">
+	
+    <resultMap id="empleadoMap" class="mx.gob.economia.scg.model.Empleado" groupBy="id_empleado">
+        <result property="id_empleado"/>        
+        <result property="correo"/>
+        <result property="contrasenna"/>
+        <result property="nombre"/>
+        <result property="paterno"/>
+        <result property="materno"/>
+        <result property="puesto"/>
+        <result property="rfc"/>
+        <result property="id_area"/>
+        <result property="activo"/>
+        <result property="ocupado"/>
+        <result property="correo_alterno"/>
+        <result property="area" column="id_area" select="Area.getAreaById"/>
+        <result property="roles" column="id_empleado" select="Rol.listRolesByIdEmpleado"/>
+    </resultMap>
+	
+    <select id="getByCorreo" resultMap="empleadoMap" parameterClass="java.lang.String">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado,
+                       e.correo_alterno
+		FROM empleado e
+		WHERE e.correo = #value#
+                and activo = 1
+    </select>
+	
+    <select id="getById" resultMap="empleadoMap" parameterClass="java.lang.Integer">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado,
+                       e.correo_alterno
+		FROM empleado e
+		WHERE e.id_empleado = #value#
+                and activo = case when (nombre = 'ACTUALIZAR' or nombre = '-') and paterno is null and materno is null then 0
+                                  else 1 end
+    </select>
+
+    <select id="getByIdWF" resultMap="empleadoMap" parameterClass="java.lang.Integer">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo,
+                       (select count(*) from asunto_detalle where id_asunto in (select id_asunto from asunto where estatus <![CDATA[ <> ]]> 3)
+                        and (id_empleado_dest = e.id_empleado or id_empleado_dest = e.id_empleado)) ocupado, e.correo_alterno
+		FROM empleado e
+		WHERE e.id_empleado = #value#
+    </select>
+	
+    <select id="listAll" resultMap="empleadoMap">
+		SELECT 
+			e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado,
+                        e.correo_alterno
+		FROM empleado e WHERE  e.activo=1
+		ORDER BY e.nombre
+    </select>
+    <select id="listEmpleadosCriterio" resultMap="empleadoMap" parameterClass="mx.gob.economia.scg.model.CriterioEmpleado">
+        SELECT * FROM (
+         SELECT vista.*, 
+                (select count(*) from asunto_detalle where id_asunto in (select id_asunto from asunto where estatus <![CDATA[ <> ]]> 3)
+                  and (id_empleado_dest = vista.id_empleado or id_empleado_remi = vista.id_empleado)) ocupado,
+                  rownum r
+         FROM(
+          SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo  FROM empleado e
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="" property="empleado.area.id_area">
+                <isNotEqual prepend="AND" property="empleado.area.id_area" compareValue="-1">
+					id_area =  #empleado.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.nombre">
+                <isNotEqual prepend="AND" property="empleado.nombre" compareValue="">
+					nombre LIKE '%$empleado.nombre$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.paterno">
+                <isNotEqual prepend="AND" property="empleado.paterno" compareValue="">
+					paterno LIKE '%$empleado.paterno$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.materno">
+                <isNotEqual prepend="AND" property="empleado.materno" compareValue="">
+					materno LIKE '%$empleado.materno$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.correo">
+                <isNotEqual prepend="AND" property="empleado.correo" compareValue="">
+					correo LIKE '%$empleado.correo$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.puesto">
+                <isNotEqual prepend="AND" property="empleado.puesto" compareValue="">
+					puesto LIKE '%$empleado.puesto$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.rfc">
+                <isNotEqual prepend="AND" property="empleado.rfc" compareValue="">
+					rfc LIKE '%$empleado.rfc$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>         
+               ) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+                ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#
+    </select>	
+    <select id="countEmpleadosCriterio" parameterClass="mx.gob.economia.scg.model.CriterioEmpleado" resultClass="java.lang.Integer">
+          SELECT count(1) FROM empleado e  
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="" property="empleado.area.id_area">
+                <isNotEqual prepend="AND" property="empleado.area.id_area" compareValue="-1">
+					e.id_area =  #empleado.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.nombre">
+                <isNotEqual prepend="AND" property="empleado.nombre" compareValue="">
+					e.nombre LIKE '%$empleado.nombre$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.paterno">
+                <isNotEqual prepend="AND" property="empleado.paterno" compareValue="">
+					e.paterno LIKE '%$empleado.paterno$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.materno">
+                <isNotEqual prepend="AND" property="empleado.materno" compareValue="">
+					e.materno LIKE '%$empleado.materno$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.correo">
+                <isNotEqual prepend="AND" property="empleado.correo" compareValue="">
+					e.correo LIKE '%$empleado.correo$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.puesto">
+                <isNotEqual prepend="AND" property="empleado.puesto" compareValue="">
+					e.puesto LIKE '%$empleado.puesto$%'
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="empleado.rfc">
+                <isNotEqual prepend="AND" property="empleado.rfc" compareValue="">
+					e.rfc LIKE '%$empleado.rfc$%'
+                </isNotEqual>
+            </isNotNull>
+        </dynamic>        
+    </select>	
+    <select id="listCcpByIdAsunto" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT 
+            e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado
+        FROM empleado e LEFT JOIN asunto_ccp a ON a.id_empleado = e.id_empleado 
+        WHERE a.id_asunto = #id_asunto#
+        ORDER BY e.nombre
+    </select>
+
+    <select id="listCcpByIdAsuntoDetalle" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT
+            e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+        FROM empleado e LEFT JOIN asunto_detalle_ccp a ON a.id_empleado = e.id_empleado
+        WHERE a.id_asunto_detalle = #id_asunto_detalle#
+        ORDER BY e.nombre
+    </select>
+
+    <select id="listCcpByIdAsuntoDetalleAtParc" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT
+            e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+        FROM empleado e LEFT JOIN asunto_att_parc_ccp_capt a ON a.id_empleado = e.id_empleado
+        WHERE a.id_asunto_detalle = #id_asunto_detalle#
+        ORDER BY e.nombre
+    </select>
+
+    <select id="listByIdArea" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT 
+			e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+		FROM empleado e
+		WHERE e.id_area = #id_area# AND e.activo=1
+		ORDER BY e.nombre
+    </select>
+
+    <select id="listByIdAreaOrderByFirmante" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+		FROM empleado e,
+                     (select ad.id_empleado_firmante, count(*) total
+                     from empleado e2,
+                          asunto_detalle ad
+                     where e2.id_empleado = ad.id_empleado_firmante
+                     and e2.id_area = #id_area#
+                     group by id_empleado_firmante) c
+                WHERE e.id_empleado = c.id_empleado_firmante(+)
+                AND e.id_area = #id_area#
+                AND e.activo=1
+                ORDER BY nvl(c. total,0) desc, e.nombre
+    </select>
+
+    <select id="listByIdAreaOrderByFirmanteRol" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+		FROM empleado e,
+                     (select ad.id_empleado_dest, count(*) total
+                     from empleado e2,
+                          asunto_detalle ad
+                     where e2.id_empleado = ad.id_empleado_dest
+                     and e2.id_area = #id_area#
+                     group by id_empleado_dest) c,
+                     (select id_empleado from empleado_rol
+                     where id_rol=9) r
+                WHERE e.id_empleado = c.id_empleado_dest(+)
+                AND e.id_empleado = r.id_empleado
+                AND e.id_area = #id_area#
+                AND e.activo=1
+                ORDER BY nvl(c. total,0) desc, e.nombre    </select>
+
+    <select id="listByIdAreaOrderByDest" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+		FROM empleado e,
+                     (select ad.id_empleado_dest, count(*) total
+                     from empleado e2,
+                          asunto_detalle ad
+                     where e2.id_empleado = ad.id_empleado_dest
+                     and e2.id_area = #id_area#
+                     group by id_empleado_dest) c
+                WHERE e.id_empleado = c.id_empleado_dest(+)
+                AND e.id_area = #id_area#
+                AND e.activo=1
+                ORDER BY nvl(c. total,0) desc, e.nombre
+    </select>
+
+    <select id="listByIdAreaOrderByRemi" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+		FROM empleado e,
+                     (select ad.id_empleado_remi, count(*) total
+                     from empleado e2,
+                          asunto_detalle ad
+                     where e2.id_empleado = ad.id_empleado_remi
+                     and e2.id_area = #id_area#
+                     group by id_empleado_remi) c
+                WHERE e.id_empleado = c.id_empleado_remi(+)
+                AND e.id_area = #id_area#
+                AND e.activo=1
+                ORDER BY nvl(c. total,0) desc, e.nombre
+    </select>
+
+    <select id="listByIdAreaOrderByReDe" parameterClass="java.lang.Integer" resultMap="empleadoMap">
+
+                SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+                FROM empleado e,
+                     (select id_empleado, sum(total) total
+                      from (select ad.id_empleado_remi id_empleado, count(*) total
+                            from empleado e2,
+                                 asunto_detalle ad
+                            where e2.id_empleado = ad.id_empleado_remi
+                            and e2.id_area = #id_area#
+                            group by id_empleado_remi
+                            union all
+                            select ad.id_empleado_dest, count(*) total
+                            from empleado e2,
+                                 asunto_detalle ad
+                            where e2.id_empleado = ad.id_empleado_dest
+                            and e2.id_area = #id_area#
+                            group by id_empleado_dest)
+                     group by id_empleado) c
+                WHERE e.id_empleado = c.id_empleado(+)
+                AND e.id_area = #id_area#
+                AND e.activo=1
+                ORDER BY nvl(c. total,0) desc, e.nombre
+    </select>
+    
+    <select id="listEmpleadoWithRol" parameterClass="mx.gob.economia.scg.model.EmpleadoAreaRol" resultMap="empleadoMap">
+    
+    SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo, 0 ocupado, e.correo_alterno
+    FROM empleado e INNER JOIN EMPLEADO_ROL  ON e.ID_EMPLEADO = EMPLEADO_ROL.ID_EMPLEADO
+        <dynamic prepend="WHERE">
+            <isNotNull prepend="" property="idRol">
+                <isNotEqual prepend="" property="idRol" compareValue="-1">
+						EMPLEADO_ROL.ID_ROL = #idRol#
+                </isNotEqual>
+            </isNotNull>
+            <isNotEmpty prepend="AND" property="idsArea">
+                <iterate prepend="AND" property="idsArea"
+			  			open="(" close=")" conjunction="OR">
+							e.id_area =nvl(#idsArea[]#,-2)
+                </iterate>
+            </isNotEmpty>
+        </dynamic>    
+        AND e.activo=1 ORDER BY e.nombre
+    </select>
+    <select id="getIdsEmpleadosByIdAreaExcledeMe" parameterClass="mx.gob.economia.scg.model.Empleado" resultClass="java.lang.String">
+		SELECT e.id_empleado, e.correo, e.contrasenna, e.nombre, e.paterno, e.materno, e.puesto, e.rfc, e.id_area, e.activo
+		FROM empleado e WHERE e.id_area = #id_area# AND e.id_empleado not in(#id_empleado#) AND e.activo=1 
+		ORDER BY e.nombre
+    </select>
+    <select id="getIdsEmpleadosByIdArea" parameterClass="java.lang.Integer" resultClass="java.lang.String">
+		SELECT	e.id_empleado
+		FROM empleado e
+		WHERE e.id_area = #id_area# AND e.activo=1
+		ORDER BY e.nombre
+    </select>
+	
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Empleado">
+        <selectKey keyProperty="id_empleado" resultClass="int">
+			SELECT seq_empleado.nextval FROM dual
+        </selectKey>
+		insert into empleado(id_empleado,correo,nombre,paterno,materno,id_area,activo,puesto,rfc, contrasenna)
+ 		values(#id_empleado#,#correo#,#nombre#,#paterno#,#materno#,#id_area#,#activo#,#puesto#,#rfc#,#contrasenna#)
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.Empleado">
+		UPDATE empleado SET 
+			correo=#correo#,nombre=#nombre#,paterno=#paterno#,materno=#materno#,
+			id_area=#id_area#,activo=#activo#,puesto=#puesto#, rfc=#rfc#, contrasenna=#contrasenna#,
+                        correo_alterno=#correo_alterno#
+		WHERE id_empleado=#id_empleado#
+    </update>
+    <select id="listEmpleadoUsado" parameterClass="java.lang.Integer" resultClass="java.lang.Integer">
+        select ac.ID_EMPLEADO as resultado from ASUNTO_CCP  ac 
+        where ac.ID_EMPLEADO=#id_empleado#
+        union
+        select ad.ID_ASUNTO_DETALLE as resultado from ASUNTO_DETALLE ad
+        where ad.ID_EMPLEADO_REMI=#id_empleado# or ad.ID_EMPLEADO_DEST=#id_empleado# or ad.ID_EMPLEADO_INI=#id_empleado#
+        union
+        select ar.ID_ASUNTO as resultado from asunto_recepcion ar
+        where ar.ID_EMPLEADO=#id_empleado#
+        union
+        select a.ID_ASUNTO as resultado from asunto a
+        where a.ID_EMPLEADO_CAPT=#id_empleado# or a.ID_EMPLEADO_REMI=#id_empleado# or a.ID_EMPLEADO_DEST=#id_empleado#
+    </select>
+</sqlMap>

@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/gestion/!svn/ver/595/V8/scg_svn2/src/mx/gob/economia/scg/service
+END
+DocumentoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/DocumentoServiceImpl.java
+END
+ArbolServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ArbolServiceImpl.java
+END
+TipoAsuntoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoAsuntoServiceImpl.java
+END
+EstatusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/EstatusService.java
+END
+AsuntoRevisionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/570/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoRevisionService.java
+END
+ExpedienteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ExpedienteService.java
+END
+ReporteVolanteServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gestion/!svn/ver/595/V8/scg_svn2/src/mx/gob/economia/scg/service/ReporteVolanteServiceImpl.java
+END
+DocumentoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/DocumentoService.java
+END
+ArbolService.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ArbolService.java
+END
+LdapServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/LdapServiceImpl.java
+END
+ReporteServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/554/V8/scg_svn2/src/mx/gob/economia/scg/service/ReporteServiceImpl.java
+END
+TipoAsuntoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoAsuntoService.java
+END
+TipoSeguimientoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoSeguimientoServiceImpl.java
+END
+EmpleadoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/570/V8/scg_svn2/src/mx/gob/economia/scg/service/EmpleadoServiceImpl.java
+END
+AutenticacionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gestion/!svn/ver/592/V8/scg_svn2/src/mx/gob/economia/scg/service/AutenticacionServiceImpl.java
+END
+TemaServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TemaServiceImpl.java
+END
+ConsultaConfidencialServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ConsultaConfidencialServiceImpl.java
+END
+ReporteVolanteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/577/V8/scg_svn2/src/mx/gob/economia/scg/service/ReporteVolanteService.java
+END
+CorreoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/588/V8/scg_svn2/src/mx/gob/economia/scg/service/CorreoServiceImpl.java
+END
+TipoDocumentoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoDocumentoServiceImpl.java
+END
+LdapService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/LdapService.java
+END
+ReporteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/gestion/!svn/ver/554/V8/scg_svn2/src/mx/gob/economia/scg/service/ReporteService.java
+END
+InstruccionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/InstruccionServiceImpl.java
+END
+EventoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/EventoServiceImpl.java
+END
+AsuntoCapturaActualizacionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoCapturaActualizacionServiceImpl.java
+END
+TipoSeguimientoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoSeguimientoService.java
+END
+EmpleadoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/538/V8/scg_svn2/src/mx/gob/economia/scg/service/EmpleadoService.java
+END
+AutenticacionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/AutenticacionService.java
+END
+TemaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TemaService.java
+END
+ConsultaConfidencialService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ConsultaConfidencialService.java
+END
+NotificacionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/NotificacionServiceImpl.java
+END
+CorreoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/570/V8/scg_svn2/src/mx/gob/economia/scg/service/CorreoService.java
+END
+TipoDocumentoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/TipoDocumentoService.java
+END
+AreaServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/gestion/!svn/ver/545/V8/scg_svn2/src/mx/gob/economia/scg/service/AreaServiceImpl.java
+END
+AsuntoEstadoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoEstadoServiceImpl.java
+END
+AsuntoServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/gestion/!svn/ver/609/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoServiceImpl.java
+END
+ServerConfigImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ServerConfigImpl.java
+END
+PrioridadServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/PrioridadServiceImpl.java
+END
+InstruccionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/InstruccionService.java
+END
+EventoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/EventoService.java
+END
+AsuntoCapturaActualizacionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoCapturaActualizacionService.java
+END
+NotificacionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/NotificacionService.java
+END
+AreaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/gestion/!svn/ver/545/V8/scg_svn2/src/mx/gob/economia/scg/service/AreaService.java
+END
+AsuntoEstadoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoEstadoService.java
+END
+AsuntoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/gestion/!svn/ver/602/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoService.java
+END
+EstatusServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/gestion/!svn/ver/551/V8/scg_svn2/src/mx/gob/economia/scg/service/EstatusServiceImpl.java
+END
+AsuntoRevisionServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/gestion/!svn/ver/570/V8/scg_svn2/src/mx/gob/economia/scg/service/AsuntoRevisionServiceImpl.java
+END
+ServerConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ServerConfig.java
+END
+ExpedienteServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/ExpedienteServiceImpl.java
+END
+PrioridadService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/gestion/!svn/ver/533/V8/scg_svn2/src/mx/gob/economia/scg/service/PrioridadService.java
+END

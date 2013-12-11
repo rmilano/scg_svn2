@@ -1,0 +1,32 @@
+/* 
+    Document   : error
+    Created on : 11-oct-2010, 16:14:54
+    Author     : gerardo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+
+
+
+input.error, select.error
+{
+    border:1px dotted;
+    border-color: #ba2025;
+}
+
+
+
+label.error
+{
+    margin-left: 10px;
+    width: auto;
+    display: inline;
+    color: #ba2025;
+    font-style: italic;
+}

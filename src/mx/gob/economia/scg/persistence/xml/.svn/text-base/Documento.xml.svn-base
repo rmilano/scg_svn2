@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Documento">
+
+	<resultMap id="documentoMap" class="mx.gob.economia.scg.model.Documento">
+		<result property="id_documento" column="id_documento"/>
+		<result property="id_asunto" column="id_asunto"/>
+		<result property="id_asunto_detalle" column="id_asunto_detalle"/>
+		<result property="documento" column="documento"/>
+		<result property="tipo_documento.id_tipo_documento" column="id_tipo_documento"/>
+		<result property="tipo_documento.tipo_documento" column="tipo_documento"/>
+	</resultMap>
+
+        <resultMap id="documentoCaptMap" class="mx.gob.economia.scg.model.Documento">
+		<result property="id_asunto_detalle" column="id_asunto_detalle"/>
+                <result property="id_documento" column="consecutivo"/>
+                <result property="documento" column="documento"/>
+                <result property="tipo_documento.id_tipo_documento" column="id_tipo_documento"/>
+		<result property="tipo_documento.tipo_documento" column="tipo_documento"/>
+		<result property="blob" column="blob"/>
+	</resultMap>
+	
+	<insert id="insert" parameterClass="mx.gob.economia.scg.model.Documento">
+		<selectKey keyProperty="id_documento" resultClass="int">
+			SELECT seq_documento.nextval FROM dual
+		</selectKey>
+		INSERT INTO documento(id_documento, id_asunto_detalle, id_asunto, documento, id_tipo_documento) 
+		VALUES (#id_documento#, #id_asunto_detalle#, #id_asunto#, #documento#, #tipo_documento.id_tipo_documento#)
+	</insert>
+
+        <insert id="insertCapt" parameterClass="mx.gob.economia.scg.model.Documento">
+		<selectKey keyProperty="id_documento" resultClass="int">
+                    SELECT count(consecutivo)+1 from documento_capt where id_asunto_detalle=#id_asunto_detalle#
+		</selectKey>
+                INSERT INTO documento_capt(id_asunto_detalle,consecutivo,documento,id_tipo_documento,blob)
+                VALUES (#id_asunto_detalle#, #id_documento#,#documento#,#tipo_documento.id_tipo_documento#,#blob#)
+	</insert>
+
+        <insert id="insertAtencionParcial" parameterClass="mx.gob.economia.scg.model.Documento">
+		<selectKey keyProperty="id_documento" resultClass="int">
+                    SELECT count(consecutivo)+1 from documento_ATT_PARC where id_asunto_detalle=#id_asunto_detalle#
+		</selectKey>
+                INSERT INTO documento_ATT_PARC(id_asunto_detalle,consecutivo,documento,id_tipo_documento,blob)
+                VALUES (#id_asunto_detalle#, #id_documento#,#documento#,#tipo_documento.id_tipo_documento#,#blob#)
+	</insert>
+
+        <select id="listCaptByIdAsuntoDetalle" parameterClass="java.lang.Integer" resultMap="documentoCaptMap">
+		SELECT d.id_asunto_detalle, d.consecutivo, d.documento, d.blob, d.id_tipo_documento, t.tipo_documento
+                FROM documento_capt d LEFT JOIN tipo_documento t ON t.id_tipo_documento = d.id_tipo_documento
+		WHERE d.id_asunto_detalle = #id_asunto_detalle#
+		ORDER BY d.consecutivo
+	</select>
+
+        <select id="listAtencionParcial" parameterClass="java.lang.Integer" resultMap="documentoCaptMap">
+		SELECT d.id_asunto_detalle, d.consecutivo, d.documento, d.blob, d.id_tipo_documento, t.tipo_documento
+                FROM documento_ATT_PARC d LEFT JOIN tipo_documento t ON t.id_tipo_documento = d.id_tipo_documento
+		WHERE d.id_asunto_detalle = #id_asunto_detalle#
+		ORDER BY d.consecutivo
+	</select>
+
+        <delete id="deleteCapt" parameterClass="java.lang.Integer">
+		DELETE FROM documento_capt WHERE id_asunto_detalle = #id_asunto_detalle#
+	</delete>
+
+        <delete id="deleteAtencionParcial" parameterClass="java.lang.Integer">
+		DELETE FROM documento_ATT_PARC WHERE id_asunto_detalle = #id_asunto_detalle#
+	</delete>
+        
+	<delete id="deleteDocAsunto" parameterClass="java.util.HashMap">
+		DELETE FROM documento WHERE id_asunto_detalle = #id_asunto_detalle# AND id_asunto = #id_asunto#
+	</delete>
+	
+	<select id="listByIdAsuntoDetalle" parameterClass="java.lang.Integer" resultMap="documentoMap">
+		SELECT 
+            d.id_documento, d.id_asunto_detalle, d.id_asunto, d.documento, d.id_tipo_documento, t.tipo_documento
+        FROM documento d LEFT JOIN tipo_documento t ON t.id_tipo_documento = d.id_tipo_documento
+		WHERE d.id_asunto_detalle = #id_asunto_detalle#
+		ORDER BY d.id_documento 
+	</select>
+
+	<select id="listTipoDocumento" resultClass="mx.gob.economia.scg.model.TipoDocumento">
+		SELECT 
+			t.id_tipo_documento, t.tipo_documento
+		FROM tipo_documento t 
+		WHERE t.activo= 1
+		ORDER BY t.tipo_documento
+	</select>
+	
+	<delete id="deleteAsuntoDocumento" parameterClass="java.lang.Integer">
+		DELETE FROM documento WHERE id_asunto = #id_asunto#
+	</delete>
+		
+</sqlMap>

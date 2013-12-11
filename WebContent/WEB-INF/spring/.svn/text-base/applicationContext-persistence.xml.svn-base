@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- Configuracion del DataSource por JNDI-->
+	<bean id="dataSource"
+		class="org.springframework.jndi.JndiObjectFactoryBean"
+		destroy-method="close">
+		<property name="jndiName" value="${jdbc.jndiName}"/>
+	</bean>
+
+	<!-- Configuracion del DataSource por jdbc-->
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean> -->
+	
+	<!-- Configuracion del Map Client Factory para utilizar iBatis -->
+    <bean id="sqlMapClient2" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value>classpath:mx/gob/economia/scg/persistence/xml/SqlMapConfig2.xml</value>
+        </property>
+        <property name="useTransactionAwareDataSource">
+            <value>true</value>
+        </property>
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+	
+	<!-- Configuracion del Map Client Factory para utilizar iBatis -->
+    <bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+        <property name="configLocation">
+            <value>classpath:mx/gob/economia/scg/persistence/xml/SqlMapConfig.xml</value>
+        </property>
+        <property name="useTransactionAwareDataSource">
+            <value>true</value>
+        </property>
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!--	Configuracion de la transaccionalidad -->
+      <!-- setup transaction manager	-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- these are transactional proxys for dao which ensure proper transaction handling -->
+    <!-- Note that they're loaded in via @SpringBean calls. -->
+    <bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="transactionAttributes">
+            <props>
+                <prop key="save">PROPAGATION_REQUIRED</prop>
+                <prop key="delete">PROPAGATION_REQUIRED</prop>
+                <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Configuracion de la persistencia con iBatis -->
+
+	<!-- Configuracion de las clases de persistencia -->
+	<!-- Empleado -->
+    <bean id="empleadoDao" class="mx.gob.economia.scg.persistence.EmpleadoDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+	<!-- Asunto -->
+    <bean id="asuntoDao" class="mx.gob.economia.scg.persistence.AsuntoDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+        <property name="documentoBlobDao" ref="documentoBlobDao" />
+    </bean>
+	<!-- Area -->
+    <bean id="areaDao" class="mx.gob.economia.scg.persistence.AreaDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+    <!-- Documento -->
+    <bean id="documentoDao" class="mx.gob.economia.scg.persistence.DocumentoDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+	<!-- Documento Blob-->
+    <bean id="documentoBlobDao" class="mx.gob.economia.scg.persistence.DocumentoBlobDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient2" />
+        </property>
+    </bean>
+	<!-- Tipos_Documento -->
+    <bean id="tipoDocumentoDao" class="mx.gob.economia.scg.persistence.TipoDocumentoDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+	<!-- Prioridad -->
+    <bean id="prioridadDao" class="mx.gob.economia.scg.persistence.PrioridadDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+	<!-- Reportes -->
+    <bean id="reporteDao" class="mx.gob.economia.scg.persistence.ReporteDaoImpl">
+        <property name="sqlMapClient">
+            <ref bean="sqlMapClient" />
+        </property>
+    </bean>
+	<!-- Tema -->
+	<bean id="temaDao" class="mx.gob.economia.scg.persistence.TemaDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Evento -->
+	<bean id="eventoDao" class="mx.gob.economia.scg.persistence.EventoDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Instruccion -->
+	<bean id="instruccionDao" class="mx.gob.economia.scg.persistence.InstruccionDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Expediente -->
+	<bean id="expedienteDao" class="mx.gob.economia.scg.persistence.ExpedienteDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Asunto Captura Actualizacion -->
+	<bean id="asuntoCapturaActualizacionDao" class="mx.gob.economia.scg.persistence.AsuntoCapturaActualizacionDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Para el catalogo de asunto -->
+	<bean id="tipoAsuntoDao" class="mx.gob.economia.scg.persistence.TipoAsuntoDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+	<!-- Los tipos de seguimiento -->
+	<bean id="tipoSeguimientoDao" class="mx.gob.economia.scg.persistence.TipoSeguimientoDaoImpl">
+		<property name="sqlMapClient">
+			<ref bean="sqlMapClient" />
+		</property>
+	</bean>
+</beans>

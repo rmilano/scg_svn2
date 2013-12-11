@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="AsuntoDetalle">
+    <resultMap id="asuntoDetalleMap" class="mx.gob.economia.scg.model.AsuntoDetalle">
+        <result property="id_asunto_detalle" column="id_asunto_detalle"/>
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="estatus" column="estatus"/>
+        <result property="fh_lectura" column="fh_lectura"/>
+        <result property="fh_registro" column="fh_registro"/>
+        <result property="fh_limite" column="fh_limite"/>
+        <result property="comentario" column="comentario"/>
+        <result property="ip" column="ip"/>
+        <result property="instruccionAdicional" column="instruccion_adicional"/>
+        <result property="empleado_remi.id_empleado" column="id_empleado_remi"/>
+        <result property="empleado_remi.correo" column="correo_remi"/>
+        <result property="empleado_remi.nombre" column="nombre_remi"/>
+        <result property="empleado_remi.paterno" column="paterno_remi"/>
+        <result property="empleado_remi.materno" column="materno_remi"/>
+        <result property="empleado_remi.id_area" column="id_area_remi"/>
+        <result property="empleado_remi.area.id_area" column="id_area_remi"/>
+        <result property="empleado_remi.area.area" column="area_remi"/>
+        <result property="empleado_remi.area.tipo" column="tipo_area_remi"/>
+        <result property="empleado_remi.activo" column="activo_remi"/>
+        <result property="empleado_remi.puesto" column="puesto_remi"/>
+        <result property="empleado_dest.id_empleado" column="id_empleado_dest"/>
+        <result property="empleado_dest.correo" column="correo_dest"/>
+        <result property="empleado_dest.nombre" column="nombre_dest"/>
+        <result property="empleado_dest.paterno" column="paterno_dest"/>
+        <result property="empleado_dest.materno" column="materno_dest"/>
+        <result property="empleado_dest.id_area" column="id_area_dest"/>
+        <result property="empleado_dest.area.id_area" column="id_area_dest"/>
+        <result property="empleado_dest.area.area" column="area_dest"/>
+        <result property="empleado_dest.area.tipo" column="tipo_area_dest"/>
+        <result property="empleado_dest.activo" column="activo_dest"/>
+        <result property="empleado_dest.puesto" column="puesto_dest"/>
+        <result property="empleado_dest_ini.id_empleado" column="id_empleado_dest_ini"/>
+        <result property="empleado_dest_ini.correo" column="correo_dest_ini"/>
+        <result property="empleado_dest_ini.nombre" column="nombre_dest_ini"/>
+        <result property="empleado_dest_ini.paterno" column="paterno_dest_ini"/>
+        <result property="empleado_dest_ini.materno" column="materno_dest_ini"/>
+        <result property="empleado_dest_ini.id_area" column="id_area_dest_ini"/>
+        <result property="empleado_dest_ini.area.id_area" column="id_area_dest_ini"/>
+        <result property="empleado_dest_ini.area.area" column="area_dest_ini"/>
+        <result property="empleado_dest_ini.area.tipo" column="tipo_area_dest_ini"/>
+        <result property="empleado_dest_ini.activo" column="activo_dest_ini"/>
+        <result property="empleado_dest_ini.puesto" column="puesto_dest_ini"/>
+        <result property="instruccion.id_instruccion" column="id_instruccion"/>
+        <result property="instruccion.instruccion" column="instruccion"/>
+        <result property="documentos" column="id_asunto_detalle" select="Documento.listByIdAsuntoDetalle"/>
+        <result property="empleadosCcpDetalle" column="id_asunto_detalle" select="Empleado.listCcpByIdAsuntoDetalle"/>
+        <result property="asuntos_asociados" column="id_concentrado" select="Asunto.listAsuntoAsociados"/>
+        <result property="id_concentrado" column="id_concentrado" />
+        <result property="prioridad.id_prioridad" column="id_prioridad" />
+        <result property="tipoSeguimiento.idTipoSeguimiento" column="id_tipo_seguimiento" />
+        <result property="tipoSeguimiento.tipoSeguimiento" column="tipo_seguimiento" />
+        <result property="empleadoFirmanteVolante.id_empleado" column="id_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.nombre" column="nombre_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.paterno" column="paterno_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.materno" column="materno_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.id_area" column="id_area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.area.id_area" column="id_area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.area.area" column="area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.activo" column="activo_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.puesto" column="puesto_empleado_firmante" />
+    </resultMap>
+
+    <resultMap id="asuntoDetalleMap2" class="mx.gob.economia.scg.model.AsuntoDetalle">
+        <result property="id_asunto_detalle" column="id_asunto_detalle"/>
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="estatus" column="estatus"/>
+        <result property="fh_lectura" column="fh_lectura"/>
+        <result property="fh_registro" column="fh_registro"/>
+        <result property="fh_limite" column="fh_limite"/>
+        <result property="comentario" column="comentario"/>
+        <result property="ip" column="ip"/>
+        <result property="empleado_remi.id_empleado" column="id_empleado_remi"/>
+        <result property="empleado_remi.correo" column="correo_remi"/>
+        <result property="empleado_remi.nombre" column="nombre_remi"/>
+        <result property="empleado_remi.paterno" column="paterno_remi"/>
+        <result property="empleado_remi.materno" column="materno_remi"/>
+        <result property="empleado_remi.id_area" column="id_area_remi"/>
+        <result property="empleado_remi.area.id_area" column="id_area_remi"/>
+        <result property="empleado_remi.area.area" column="area_remi"/>
+        <result property="empleado_remi.area.tipo" column="tipo_area_remi"/>
+        <result property="empleado_remi.activo" column="activo_remi"/>
+        <result property="empleado_remi.puesto" column="puesto_remi"/>
+        <result property="empleado_dest.id_empleado" column="id_empleado_dest"/>
+        <result property="empleado_dest.correo" column="correo_dest"/>
+        <result property="empleado_dest.nombre" column="nombre_dest"/>
+        <result property="empleado_dest.paterno" column="paterno_dest"/>
+        <result property="empleado_dest.materno" column="materno_dest"/>
+        <result property="empleado_dest.id_area" column="id_area_dest"/>
+        <result property="empleado_dest.area.id_area" column="id_area_dest"/>
+        <result property="empleado_dest.area.area" column="area_dest"/>
+        <result property="empleado_dest.area.tipo" column="tipo_area_dest"/>
+        <result property="empleado_dest.activo" column="activo_dest"/>
+        <result property="empleado_dest.puesto" column="puesto_dest"/>
+        <result property="empleado_dest_ini.id_empleado" column="id_empleado_dest_ini"/>
+        <result property="empleado_dest_ini.correo" column="correo_dest_ini"/>
+        <result property="empleado_dest_ini.nombre" column="nombre_dest_ini"/>
+        <result property="empleado_dest_ini.paterno" column="paterno_dest_ini"/>
+        <result property="empleado_dest_ini.materno" column="materno_dest_ini"/>
+        <result property="empleado_dest_ini.id_area" column="id_area_dest_ini"/>
+        <result property="empleado_dest_ini.area.id_area" column="id_area_dest_ini"/>
+        <result property="empleado_dest_ini.area.area" column="area_dest_ini"/>
+        <result property="empleado_dest_ini.area.tipo" column="tipo_area_dest_ini"/>
+        <result property="empleado_dest_ini.activo" column="activo_dest_ini"/>
+        <result property="empleado_dest_ini.puesto" column="puesto_dest_ini"/>
+        <result property="documentos" column="id_asunto_detalle" select="Documento.listAtencionParcial"/>
+        <result property="empleadosCcpDetalle" column="id_asunto_detalle" select="Empleado.listCcpByIdAsuntoDetalleAtParc"/>
+        <result property="id_concentrado" column="id_concentrado" />
+        <result property="prioridad.id_prioridad" column="id_prioridad" />
+        <result property="tipoSeguimiento.idTipoSeguimiento" column="id_tipo_seguimiento" />
+        <result property="tipoSeguimiento.tipoSeguimiento" column="tipo_seguimiento" />
+        <result property="empleadoFirmanteVolante.id_empleado" column="id_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.nombre" column="nombre_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.paterno" column="paterno_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.materno" column="materno_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.id_area" column="id_area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.area.id_area" column="id_area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.area.area" column="area_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.activo" column="activo_empleado_firmante" />
+        <result property="empleadoFirmanteVolante.puesto" column="puesto_empleado_firmante" />
+    </resultMap>
+
+    <resultMap id="turnoGuardadoMap" class="mx.gob.economia.scg.model.AsuntoDetalle">
+        <result property="id_asunto" column="id_asunto"/>
+        <result property="empleado_dest.id_empleado" column="id_empleado_dest"/>
+        <result property="prioridad.id_prioridad" column="id_prioridad" />
+        <result property="id_instruccion" column="id_instruccion"/>
+        <result property="fh_limite" column="fh_limite"/>
+        <result property="empleado_remi.id_empleado" column="id_empleado_captura"/>
+        <result property="empleadoFirmanteVolante.id_empleado" column="id_empleado_firmante" />
+        <result property="comentario" column="comentario"/>
+        <result property="fh_registro" column="fh_registro"/>
+        <result property="documentos" column="id_asunto_detalle" select="Documento.listCaptByIdAsuntoDetalle"/>
+        <result property="empleadosCcp" column="id_asunto_detalle" select="AsuntoDetalle.listCopiasCapt"/>
+    </resultMap>
+
+    <resultMap id="CcpsTurnoGuardado" class="mx.gob.economia.scg.model.Empleado">
+        <result property="id_empleado" column="id_empleado"/>
+        <result property="nombre" column="nombre"/>
+        <result property="paterno" column="paterno"/>
+        <result property="materno" column="materno"/>
+    </resultMap>
+	
+    <select id="listByIdAsuntoDetalle" parameterClass="java.lang.Integer" resultMap="asuntoDetalleMap">
+            SELECT
+            ad.id_asunto_detalle, ad.id_asunto, ad.estatus,
+            ad.fh_lectura, ad.fh_registro, ad.fh_limite,
+            ad.comentario, ad.ip,
+            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi,
+            r.nombre AS nombre_remi, r.paterno AS paterno_remi, r.materno AS materno_remi,
+            r.id_area AS id_area_remi, ar_r.area AS area_remi,ar_r.tipo AS tipo_area_remi,
+            r.activo AS activo_remi, r.puesto AS puesto_remi,
+            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest,
+            d.nombre AS nombre_dest, d.paterno AS paterno_dest, d.materno AS materno_dest,
+            d.id_area AS id_area_dest, ar_d.area AS area_dest, ar_d.tipo AS tipo_area_dest,
+            d.activo AS activo_dest, d.puesto AS puesto_dest,
+            i.id_empleado AS id_empleado_dest_ini, i.correo AS correo_dest_ini,
+            i.nombre AS nombre_dest_ini, i.paterno AS paterno_dest_ini, i.materno AS materno_dest_ini,
+            i.id_area AS id_area_dest_ini, ar_i.area AS area_dest_ini, ar_i.tipo AS tipo_area_dest_ini,
+            i.activo AS activo_dest_ini, i.puesto AS puesto_dest_ini, ca.id_concentrado, ad.id_prioridad,
+            tipoSeguimiento.ID_TIPO_SEGUIMIENTO, tipoSeguimiento.TIPO_SEGUIMIENTO, empleadoFirmante.ID_EMPLEADO id_empleado_firmante,
+            empleadoFirmante.NOMBRE nombre_empleado_firmante, empleadoFirmante.PATERNO paterno_empleado_firmante,
+            empleadoFirmante.MATERNO materno_empleado_firmante, empleadoFirmante.ID_AREA id_area_empleado_firmante,
+            areaEmpleadoFirmante.AREA area_empleado_firmante, empleadoFirmante.ACTIVO activo_empleado_firmante,
+            empleadoFirmante.PUESTO puesto_empleado_firmante, ad.id_instruccion, ins.instruccion, ad.instruccion_adicional
+        FROM asunto_detalle ad
+        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest
+        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi
+        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+        LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+        LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+        LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+        LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+        LEFT JOIN instruccion ins ON ins.id_instruccion = ad.id_instruccion
+        WHERE ad.id_asunto = #id_asunto#
+        ORDER BY ad.id_asunto_detalle
+    </select>
+    <select id="getDetalleByIdAsuntoDetalle" parameterClass="java.lang.Integer" resultMap="asuntoDetalleMap">
+            SELECT
+            ad.id_asunto_detalle, ad.id_asunto, ad.estatus,
+            ad.fh_lectura, ad.fh_registro, ad.fh_limite,
+            ad.comentario, ad.ip,
+            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi,
+            r.nombre AS nombre_remi, r.paterno AS paterno_remi, r.materno AS materno_remi,
+            r.id_area AS id_area_remi, ar_r.area AS area_remi,ar_r.tipo AS tipo_area_remi,
+            r.activo AS activo_remi, r.puesto AS puesto_remi,
+            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest,
+            d.nombre AS nombre_dest, d.paterno AS paterno_dest, d.materno AS materno_dest,
+            d.id_area AS id_area_dest, ar_d.area AS area_dest, ar_d.tipo AS tipo_area_dest,
+            d.activo AS activo_dest, d.puesto AS puesto_dest,
+            i.id_empleado AS id_empleado_dest_ini, i.correo AS correo_dest_ini,
+            i.nombre AS nombre_dest_ini, i.paterno AS paterno_dest_ini, i.materno AS materno_dest_ini,
+            i.id_area AS id_area_dest_ini, ar_i.area AS area_dest_ini, ar_i.tipo AS tipo_area_dest_ini,
+            i.activo AS activo_dest_ini, i.puesto AS puesto_dest_ini, ca.id_concentrado, ad.id_prioridad,
+            tipoSeguimiento.ID_TIPO_SEGUIMIENTO, tipoSeguimiento.TIPO_SEGUIMIENTO, empleadoFirmante.ID_EMPLEADO id_empleado_firmante,
+            empleadoFirmante.NOMBRE nombre_empleado_firmante, empleadoFirmante.PATERNO paterno_empleado_firmante,
+            empleadoFirmante.MATERNO materno_empleado_firmante, empleadoFirmante.ID_AREA id_area_empleado_firmante,
+            areaEmpleadoFirmante.AREA area_empleado_firmante, empleadoFirmante.ACTIVO activo_empleado_firmante,
+            empleadoFirmante.PUESTO puesto_empleado_firmante, ad.id_instruccion, ins.instruccion, ad.instruccion_adicional
+        FROM asunto_detalle ad
+        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest
+        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi
+        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+        LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+        LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+        LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+        LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+        LEFT JOIN instruccion ins ON ins.id_instruccion = ad.id_instruccion
+        WHERE ad.id_asunto_detalle = #id_asunto_detalle#
+    </select>
+    <select id="listByFolioAsuntoDetalle" parameterClass="java.lang.String" resultMap="asuntoDetalleMap">
+            SELECT
+            ad.id_asunto_detalle, ad.id_asunto, ad.estatus,
+            ad.fh_lectura, ad.fh_registro, ad.fh_limite,
+            ad.comentario, ad.ip,
+            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi,
+            r.nombre AS nombre_remi, r.paterno AS paterno_remi, r.materno AS materno_remi,
+            r.id_area AS id_area_remi, ar_r.area AS area_remi,ar_r.tipo AS tipo_area_remi,
+            r.activo AS activo_remi, r.puesto AS puesto_remi,
+            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest,
+            d.nombre AS nombre_dest, d.paterno AS paterno_dest, d.materno AS materno_dest,
+            d.id_area AS id_area_dest, ar_d.area AS area_dest, ar_d.tipo AS tipo_area_dest,
+            d.activo AS activo_dest, d.puesto AS puesto_dest,
+            i.id_empleado AS id_empleado_dest_ini, i.correo AS correo_dest_ini,
+            i.nombre AS nombre_dest_ini, i.paterno AS paterno_dest_ini, i.materno AS materno_dest_ini,
+            i.id_area AS id_area_dest_ini, ar_i.area AS area_dest_ini, ar_i.tipo AS tipo_area_dest_ini,
+            i.activo AS activo_dest_ini, i.puesto AS puesto_dest_ini, ca.id_concentrado, ad.id_prioridad,
+            tipoSeguimiento.ID_TIPO_SEGUIMIENTO, tipoSeguimiento.TIPO_SEGUIMIENTO, empleadoFirmante.ID_EMPLEADO id_empleado_firmante,
+            empleadoFirmante.NOMBRE nombre_empleado_firmante, empleadoFirmante.PATERNO paterno_empleado_firmante,
+            empleadoFirmante.MATERNO materno_empleado_firmante, empleadoFirmante.ID_AREA id_area_empleado_firmante,
+            areaEmpleadoFirmante.AREA area_empleado_firmante, empleadoFirmante.ACTIVO activo_empleado_firmante,
+            empleadoFirmante.PUESTO puesto_empleado_firmante, ad.instruccion_adicional
+        FROM asunto_detalle ad
+        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest
+        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi
+        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+        LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+        LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+        LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+        LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+        WHERE ad.id_asunto = #id_asunto#
+        ORDER BY ad.id_asunto_detalle    
+    </select>
+	
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+        <selectKey keyProperty="id_asunto_detalle" resultClass="int">
+			SELECT seq_asunto_detalle.nextval FROM dual
+        </selectKey>
+		INSERT INTO asunto_detalle(id_asunto_detalle, id_asunto, fh_lectura, fh_registro, fh_limite,
+			id_empleado_remi, id_empleado_dest, comentario, ip, estatus, id_empleado_ini, id_prioridad,
+                        id_empleado_firmante,id_tipo_seguimiento,id_instruccion,instruccion_adicional)
+		VALUES (#id_asunto_detalle#, #id_asunto#, #fh_lectura#, nvl(null,sysdate), #fh_limite#,
+			#empleado_remi.id_empleado#, #empleado_dest.id_empleado#, #comentario#, #ip#,
+                        #estatus#, #empleado_dest_ini.id_empleado#, decode(#prioridad.id_prioridad#,0,null,-1,null,#prioridad.id_prioridad#),
+                        #empleadoFirmanteVolante.id_empleado#,#tipoSeguimiento.idTipoSeguimiento#,#empleado_dest.instruccion.id_instruccion#,
+                        upper(#instruccionAdicional#))
+    </insert>
+
+    <insert id="insertEdicionTurno" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+        <selectKey keyProperty="id_asunto_detalle" resultClass="int">
+			SELECT id_asunto_detalle FROM asunto_detalle where id_asunto_detalle = #id_asunto_detalle#
+        </selectKey>
+		INSERT INTO asunto_detalle(id_asunto_detalle, id_asunto, fh_lectura, fh_registro, fh_limite,
+			id_empleado_remi, id_empleado_dest, comentario, ip, estatus, id_empleado_ini, id_prioridad,
+                        id_empleado_firmante,id_tipo_seguimiento)
+		VALUES (#id_asunto_detalle#, #id_asunto#, #fh_lectura#, #fh_registro#, #fh_limite#,
+			#empleado_remi.id_empleado#, #empleado_dest.id_empleado#, #comentario#, #ip#,
+                        #estatus#, #empleado_dest_ini.id_empleado#, decode(#prioridad.id_prioridad#,0,null,-1,null,#prioridad.id_prioridad#),
+                        #empleadoFirmanteVolante.id_empleado#,#tipoSeguimiento.idTipoSeguimiento#)
+    </insert>
+
+    <select id="listCopiasCapt" parameterClass="java.lang.Integer" resultMap="CcpsTurnoGuardado">
+            select c.id_empleado,e.nombre,e.paterno,e.materno
+            from ASUNTO_DETALLE_CCP_CAPT c,
+                 empleado e
+            where c.id_empleado=e.id_empleado            
+            and id_asunto_detalle=#id_asunto_detalle#
+            order by nombre, paterno, materno
+    </select>
+    <select id="listCapturaTurno" parameterClass="java.lang.Integer" resultMap="turnoGuardadoMap">
+        select id_asunto_detalle,id_asunto,id_empleado_dest,nvl(id_prioridad,-1) id_prioridad,
+               id_instruccion,fh_limite,id_empleado_captura,id_empleado_firmante,comentario,fh_registro
+        from asunto_detalle_captura
+        where id_asunto_detalle=#id_asunto_detalle#
+    </select>
+
+    <insert id="guardaCapturaTurno" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+        <selectKey keyProperty="id_asunto_detalle" resultClass="int">
+			select max(id_asunto_detalle) from asunto_detalle where id_asunto=#id_asunto#
+        </selectKey>
+		INSERT INTO asunto_detalle_captura(id_asunto_detalle,id_asunto,id_empleado_dest,id_prioridad,
+                        id_instruccion,fh_limite,id_empleado_captura,id_empleado_firmante,comentario,fh_registro)
+		VALUES (#id_asunto_detalle#, #id_asunto#,#empleado_dest.id_empleado#,
+                        decode(#prioridad.id_prioridad#,0,null,-1,null,#prioridad.id_prioridad#),
+                        nvl(#empleado_dest.instruccion.id_instruccion#,-1),
+                        #fh_limite#,#empleado_remi.id_empleado#,
+                        #empleadoFirmanteVolante.id_empleado#,#comentario#,nvl(#fh_registro#,sysdate))
+    </insert>
+
+    <insert id="guardaAtencionParcial" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+        <selectKey keyProperty="id_asunto_detalle" resultClass="int">
+			select max(id_asunto_detalle) from asunto_detalle where id_asunto=#id_asunto#
+        </selectKey>
+		INSERT INTO asunto_atencion_parcial(id_asunto_detalle,id_asunto,id_empleado_captura,comentario,fh_registro)
+		VALUES (#id_asunto_detalle#, #id_asunto#,#empleado_remi.id_empleado#,
+                        #comentario#,nvl(#fh_registro#,sysdate))
+    </insert>
+
+    <insert id="guardaAtencionParcialRechazo" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+        <selectKey keyProperty="id_asunto_detalle" resultClass="int">
+			select max(id_asunto_detalle) from asunto_detalle where id_asunto=#id_asunto#
+        </selectKey>
+		INSERT INTO asunto_atencion_parcial(id_asunto_detalle,id_asunto,id_empleado_captura,comentario,fh_registro)
+		VALUES (#id_asunto_detalle#, #id_asunto#,#empleado_dest.id_empleado#,
+                        #comentario#,nvl(#fh_registro#,sysdate))
+    </insert>
+
+    <delete id="deleteCapturaTurno" parameterClass="java.lang.Integer">
+		DELETE FROM asunto_detalle_captura WHERE id_asunto_detalle = #id_asunto_detalle#
+    </delete>
+
+    <delete id="deleteAtencionParcial" parameterClass="java.lang.Integer">
+		DELETE FROM asunto_atencion_parcial WHERE id_asunto_detalle = #id_asunto_detalle#
+    </delete>
+
+    <delete id="deleteAtencionParcialRechazo" parameterClass="java.lang.Integer">
+		DELETE FROM asunto_atencion_parcial WHERE id_asunto = #id_asunto#
+    </delete>
+	
+    <update id="update" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+		UPDATE asunto_detalle SET 
+			fh_limite = #fh_limite#,			
+			comentario = #comentario#, 			
+                        id_prioridad = #prioridad.id_prioridad#,
+                        id_empleado_firmante = #empleadoFirmanteVolante.id_empleado#,
+                        id_tipo_seguimiento = #tipoSeguimiento.idTipoSeguimiento#
+		WHERE id_asunto_detalle=#id_asunto_detalle#
+    </update>
+
+	
+    <update id="update_empleado_dest" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+		UPDATE asunto_detalle SET 
+			id_empleado_dest=#empleado_dest.id_empleado#, 
+			ip=#ip#
+		WHERE id_asunto_detalle=#id_asunto_detalle#
+    </update>
+   
+    <update id="updateFhLectura" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+		UPDATE asunto_detalle SET fh_lectura=#fh_lectura#
+		WHERE id_asunto_detalle=#id_asunto_detalle#
+    </update>
+
+    <update id="updateEstatus" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+		UPDATE asunto_detalle SET estatus=#estatus# WHERE  
+        <isNotEmpty prepend="" property="ids_asunto">
+            <iterate prepend="" property="ids_asunto" open="(" close=")" conjunction="OR">
+                    id_asunto = #ids_asunto[]#
+            </iterate>
+        </isNotEmpty>
+    </update>
+
+    <update id="updateEstatusByIdAsuntoDetalle" parameterClass="mx.gob.economia.scg.model.AsuntoDetalle">
+		UPDATE asunto_detalle SET estatus=#estatus#
+                WHERE id_asunto_detalle = #id_asunto_detalle#
+    </update>
+	
+    <insert id="insertRecepcionista" parameterClass="java.util.HashMap">
+		INSERT INTO asunto_recepcion(id_asunto, id_asunto_detalle, id_empleado) 
+		VALUES (#id_asunto#, #id_asunto_detalle#, #id_empleado#)
+    </insert>
+	
+    <delete id="delete" parameterClass="java.lang.Integer">
+		DELETE FROM asunto_detalle WHERE id_asunto =#id_asunto#
+    </delete>
+	
+    <delete id="deleteConcentrado" parameterClass="java.lang.Integer">
+		DELETE FROM concentrado_asunto WHERE id_asunto = #id_asunto#
+    </delete>
+
+    <delete id="deleteEdicionTurnoDocumento" parameterClass="java.lang.Integer">
+                DELETE FROM documento WHERE id_asunto_detalle = #id_asunto_detalle#
+    </delete>
+    <delete id="deleteEdicionTurnoDocBlob" parameterClass="java.lang.Integer">
+                DELETE FROM documento_blob WHERE id_asunto_detalle = #id_asunto_detalle#
+    </delete>
+
+    <select id="asuntoAtencionParcial" parameterClass="java.lang.Integer" resultMap="asuntoDetalleMap2">
+            SELECT
+            aap.id_asunto_detalle, aap.id_asunto, 14 estatus,
+            null fh_lectura, aap.fh_registro, null fh_limite,
+            aap.comentario, null ip,
+            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi,
+            r.nombre AS nombre_remi, r.paterno AS paterno_remi, r.materno AS materno_remi,
+            r.id_area AS id_area_remi, ar_r.area AS area_remi,ar_r.tipo AS tipo_area_remi,
+            r.activo AS activo_remi, r.puesto AS puesto_remi,
+            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest,
+            d.nombre AS nombre_dest, d.paterno AS paterno_dest, d.materno AS materno_dest,
+            d.id_area AS id_area_dest, ar_d.area AS area_dest, ar_d.tipo AS tipo_area_dest,
+            d.activo AS activo_dest, d.puesto AS puesto_dest,
+            i.id_empleado AS id_empleado_dest_ini, i.correo AS correo_dest_ini,
+            i.nombre AS nombre_dest_ini, i.paterno AS paterno_dest_ini, i.materno AS materno_dest_ini,
+            i.id_area AS id_area_dest_ini, ar_i.area AS area_dest_ini, ar_i.tipo AS tipo_area_dest_ini,
+            i.activo AS activo_dest_ini, i.puesto AS puesto_dest_ini, ca.id_concentrado, ad.id_prioridad,
+            tipoSeguimiento.ID_TIPO_SEGUIMIENTO, tipoSeguimiento.TIPO_SEGUIMIENTO, empleadoFirmante.ID_EMPLEADO id_empleado_firmante,
+            empleadoFirmante.NOMBRE nombre_empleado_firmante, empleadoFirmante.PATERNO paterno_empleado_firmante,
+            empleadoFirmante.MATERNO materno_empleado_firmante, empleadoFirmante.ID_AREA id_area_empleado_firmante,
+            areaEmpleadoFirmante.AREA area_empleado_firmante, empleadoFirmante.ACTIVO activo_empleado_firmante,
+            empleadoFirmante.PUESTO puesto_empleado_firmante
+        FROM asunto_atencion_parcial aap
+        LEFT JOIN asunto_detalle ad ON aap.id_asunto_detalle = ad.id_asunto_detalle and aap.id_asunto = ad.id_asunto
+        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_remi
+        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_dest
+        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+        LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+        LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+        LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+        LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+        WHERE ad.id_asunto = #id_asunto#
+        ORDER BY ad.id_asunto_detalle
+    </select>
+	
+<!--	<select id="getIdConcentradoDet" resultClass="java.lang.Integer">-->
+<!--		SELECT seq_concentrado_det.nextval FROM dual-->
+<!--	</select>-->
+<!--	<insert id="insertConcentradoDet" parameterClass="java.util.HashMap">-->
+<!--		INSERT INTO concentrado_asunto_det(id_concentrado_det, id_asunto, id_asunto_detalle, estatus) -->
+<!--		VALUES (#id_concentrado_det#, #id_asunto#, #id_asunto_detalle#, #estatus#)-->
+<!--	</insert>-->
+    <select id="listByIdAsuntoDetalle_ultimo" parameterClass="java.lang.Integer" resultMap="asuntoDetalleMap">
+        SELECT
+            ad.id_asunto_detalle, ad.id_asunto, ad.estatus,
+            ad.fh_lectura, ad.fh_registro, ad.fh_limite,
+            ad.comentario, ad.ip,
+            r.id_empleado AS id_empleado_remi, r.correo AS correo_remi,
+            r.nombre AS nombre_remi, r.paterno AS paterno_remi, r.materno AS materno_remi,
+            r.id_area AS id_area_remi, ar_r.area AS area_remi,ar_r.tipo AS tipo_area_remi,
+            r.activo AS activo_remi, r.puesto AS puesto_remi,
+            d.id_empleado AS id_empleado_dest, d.correo AS correo_dest,
+            d.nombre AS nombre_dest, d.paterno AS paterno_dest, d.materno AS materno_dest,
+            d.id_area AS id_area_dest, ar_d.area AS area_dest, ar_d.tipo AS tipo_area_dest,
+            d.activo AS activo_dest, d.puesto AS puesto_dest,
+            i.id_empleado AS id_empleado_dest_ini, i.correo AS correo_dest_ini,
+            i.nombre AS nombre_dest_ini, i.paterno AS paterno_dest_ini, i.materno AS materno_dest_ini,
+            i.id_area AS id_area_dest_ini, ar_i.area AS area_dest_ini, ar_i.tipo AS tipo_area_dest_ini,
+            i.activo AS activo_dest_ini, i.puesto AS puesto_dest_ini, ca.id_concentrado, ad.id_prioridad,
+            tipoSeguimiento.ID_TIPO_SEGUIMIENTO, tipoSeguimiento.TIPO_SEGUIMIENTO, empleadoFirmante.ID_EMPLEADO id_empleado_firmante,
+            empleadoFirmante.NOMBRE nombre_empleado_firmante, empleadoFirmante.PATERNO paterno_empleado_firmante,
+            empleadoFirmante.MATERNO materno_empleado_firmante, empleadoFirmante.ID_AREA id_area_empleado_firmante,
+            areaEmpleadoFirmante.AREA area_empleado_firmante, empleadoFirmante.ACTIVO activo_empleado_firmante,
+            empleadoFirmante.PUESTO puesto_empleado_firmante, ad.id_instruccion, ins.instruccion, ad.instruccion_adicional
+        FROM asunto_detalle ad
+        LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest
+        LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+        LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi
+        LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+        LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+        LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+        LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+        LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+        LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+        LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+        LEFT JOIN instruccion ins ON ins.id_instruccion = ad.id_instruccion
+        WHERE ad.id_asunto_detalle = (
+            SELECT
+                max(ad.id_asunto_detalle)
+                FROM asunto_detalle ad
+                LEFT JOIN empleado d ON d.id_empleado = ad.id_empleado_dest
+                LEFT JOIN area ar_d ON ar_d.id_area = d.id_area
+                LEFT JOIN empleado r ON r.id_empleado = ad.id_empleado_remi
+                LEFT JOIN area ar_r ON ar_r.id_area = r.id_area
+                LEFT JOIN empleado i ON i.id_empleado = ad.id_empleado_ini
+                LEFT JOIN area ar_i ON ar_i.id_area = i.id_area
+                LEFT JOIN empleado empleadoFirmante ON empleadoFirmante.ID_EMPLEADO = ad.ID_EMPLEADO_FIRMANTE
+                LEFT JOIN area areaEmpleadoFirmante ON empleadoFirmante.ID_AREA = areaEmpleadoFirmante.ID_AREA
+                LEFT JOIN tipo_seguimiento tipoSeguimiento ON tipoSeguimiento.ID_TIPO_SEGUIMIENTO = ad.ID_TIPO_SEGUIMIENTO
+                LEFT JOIN concentrado_asunto ca ON ca.id_asunto = ad.id_asunto AND ca.id_asunto_detalle = ad.id_asunto_detalle
+                LEFT JOIN instruccion ins ON ins.id_instruccion = ad.id_instruccion
+                WHERE ad.id_asunto = #id_asunto#
+        )
+        ORDER BY ad.id_asunto_detalle
+    </select>
+
+    <resultMap id="estatusAsuntoAreaMap" class="java.lang.Integer">
+        <result property="estatus" column="estatus"/>
+    </resultMap>
+
+    <select id="ultimoEstatusAsuntoByArea" parameterClass="java.util.HashMap" resultMap="estatusAsuntoAreaMap">
+            SELECT DISTINCT(CASE
+                       WHEN (SELECT ESTATUS_DET
+                               FROM (SELECT AD3.ID_ASUNTO, MAX(AD3.ESTATUS) AS ESTATUS_DET
+                                       FROM ASUNTO_DETALLE AD3
+                                      WHERE (AD3.ID_EMPLEADO_REMI IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                             AD3.ID_EMPLEADO_DEST IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                             AD3.ID_EMPLEADO_REMI IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL) OR
+                                             AD3.ID_EMPLEADO_DEST IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL))
+                                      GROUP BY AD3.ID_ASUNTO) AD_EST
+                              WHERE AD_EST.ID_ASUNTO = B.ID_ASUNTO) = 0 AND B.ESTATUS =2 THEN 1
+                        WHEN (SELECT ESTATUS_DET
+                                FROM (SELECT AD3.ID_ASUNTO, MAX(AD3.ESTATUS) AS ESTATUS_DET
+                                        FROM ASUNTO_DETALLE AD3
+                                       WHERE (AD3.ID_EMPLEADO_REMI IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                              AD3.ID_EMPLEADO_DEST IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                              AD3.ID_EMPLEADO_REMI IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL) OR
+                                              AD3.ID_EMPLEADO_DEST IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL))
+                                       GROUP BY AD3.ID_ASUNTO) AD_EST
+                               WHERE AD_EST.ID_ASUNTO = B.ID_ASUNTO) = 1 AND B.ESTATUS =2 THEN 1
+                        WHEN (SELECT ESTATUS_DET
+                            FROM (SELECT AD1.ID_ASUNTO, MAX(AD1.ESTATUS) AS ESTATUS_DET
+                                    FROM ASUNTO AD1
+                                   WHERE (AD1.ID_EMPLEADO_REMI IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                          AD1.ID_EMPLEADO_DEST IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                                          AD1.ID_EMPLEADO_REMI IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL) OR
+                                          AD1.ID_EMPLEADO_DEST IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL))
+                                     AND AD1.ESTATUS IN (0,1) 
+                                     AND (SELECT COUNT(ID_ASUNTO)
+                                            FROM ASUNTO_ATENCION_PARCIAL AAP
+                                           WHERE AAP.ID_ASUNTO = AD1.ID_ASUNTO)> 0
+                                   GROUP BY AD1.ID_ASUNTO  )
+                            WHERE ID_ASUNTO = B.ID_ASUNTO ) IN (0,1)
+                    THEN 14
+                    ELSE B.ESTATUS
+                   END) AS ESTATUS
+              FROM
+             (SELECT AD.ID_ASUNTO,
+                     A.ESTATUS
+             FROM ASUNTO_DETALLE AD
+             INNER JOIN ASUNTO A
+                ON A.ID_ASUNTO = AD.ID_ASUNTO
+             WHERE (AD.ID_EMPLEADO_REMI IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                    AD.ID_EMPLEADO_DEST IN(SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = #id_area#) OR
+                    AD.ID_EMPLEADO_REMI IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL) OR
+                    AD.ID_EMPLEADO_DEST IN (SELECT ID_EMPLEADO FROM EMPLEADO WHERE ID_AREA = NULL))
+               AND AD.ID_ASUNTO = #id_asunto#
+              ) B
+    </select>
+</sqlMap>

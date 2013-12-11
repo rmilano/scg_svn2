@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Area">
+	
+    <resultMap id="areaMap" class="mx.gob.economia.scg.model.Area">
+        <result property="id_area"/>
+        <result property="id_area_padre"/>
+        <result property="area"/>
+        <result property="clave"/>
+        <result property="tipo"/>
+        <result property="activo"/>
+        <result property="unidad_administrativa"/>
+        <result property="listado_area"/>
+        <result property="envio_correo"/>
+    </resultMap>
+	
+    <select id="getAreaById" resultMap="areaMap" parameterClass="int">
+		SELECT 
+			a.id_area, a.id_area_padre, a.area, a.clave, a.tipo, a.activo, a.unidad_administrativa, a.listado_area, a.envio_correo
+		FROM area a
+		WHERE a.id_area=#value# and a.activo = 1
+    </select>
+    <select id="getAreaByIdWitoutFilter" resultMap="areaMap" parameterClass="int">
+		SELECT
+			a.id_area, a.id_area_padre, a.area, a.clave, a.tipo, a.activo, a.unidad_administrativa, a.listado_area, a.envio_correo
+		FROM area a
+		WHERE a.id_area=#value#
+    </select>
+    <select id="getAreaRaiz" resultMap="areaMap" parameterClass="java.lang.Integer">
+        SELECT  ID_AREA, ID_AREA_PADRE,AREA,CLAVE,TIPO, ACTIVO, UNIDAD_ADMINISTRATIVA, LISTADO_AREA, envio_correo
+        FROM AREA
+        WHERE ID_AREA = (SELECT  MIN(ID_AREA)  FROM AREA where ACTIVO=1 AND TIPO=#value#)
+    </select>
+
+    <select id="listAreasByParentId" resultClass="mx.gob.economia.scg.model.Area" parameterClass="java.lang.Integer">
+		select area.ID_AREA, area.ID_AREA_PADRE, area.AREA, area.CLAVE,
+                       area.TIPO, area.ACTIVO, area.UNIDAD_ADMINISTRATIVA, area.LISTADO_AREA, area.envio_correo
+                from Area area
+                where area.id_area_padre = #value#
+                and area.activo=1
+                order by area.AREA
+    </select>
+    <select id="listAreasByGrandId" resultClass="mx.gob.economia.scg.model.Area" parameterClass="java.lang.Integer">
+		select area.ID_AREA, area.ID_AREA_PADRE, area.AREA, area.CLAVE,
+                       area.TIPO, area.ACTIVO, area.UNIDAD_ADMINISTRATIVA, area.LISTADO_AREA, area.ENVIO_CORREO
+                from Area area
+                where area.id_area_padre = (select id_area_padre from area where id_area = #value#)
+                and area.activo=1
+                order by area.AREA
+    </select>
+    <select id="listAreasByDespliegue" resultClass="mx.gob.economia.scg.model.Area" parameterClass="java.lang.Integer">
+        SELECT *  FROM(
+        (select area.ID_AREA, area.ID_AREA_PADRE, area.AREA, area.CLAVE,
+        area.TIPO, area.ACTIVO, area.UNIDAD_ADMINISTRATIVA, area.LISTADO_AREA, area.ENVIO_CORREO
+        from Area area where area.id_area_padre
+        in(SELECT ID_AREA_PADRE_DESPLIEGUE FROM AREA_DESPLIEGUE WHERE ID_AREA_SESSION= #value# )
+        and area.activo=1) UNION
+        (select area.ID_AREA, area.ID_AREA_PADRE, area.AREA, area.CLAVE,
+        area.TIPO, area.ACTIVO, area.UNIDAD_ADMINISTRATIVA, area.LISTADO_AREA, area.ENVIO_CORREO from Area area where area.id_area_padre = #value#
+        and area.activo=1)) VISTA ORDER BY VISTA.AREA
+    </select>
+    
+    <select id="listAreasDescendenciaByParentId" resultClass="mx.gob.economia.scg.model.Area" parameterClass="java.lang.Integer">
+                select id_area,id_area_padre,area,clave, tipo,activo,unidad_administrativa,envio_correo
+                from area connect by prior id_area=id_area_padre start with id_area_padre = #value# order by area
+    </select>    
+    
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Area">
+        <selectKey keyProperty="id_area" resultClass="int">
+			SELECT seq_area.nextval FROM dual
+        </selectKey>
+		insert into area(id_area,id_area_padre,area,clave,tipo,activo, unidad_administrativa, listado_area, envio_correo)
+ 		values(#id_area#,#id_area_padre#,#area#,#clave#,#tipo#,#activo#,#unidad_administrativa#,#listado_area#,$envio_correo$)
+    </insert>
+    <update id="update" parameterClass="mx.gob.economia.scg.model.Area">
+		UPDATE area SET 
+			area=#area#,clave=#clave#, tipo=#tipo#, 
+			activo=#activo#, unidad_administrativa=#unidad_administrativa#,listado_area=#listado_area#, envio_correo=#envio_correo#
+		WHERE id_area=#id_area#
+    </update>
+
+    <select id="countInAreaDespliegue" resultClass="java.lang.Integer" parameterClass="java.lang.Integer">
+            select id_area_padre_despliegue
+            from area_despliegue
+            where id_area_session = #idArea_ses#
+    </select>
+    <select id="listAreaById" resultClass="mx.gob.economia.scg.model.Area" parameterClass="java.lang.Integer">
+		select area.ID_AREA, area.ID_AREA_PADRE, area.AREA, area.CLAVE,
+                       area.TIPO, area.ACTIVO, area.UNIDAD_ADMINISTRATIVA, area.LISTADO_AREA, area.ENVIO_CORREO
+                from Area area
+                where area.id_area = #value#
+                and area.activo=1
+                order by area.AREA
+    </select>
+</sqlMap>

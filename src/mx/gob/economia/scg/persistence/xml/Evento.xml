@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Evento">
+    <select id="listEventos" resultClass="mx.gob.economia.scg.model.Evento" parameterClass="java.lang.Integer">
+		SELECT id_evento, evento, activo, id_area FROM evento
+		WHERE id_area = #id_area# and activo = 1 AND id_evento>-1
+                ORDER BY evento
+    </select>
+    <select id="listEventosCriterio" resultClass="mx.gob.economia.scg.model.Evento" parameterClass="mx.gob.economia.scg.model.CriterioEvento">
+        SELECT * FROM (
+         SELECT vista.*, rownum r FROM(
+          SELECT id_evento, evento, activo, id_area, rownum fila
+          FROM evento
+          WHERE id_evento>-1
+          AND activo=1
+        <dynamic prepend="AND">
+            <isNotNull prepend="" property="evento.area.id_area">
+                <isNotEqual prepend="AND" property="evento.area.id_area" compareValue="-1">
+					id_area =  #evento.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="evento.evento">
+                <isNotEqual prepend="AND" property="evento.evento" compareValue="">
+					evento LIKE '%$evento.evento$%'
+                </isNotEqual>
+            </isNotNull>            
+        </dynamic>
+            ORDER BY evento) vista WHERE ROWNUM<![CDATA[ <= ]]>#paginador.maximo#
+                ) WHERE r<![CDATA[ >= ]]>#paginador.minimo#
+    </select>
+    <select id="countEventosCriterio" resultClass="java.lang.Integer" parameterClass="mx.gob.economia.scg.model.CriterioEvento">
+        SELECT count(*) FROM evento
+        WHERE id_evento>-1 AND activo=1
+        <dynamic prepend="AND">
+             <isNotNull prepend="" property="evento.area.id_area">
+                <isNotEqual prepend="AND" property="evento.area.id_area" compareValue="-1">
+					id_area =  #evento.area.id_area#
+                </isNotEqual>
+            </isNotNull>
+            <isNotNull prepend="" property="evento.evento">
+                <isNotEqual prepend="AND" property="evento.evento" compareValue="">
+					evento LIKE '%$evento.evento$%'
+                </isNotEqual>
+            </isNotNull>            
+        </dynamic>
+    </select>    
+    <select id="getEvento" resultClass="mx.gob.economia.scg.model.Evento" parameterClass="java.lang.Integer">
+		SELECT id_evento, evento, activo, id_area FROM evento
+		WHERE id_evento = #id_evento# AND activo = 1
+    </select>
+    <select id="getById" resultClass="mx.gob.economia.scg.model.Evento" parameterClass="java.lang.Integer">
+		SELECT id_evento, evento, activo, id_area FROM evento
+		WHERE id_evento = #id_evento#
+    </select>
+
+    <insert id="insert" parameterClass="mx.gob.economia.scg.model.Evento">
+        <selectKey keyProperty="id_evento" resultClass="int">
+			SELECT seq_evento.nextval FROM dual
+        </selectKey>
+		INSERT INTO evento (id_evento, evento, activo, id_area)
+		VALUES (#id_evento#, #evento#, #activo#, #id_area#)
+    </insert>
+    
+    <update id="update" parameterClass="mx.gob.economia.scg.model.Evento">
+	    UPDATE evento SET evento = #evento#, activo = #activo#, id_area = #id_area#
+	    WHERE id_evento=#id_evento#
+    </update>
+    <delete id="delete" parameterClass="java.lang.Integer" >
+		DELETE FROM  evento WHERE id_evento = #id_evento#
+    </delete >
+</sqlMap>

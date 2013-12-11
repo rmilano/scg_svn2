@@ -1,0 +1,28 @@
+        
+
+input.tree
+{
+    background-color: #9c9e9f;
+    font-weight: bold;
+    color: #ba2025;
+}
+
+.rojo {
+    background-color: #BA2025;
+    color: #ffffff;
+}
+
+.amarillo {
+    background-color: #BA2025;
+    color: #ffffff;
+}
+
+.verde {
+    background-color: #1b6a3f;
+    color: #ffffff;
+}
+
+.confidencial {
+    background-color: #ba2025;
+    color: #ffffff;
+}
