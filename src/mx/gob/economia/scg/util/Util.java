@@ -355,7 +355,7 @@ public class Util
 
     public static String getHtml(String contenido)
     {
-        return "<HTML><head><meta charset='ISO-8859-1'></head><BODY><TABLE BORDER='0'><TR><TD COLSPAN='3'><img src='cid:cidimage01' /></TD></TR>"
+        return "<HTML><head><meta charset='UTF-8'></head><BODY><TABLE BORDER='0'><TR><TD COLSPAN='3'><img src='cid:cidimage01' /></TD></TR>"
                 + "<TR HEIGHT='200px' VALIGN='TOP'><TD WIDTH='5%'>&nbsp;</TD><TD WIDTH='90%'>"
                 + contenido
                 + "</TD><TD WIDTH='5%'>&nbsp;</TD></TR>"

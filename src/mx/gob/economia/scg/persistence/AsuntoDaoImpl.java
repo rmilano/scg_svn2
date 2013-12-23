@@ -300,7 +300,23 @@ public class AsuntoDaoImpl extends SqlMapClientTemplate implements AsuntoDao
                     asuntoEmpMap);
         }
         // Guarda documentos adjuntos de un asunto en repositorio
+        // Incluir documentos adjuntos a todos los destinatarios
+        // Ticket 146
+        // Rodolfo Milano Oliveros
         List<Documento> documentos = asunto.getAsunto_detalle().getDocumentos();
+        List<Documento> documentosActuales = new ArrayList<Documento>();
+
+        // List<Documento> documentos = new ArrayList<Documento>();
+        List<AsuntoDetalle> detallesAsuntos = asunto.getAsuntos_detalles();
+        for (int i = 0; i < detallesAsuntos.size(); i++)
+        {
+            documentosActuales = detallesAsuntos.get(i).getDocumentos();
+            for (int j = 0; j < documentosActuales.size(); j++)
+            {
+                documentos.add(documentosActuales.get(j));
+            }
+        }
+        
         for (int i = 0; i < documentos.size(); i++)
         {
             Documento documento = documentos.get(i);

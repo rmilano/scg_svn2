@@ -1,7 +1,7 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/WebContent/imagenes/color
 https://svn.economia.gob.mx/svn/gestion
 
@@ -128,40 +128,6 @@ has-props
 
 984
 
-custom_indic.gif
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-04660eb352eb259581a36a0fe8da2d4d
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-86
-
 select2.png
 file
 
@@ -195,6 +161,40 @@ has-props
 
 
 518
+
+custom_indic.gif
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+04660eb352eb259581a36a0fe8da2d4d
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+86
 
 colorpicker_indic.gif
 file
@@ -264,40 +264,6 @@ has-props
 
 1008
 
-custom_hsb_b.png
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-b45588ca2fe9ba46673862300fcd3083
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1097
-
 colorpicker_rgb_b.png
 file
 
@@ -331,6 +297,40 @@ has-props
 
 
 970
+
+custom_hsb_b.png
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+b45588ca2fe9ba46673862300fcd3083
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1097
 
 blank.gif
 file
@@ -366,40 +366,6 @@ has-props
 
 49
 
-custom_background.png
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-06c91f7ae1561ccd8f1c79119529600d
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1916
-
 colorpicker_hsb_b.png
 file
 
@@ -433,6 +399,40 @@ has-props
 
 
 970
+
+custom_background.png
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+06c91f7ae1561ccd8f1c79119529600d
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1916
 
 custom_rgb_g.png
 file

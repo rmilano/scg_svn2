@@ -1514,6 +1514,16 @@ public class AsuntoServiceImpl implements AsuntoService
 
             for (Empleado destinatario : asunto.getAsunto_detalle().getEmpleadosDest()){
                     String coment = destinatario.getComentarioSaltos().toUpperCase();
+                    
+                    byte[] asuntoInISO = asunto.getAsunto().getBytes("ISO-8859-1");
+                    String asuntoInUtf_8 = new String(asuntoInISO, "UTF-8");
+                    
+                    byte[] descripcionInISO = asunto.getDescripcionSaltos().toUpperCase().getBytes("ISO-8859-1");
+                    String descripcionInUtf_8 = new String(descripcionInISO, "UTF-8");
+
+                    byte[] comentInISO8 = coment.getBytes("ISO-8859-1");
+                    String comentInUtf_8 = new String(comentInISO8, "UTF-8");
+                    
                     String contenido = "<BR/><b>Buen d&iacute;a:</b>"
                         + "<BR/>"
                         + "<BR/><b>Se registr&oacute; un nuevo asunto con la siguiente informaci&oacute;n:</b>"
@@ -1522,12 +1532,12 @@ public class AsuntoServiceImpl implements AsuntoService
                         + "<BR/><font color='#BA2025'><b>Folio: </b></font>"
                         + asunto.getFolio()
                         + "<BR/><font color='#BA2025'><b>Asunto: </b></font>"
-                        + asunto.getAsunto()
+                        + asuntoInUtf_8
                         + "<BR/><font color='#BA2025'><b>Descripci&oacute;n: </b></font>";
                         if (asunto.getConfidencial().equals(1))
                             contenido = contenido + "Confidencial.";
                         else
-                            contenido = contenido + ((coment==null||coment=="")?asunto.getDescripcionSaltos().toUpperCase():coment);
+                            contenido = contenido + ((coment==null||coment=="")?descripcionInUtf_8:comentInUtf_8);
                         contenido = contenido + "<BR/><font color='#BA2025'><b>Fecha: </b></font>"
                         + asunto.getFh_oficioDDMMYYYY()
                         + "<BR/><font color='#BA2025'><b>Fecha de recepci&oacute;n: </b></font>"
@@ -1595,9 +1605,19 @@ public class AsuntoServiceImpl implements AsuntoService
             Empleado empleado_remi = empleadoService.getEmpleadoById(asunto.getAsunto_detalle().getEmpleado_remi().getId_empleado());
             Empleado empleado_dest = empleadoService.getEmpleadoById(asunto.getAsunto_detalle().getEmpleado_dest().getId_empleado());
             // Contenido del mensaje
+
+            byte[] asuntoInISO = asunto.getAsunto().getBytes("ISO-8859-1");
+            String asuntoInUtf_8 = new String(asuntoInISO, "UTF-8");
+
+            byte[] descripcionInISO8 = asunto.getDescripcionSaltos().toUpperCase().getBytes("ISO-8859-1");
+            String descripcionInUtf_8 = new String(descripcionInISO8, "UTF-8");
+
+            byte[] comentInISO8 = asunto.getAsunto_detalle().getComentarioSaltos().toUpperCase().getBytes("ISO-8859-1");
+            String comentInUtf_8 = new String(comentInISO8, "UTF-8");
+
             String contenido = "<BR/><b>Buen d&iacute;a:</b>" + "<BR/><BR/>";
             Integer estatus = asunto.getAsunto_detalle().getEstatus();
-            
+
             if (estatus.equals(Constantes.ATENDIDO))
                 contenido += "<BR/><b>Le notificamos que se le ha asignado un asunto para validarlo, con la siguiente informaci&oacute;n:</b>";
             else if (estatus.equals(Constantes.TURNADO))
@@ -1612,12 +1632,12 @@ public class AsuntoServiceImpl implements AsuntoService
                     + "<BR/><font color='#BA2025'><b>Folio: </b></font>"
                     + asunto.getFolio()
                     + "<BR/><font color='#BA2025'><b>Asunto: </b></font>"
-                    + asunto.getAsunto()
+                    + asuntoInUtf_8
                     + "<BR/><font color='#BA2025'><b>Descripci&oacute;n: </b></font>";
                     if (asunto.getConfidencial().equals(1))
                         contenido = contenido + "Confidencial.";
                     else
-                        contenido = contenido + asunto.getDescripcionSaltos().toUpperCase();
+                        contenido = contenido + descripcionInUtf_8;
                     contenido= contenido + "<BR/><font color='#BA2025'><b>Fecha del documento: </b></font>"
                     + asunto.getFh_oficioDDMMYYYY()
                     + "<BR/><font color='#BA2025'><b>Fecha l&iacute;mite de Atenci&oacute;n: </b></font>"
@@ -1630,7 +1650,7 @@ public class AsuntoServiceImpl implements AsuntoService
                     if (asunto.getConfidencial().equals(1))
                         contenido = contenido + "Confidencial.";
                     else
-                        contenido = contenido + asunto.getAsunto_detalle().getComentarioSaltos().toUpperCase();
+                        contenido = contenido + comentInUtf_8;
                     contenido = contenido + "<BR/>Le sugerimos ingresar al Sistema Automatizado de Control de Gesti&oacute;n para darle seguimiento en la siguiente direcci&oacuten:"
                     + "<BR/>http://gestion.economia.gob.mx/";
 
@@ -1658,12 +1678,12 @@ public class AsuntoServiceImpl implements AsuntoService
                     + "<BR/><font color='#BA2025'><b>Folio: </b></font>"
                     + asunto.getFolio()
                     + "<BR/><font color='#BA2025'><b>Asunto: </b></font>"
-                    + asunto.getAsunto()
+                    + asuntoInUtf_8
                     + "<BR/><font color='#BA2025'><b>Descripci&oacute;n: </b></font>";
                     if (asunto.getConfidencial().equals(1))
                         contenidoCcp = contenidoCcp + "Confidencial.";
                     else
-                        contenidoCcp = contenidoCcp + asunto.getDescripcionSaltos().toUpperCase();
+                        contenidoCcp = contenidoCcp + descripcionInUtf_8;
                     contenidoCcp= contenidoCcp + "<BR/><font color='#BA2025'><b>Fecha: </b></font>"
                     + asunto.getFh_oficioDDMMYYYY()
                     + "<BR/><font color='#BA2025'><b>Fecha l&iacute;mite de Atencion: </b></font>"
@@ -1676,7 +1696,7 @@ public class AsuntoServiceImpl implements AsuntoService
                     if (asunto.getConfidencial().equals(1))
                         contenidoCcp = contenidoCcp + "Confidencial.";
                     else
-                        contenidoCcp = contenidoCcp + asunto.getAsunto_detalle().getComentarioSaltos().toUpperCase();
+                        contenidoCcp = contenidoCcp + comentInUtf_8;
                     contenidoCcp= contenidoCcp + "<BR/><b>Le sugerimos ingresar al Sistema Automátizado de Control de Gesti&oacute;n para darle seguimiento en la siguiente direcci&oacute;."
                     + "<BR/>http://gestion.economia.gob.mx/";
 

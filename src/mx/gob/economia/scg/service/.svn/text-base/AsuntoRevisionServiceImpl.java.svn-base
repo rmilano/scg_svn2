@@ -222,7 +222,17 @@ public class AsuntoRevisionServiceImpl extends AsuntoServiceImpl implements Asun
     {
         Asunto asunto2 = new Asunto();
         asunto2.setFolio(asunto.getFolio());
-        asunto2.setEstatus(Constantes.PENDIENTE);        
+        asunto2.setEstatus(Constantes.PENDIENTE);
+        // Guardar Asunto en estatus=1 (pendiente) si el remitente y el destinatario
+        // pertenecen a áreas internas
+        // Ticket 152
+        // Rodolfo Milano Oliveros
+        Integer tipoAreaRemite = asunto.getAsunto_detalle().getEmpleado_remi().getArea().getTipo();
+        Integer tipoAreaDestino = asunto.getAsunto_detalle().getEmpleado_dest().getArea().getTipo();
+        if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
+            asunto2.setEstatus(Constantes.TURNADO);
+        }
+
         // se actualiza los asunto con el mismo numero de folio
         this.asuntoDao.updateEstatusAsunto(asunto2);
         // Se actualizan los detalles del asunto
@@ -234,8 +244,22 @@ public class AsuntoRevisionServiceImpl extends AsuntoServiceImpl implements Asun
         AsuntoDetalle asuntoDetalle = new AsuntoDetalle();
         asuntoDetalle.setIds_asunto(idsAsuntos);
         asuntoDetalle.setEstatus(Constantes.PENDIENTE);
+        // Guardar Asunto en estatus=1 (pendiente) si el remitente y el destinatario
+        // pertenecen a áreas internas
+        // Ticket 152
+        // Rodolfo Milano Oliveros
+        if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
+            asuntoDetalle.setEstatus(Constantes.TURNADO);
+        }
         this.asuntoDao.updateEstatusAsuntoDetalle(asuntoDetalle);
         asunto.setEstatus(Constantes.PENDIENTE);
+        // Guardar Asunto en estatus=1 (pendiente) si el remitente y el destinatario
+        // pertenecen a áreas internas
+        // Ticket 152
+        // Rodolfo Milano Oliveros
+        if (tipoAreaRemite == 0 && tipoAreaDestino == 0){
+            asunto.setEstatus(Constantes.TURNADO);
+        }
         asunto.setTipo_actualizacion(1);
         this.asuntoCapturaActualizacionDao.updateAsuntoCapturaActualizacion(asunto);
         if ((asunto.getEstatus().equals(Constantes.TURNADO)||asunto.getEstatus().equals(Constantes.PENDIENTE))

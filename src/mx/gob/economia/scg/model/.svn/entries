@@ -1,14 +1,14 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/model
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-11-01T15:54:54.035875Z
-594
+2013-12-02T18:06:05.942125Z
+607
 rodolfo.milano
 
 
@@ -198,7 +198,7 @@ victor.carrera
 
 Asunto.java
 file
-601
+
 
 
 
@@ -468,6 +468,40 @@ victor.carrera
 
 819
 
+AsuntosPorEstatus.java
+file
+
+
+
+
+2013-07-02T19:16:26.504797Z
+172615bf928010ebc26fcf43f874960f
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+556
+
 Tema.java
 file
 
@@ -535,40 +569,6 @@ alejandro.gonzalez
 
 
 11266
-
-AsuntosPorEstatus.java
-file
-
-
-
-
-2013-07-02T19:16:26.504797Z
-172615bf928010ebc26fcf43f874960f
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-556
 
 FirmaAsunto.java
 file
@@ -638,40 +638,6 @@ victor.carrera
 
 954
 
-DocumentoBlob.java
-file
-
-
-
-
-2013-07-02T19:16:26.508797Z
-d34a9baff7c7187810f98ce48b367384
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1987
-
 EmpleadoAreaRol.java
 file
 
@@ -705,6 +671,40 @@ victor.carrera
 
 
 941
+
+DocumentoBlob.java
+file
+
+
+
+
+2013-07-02T19:16:26.508797Z
+d34a9baff7c7187810f98ce48b367384
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1987
 
 Documento.java
 file
@@ -774,17 +774,17 @@ victor.carrera
 
 8176
 
-AsuntoCapturaActualizacion.java
+Instruccion.java
 file
 
 
 
 
-2013-07-02T19:16:26.515798Z
-0348ee215c04eeb6c497229962da1ade
-2012-01-31T00:58:19.039000Z
-422
-alejandro.gonzalez
+2013-07-02T19:16:26.517798Z
+92704f4a47b6eb4a51bcd063d0bb4501
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
 
 
 
@@ -806,7 +806,7 @@ alejandro.gonzalez
 
 
 
-13241
+2580
 
 Evento.java
 file
@@ -842,17 +842,17 @@ alejandro.gonzalez
 
 2695
 
-Instruccion.java
+AsuntoCapturaActualizacion.java
 file
 
 
 
 
-2013-07-02T19:16:26.517798Z
-92704f4a47b6eb4a51bcd063d0bb4501
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
+2013-07-02T19:16:26.515798Z
+0348ee215c04eeb6c497229962da1ade
+2012-01-31T00:58:19.039000Z
+422
+alejandro.gonzalez
 
 
 
@@ -874,7 +874,7 @@ victor.carrera
 
 
 
-2580
+13241
 
 CriterioInstruccion.java
 file
@@ -1048,7 +1048,7 @@ alejandro.gonzalez
 
 CriterioAsunto.java
 file
-607
+
 
 
 

@@ -1,7 +1,7 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/WebContent/WEB-INF/lib
 https://svn.economia.gob.mx/svn/gestion
 
@@ -570,14 +570,14 @@ has-props
 
 402335
 
-axis2-1.6.1-wso2v3.jar
+woden-1.0.0.M8-wso2v1.jar
 file
 
 
 
 
-2013-07-02T19:17:30.822228Z
-b1354b1c2a899b107e99fe889ffc7ff6
+2013-07-02T19:17:30.746220Z
+52292b5584885d1c46e629c055f38118
 2012-05-18T23:19:12.054625Z
 491
 alejandro.gonzalez
@@ -602,7 +602,7 @@ has-props
 
 
 
-8619943
+359999
 
 commons-fileupload-1.2.0-wso2v1.jar
 file
@@ -638,14 +638,14 @@ has-props
 
 48338
 
-woden-1.0.0.M8-wso2v1.jar
+axis2-1.6.1-wso2v3.jar
 file
 
 
 
 
-2013-07-02T19:17:30.746220Z
-52292b5584885d1c46e629c055f38118
+2013-07-02T19:17:30.822228Z
+b1354b1c2a899b107e99fe889ffc7ff6
 2012-05-18T23:19:12.054625Z
 491
 alejandro.gonzalez
@@ -670,41 +670,7 @@ has-props
 
 
 
-359999
-
-jettison-1.1.0-wso2v1.jar
-file
-
-
-
-
-2013-07-02T19:17:30.839229Z
-8ad6aafe1b4eaba43697fb8762345594
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-63827
+8619943
 
 org.wso2.carbon.security.mgt.stub-3.2.0.jar
 file
@@ -739,6 +705,40 @@ has-props
 
 
 221915
+
+jettison-1.1.0-wso2v1.jar
+file
+
+
+
+
+2013-07-02T19:17:30.839229Z
+8ad6aafe1b4eaba43697fb8762345594
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+63827
 
 axiom-1.2.11-wso2v1.jar
 file
@@ -808,40 +808,6 @@ has-props
 
 18085
 
-commons-modeler-2.0.jar
-file
-
-
-
-
-2013-07-02T19:17:30.888234Z
-8b068defadbaf3b934becbab7dbec0ad
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-106911
-
 axis2-json-1.6.1-wso2v1.jar
 file
 
@@ -875,6 +841,40 @@ has-props
 
 
 15001
+
+commons-modeler-2.0.jar
+file
+
+
+
+
+2013-07-02T19:17:30.888234Z
+8b068defadbaf3b934becbab7dbec0ad
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+106911
 
 ibatis-common-2.jar
 file
@@ -1012,40 +1012,6 @@ has-props
 
 9692
 
-ojdbc14.jar
-file
-
-
-
-
-2013-07-02T19:17:31.078253Z
-8ae726d3a32c3cc3adbbe6793ade57f8
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1540457
-
 org.wso2.carbon.dataservices.core-3.2.2.jar
 file
 
@@ -1079,6 +1045,40 @@ has-props
 
 
 375590
+
+ojdbc14.jar
+file
+
+
+
+
+2013-07-02T19:17:31.078253Z
+8ae726d3a32c3cc3adbbe6793ade57f8
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1540457
 
 jibx-1.2.1-wso2v1.jar
 file
@@ -2171,40 +2171,6 @@ has-props
 
 18505
 
-ehcache-1.5.0-wso2v1.jar
-file
-
-
-
-
-2013-07-02T19:17:30.490195Z
-0615ad2561e001c8dbe7812e2b1ee1e4
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-265914
-
 commons-dbcp-1.4.0-wso2v1.jar
 file
 
@@ -2238,6 +2204,40 @@ has-props
 
 
 154934
+
+ehcache-1.5.0-wso2v1.jar
+file
+
+
+
+
+2013-07-02T19:17:30.490195Z
+0615ad2561e001c8dbe7812e2b1ee1e4
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+265914
 
 org.wso2.carbon.security.mgt-3.2.2.jar
 file
@@ -2681,40 +2681,6 @@ has-props
 
 168446
 
-commons-pool-1.5.0-wso2v1.jar
-file
-
-
-
-
-2013-07-02T19:17:30.681214Z
-8587feb3f50b5cc6d372dd37acca16db
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-91023
-
 poi-3.2-FINAL-20081019.jar
 file
 
@@ -2748,6 +2714,40 @@ has-props
 
 
 1428690
+
+commons-pool-1.5.0-wso2v1.jar
+file
+
+
+
+
+2013-07-02T19:17:30.681214Z
+8587feb3f50b5cc6d372dd37acca16db
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+91023
 
 mail.jar
 file
@@ -2783,40 +2783,6 @@ has-props
 
 270394
 
-XmlSchema-1.4.7-wso2v1.jar
-file
-
-
-
-
-2013-07-02T19:17:30.739219Z
-e614803ddceeb35c7dee48079142f117
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-141581
-
 spring-webmvc-struts.jar
 file
 
@@ -2850,6 +2816,40 @@ has-props
 
 
 37017
+
+XmlSchema-1.4.7-wso2v1.jar
+file
+
+
+
+
+2013-07-02T19:17:30.739219Z
+e614803ddceeb35c7dee48079142f117
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+141581
 
 commons-collections-3.1.jar
 file
@@ -2987,40 +2987,6 @@ has-props
 
 154985
 
-displaytag-1.2.jar
-file
-
-
-
-
-2013-07-02T19:17:30.897235Z
-2e1842497704aa2d5c55ec23b566b030
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-219121
-
 commons-logging.jar
 file
 
@@ -3054,6 +3020,40 @@ has-props
 
 
 38015
+
+displaytag-1.2.jar
+file
+
+
+
+
+2013-07-02T19:17:30.897235Z
+2e1842497704aa2d5c55ec23b566b030
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+219121
 
 activation.jar
 file
@@ -3123,40 +3123,6 @@ has-props
 
 2163567
 
-org.wso2.carbon.caching.core-3.2.2.jar
-file
-
-
-
-
-2013-07-02T19:17:30.965242Z
-14671d65b7821d4d5975fd290aa70809
-2012-05-18T23:19:12.054625Z
-491
-alejandro.gonzalez
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-39977
-
 commons-el-1.0.jar
 file
 
@@ -3190,6 +3156,40 @@ has-props
 
 
 112341
+
+org.wso2.carbon.caching.core-3.2.2.jar
+file
+
+
+
+
+2013-07-02T19:17:30.965242Z
+14671d65b7821d4d5975fd290aa70809
+2012-05-18T23:19:12.054625Z
+491
+alejandro.gonzalez
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+39977
 
 org.wso2.carbon.authenticator.stub-3.2.0.jar
 file
@@ -3293,40 +3293,6 @@ has-props
 
 28337
 
-acegi-security-1.0.7.jar
-file
-
-
-
-
-2013-07-02T19:17:31.044250Z
-355696bb2e3d3c9892543396271d4d79
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-548722
-
 org.wso2.carbon.discovery.core-3.2.0.jar
 file
 
@@ -3361,14 +3327,14 @@ has-props
 
 63573
 
-lucene-analyzers.jar
+acegi-security-1.0.7.jar
 file
 
 
 
 
-2013-07-02T19:17:31.052251Z
-e1fc6adf34135b7b8933bda84d3557af
+2013-07-02T19:17:31.044250Z
+355696bb2e3d3c9892543396271d4d79
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -3393,7 +3359,7 @@ has-props
 
 
 
-144607
+548722
 
 xstream-1.3.1.jar
 file
@@ -3428,6 +3394,40 @@ has-props
 
 
 431406
+
+lucene-analyzers.jar
+file
+
+
+
+
+2013-07-02T19:17:31.052251Z
+e1fc6adf34135b7b8933bda84d3557af
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+144607
 
 log4j-1.2.9.jar
 file
@@ -3667,40 +3667,6 @@ has-props
 
 822794
 
-displaytag-export-poi-1.2.jar
-file
-
-
-
-
-2013-07-02T19:17:31.229268Z
-2a66b187e27a54ddd76ad43684abaac5
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12758
-
 axis2-jaxbri-1.6.1-wso2v1.jar
 file
 
@@ -3734,6 +3700,40 @@ has-props
 
 
 23529
+
+displaytag-export-poi-1.2.jar
+file
+
+
+
+
+2013-07-02T19:17:31.229268Z
+2a66b187e27a54ddd76ad43684abaac5
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12758
 
 struts.jar
 file
@@ -4143,40 +4143,6 @@ has-props
 
 2284807
 
-commons-lang-2.3.jar
-file
-
-
-
-
-2013-07-02T19:17:31.612307Z
-dcdcbb47176603907c9f79a1349193eb
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-245274
-
 lucene-snowball.jar
 file
 
@@ -4210,6 +4176,40 @@ has-props
 
 
 113732
+
+commons-lang-2.3.jar
+file
+
+
+
+
+2013-07-02T19:17:31.612307Z
+dcdcbb47176603907c9f79a1349193eb
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+245274
 
 commons-beanutils.jar
 file

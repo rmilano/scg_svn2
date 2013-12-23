@@ -1,14 +1,14 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/persistence
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-11-01T15:52:43.004625Z
-593
+2013-12-06T17:27:45.129625Z
+608
 rodolfo.milano
 
 
@@ -604,17 +604,17 @@ victor.carrera
 
 996
 
-EventoDaoImpl.java
+InstruccionDaoImpl.java
 file
 
 
 
 
-2013-07-02T19:16:27.724919Z
-6f413f66a0dd284f850ebe23243dad60
-2012-05-02T17:42:51.585875Z
-476
-alejandro.gonzalez
+2013-07-02T19:16:27.727919Z
+dac3373168918dcdacc3b3ae3901aa74
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
 
 
 
@@ -636,7 +636,7 @@ alejandro.gonzalez
 
 
 
-1842
+1375
 
 AsuntoCapturaActualizacionDaoImpl.java
 file
@@ -672,17 +672,17 @@ alejandro.gonzalez
 
 1625
 
-InstruccionDaoImpl.java
+EventoDaoImpl.java
 file
 
 
 
 
-2013-07-02T19:16:27.727919Z
-dac3373168918dcdacc3b3ae3901aa74
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
+2013-07-02T19:16:27.724919Z
+6f413f66a0dd284f850ebe23243dad60
+2012-05-02T17:42:51.585875Z
+476
+alejandro.gonzalez
 
 
 
@@ -704,7 +704,7 @@ victor.carrera
 
 
 
-1375
+1842
 
 TipoSeguimientoDao.java
 file
@@ -740,40 +740,6 @@ victor.carrera
 
 541
 
-EmpleadoDao.java
-file
-
-
-
-
-2013-07-04T18:28:22.643147Z
-9c45812c75db58a0a728fb6fc3203fdd
-2013-07-04T22:04:23.035875Z
-538
-rodolfo.milano
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1629
-
 TemaDao.java
 file
 
@@ -807,6 +773,40 @@ victor.carrera
 
 
 755
+
+EmpleadoDao.java
+file
+
+
+
+
+2013-07-04T18:28:22.643147Z
+9c45812c75db58a0a728fb6fc3203fdd
+2013-07-04T22:04:23.035875Z
+538
+rodolfo.milano
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1629
 
 TipoDocumentoDao.java
 file
@@ -878,7 +878,7 @@ rodolfo.milano
 
 AsuntoDaoImpl.java
 file
-602
+
 
 
 
@@ -909,9 +909,6 @@ rodolfo.milano
 
 
 43667
-
-xml
-dir
 
 DocumentoBlobDao.java
 file
@@ -947,6 +944,9 @@ alejandro.gonzalez
 
 553
 
+xml
+dir
+
 PrioridadDaoImpl.java
 file
 
@@ -981,40 +981,6 @@ victor.carrera
 
 870
 
-EventoDao.java
-file
-
-
-
-
-2013-07-02T19:16:27.744921Z
-531b1b4ffcac1beb2a6b389243a568bf
-2012-05-02T17:42:51.585875Z
-476
-alejandro.gonzalez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-624
-
 AsuntoCapturaActualizacionDao.java
 file
 
@@ -1048,6 +1014,40 @@ alejandro.gonzalez
 
 
 813
+
+EventoDao.java
+file
+
+
+
+
+2013-07-02T19:16:27.744921Z
+531b1b4ffcac1beb2a6b389243a568bf
+2012-05-02T17:42:51.585875Z
+476
+alejandro.gonzalez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+624
 
 InstruccionDao.java
 file
@@ -1153,7 +1153,7 @@ rodolfo.milano
 
 AsuntoDao.java
 file
-602
+
 
 
 

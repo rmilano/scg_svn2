@@ -1,14 +1,14 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/util
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-10-18T19:38:42.145250Z
-588
+2013-12-06T18:24:43.145250Z
+610
 alejandro.gonzalez
 
 
@@ -338,10 +338,10 @@ file
 
 
 
-2013-10-18T19:45:10.595178Z
-f66e482e346ba4434614444eca45349d
-2013-10-18T19:38:42.145250Z
-588
+2013-12-19T21:42:14.700654Z
+f60b6b5a21be0231c968e3c242a60dbe
+2013-12-06T18:24:43.145250Z
+610
 alejandro.gonzalez
 
 
@@ -364,7 +364,7 @@ alejandro.gonzalez
 
 
 
-14532
+14527
 
 Compuesto.java
 file

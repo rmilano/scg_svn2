@@ -1,7 +1,7 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/WebContent/jsp
 https://svn.economia.gob.mx/svn/gestion
 
@@ -133,13 +133,10 @@ dir
 inicio
 dir
 
-js
-dir
-
 turnado
 dir
 
-finalizado
+js
 dir
 
 taglibs.jsp
@@ -175,6 +172,9 @@ victor.carrera
 
 
 475
+
+finalizado
+dir
 
 autenticacion.jsp
 file
@@ -244,6 +244,9 @@ victor.carrera
 
 1575
 
+bandeja
+dir
+
 error.jsp
 file
 
@@ -278,13 +281,10 @@ alejandro.gonzalez
 
 519
 
-bandeja
+css
 dir
 
 tipo_documento
-dir
-
-css
 dir
 
 expediente

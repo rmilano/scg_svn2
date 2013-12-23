@@ -1,7 +1,7 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/WebContent/imagenes/jquery-ui
 https://svn.economia.gob.mx/svn/gestion
 
@@ -25,40 +25,6 @@ rodolfo.milano
 
 
 3190096e-2e56-2746-9f61-438c76f444f6
-
-ui-bg_flat_75_ffffff_40x100.png
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-8692e6efddf882acbff144c38ea7dfdf
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-178
 
 Thumbs.db
 file
@@ -93,6 +59,40 @@ has-props
 
 
 7680
+
+ui-bg_flat_75_ffffff_40x100.png
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+8692e6efddf882acbff144c38ea7dfdf
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+178
 
 ui-bg_glass_65_ffffff_1x400.png
 file
@@ -162,40 +162,6 @@ has-props
 
 4369
 
-ui-bg_flat_0_aaaaaa_40x100.png
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-2a44fbdb7360c60122bcf6dcef0387d8
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-180
-
 calendar.png
 file
 
@@ -230,14 +196,14 @@ has-props
 
 1878
 
-ui-icons_222222_256x240.png
+ui-bg_flat_0_aaaaaa_40x100.png
 file
 
 
 
 
 2013-08-07T22:52:22.000000Z
-ebe6b6902a408fbf9cac6379a1477525
+2a44fbdb7360c60122bcf6dcef0387d8
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -262,7 +228,7 @@ has-props
 
 
 
-4369
+180
 
 hori_large.png
 file
@@ -297,6 +263,40 @@ has-props
 
 
 2524
+
+ui-icons_222222_256x240.png
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+ebe6b6902a408fbf9cac6379a1477525
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4369
 
 ui-icons_2e83ff_256x240.png
 file
@@ -400,40 +400,6 @@ has-props
 
 4369
 
-ui-bg_glass_75_dadada_1x400.png
-file
-
-
-
-
-2013-08-07T22:52:22.000000Z
-c12c6510dad3ebfa64c8a30e959a2469
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-111
-
 ui-bg_glass_55_fbf9ee_1x400.png
 file
 
@@ -467,6 +433,40 @@ has-props
 
 
 120
+
+ui-bg_glass_75_dadada_1x400.png
+file
+
+
+
+
+2013-08-07T22:52:22.000000Z
+c12c6510dad3ebfa64c8a30e959a2469
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+111
 
 ui-bg_glass_75_e6e6e6_1x400.png
 file

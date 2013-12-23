@@ -1,14 +1,14 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/persistence/xml
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-11-01T15:52:43.004625Z
-593
+2013-12-06T17:27:45.129625Z
+608
 rodolfo.milano
 
 
@@ -28,7 +28,7 @@ rodolfo.milano
 
 Reporte.xml
 file
-608
+
 
 
 
@@ -162,40 +162,6 @@ victor.carrera
 
 332
 
-Tema.xml
-file
-
-
-
-
-2013-07-02T19:16:27.616908Z
-213690f844db9ad11af318a727d30485
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4266
-
 Empleado.xml
 file
 
@@ -230,14 +196,14 @@ alejandro.gonzalez
 
 16825
 
-AsuntoRevision.xml
+Tema.xml
 file
 
 
 
 
-2013-07-02T19:16:27.621908Z
-0855d0a5005f1fb5173c67d6a5fe20bc
+2013-07-02T19:16:27.616908Z
+213690f844db9ad11af318a727d30485
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -262,7 +228,7 @@ victor.carrera
 
 
 
-39902
+4266
 
 FirmaAsunto.xml
 file
@@ -297,6 +263,40 @@ victor.carrera
 
 
 913
+
+AsuntoRevision.xml
+file
+
+
+
+
+2013-07-02T19:16:27.621908Z
+0855d0a5005f1fb5173c67d6a5fe20bc
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+39902
 
 TipoDocumento.xml
 file
@@ -366,40 +366,6 @@ rodolfo.milano
 
 3987
 
-Rol.xml
-file
-
-
-
-
-2013-07-02T19:16:27.626909Z
-4d6bb9ac1cc5a227822eb079913dfd3a
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-898
-
 DocumentoBlob.xml
 file
 
@@ -433,6 +399,40 @@ alejandro.gonzalez
 
 
 1112
+
+Rol.xml
+file
+
+
+
+
+2013-07-02T19:16:27.626909Z
+4d6bb9ac1cc5a227822eb079913dfd3a
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+898
 
 Documento.xml
 file
@@ -468,40 +468,6 @@ alejandro.gonzalez
 
 4840
 
-AsuntoCapturaActualizacion.xml
-file
-
-
-
-
-2013-08-08T15:56:40.187394Z
-1a66e6f5e6d8c3d228d478885564581e
-2013-08-08T16:40:50.895250Z
-548
-rodolfo.milano
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6538
-
 Evento.xml
 file
 
@@ -535,6 +501,40 @@ alejandro.gonzalez
 
 
 3391
+
+AsuntoCapturaActualizacion.xml
+file
+
+
+
+
+2013-08-08T15:56:40.187394Z
+1a66e6f5e6d8c3d228d478885564581e
+2013-08-08T16:40:50.895250Z
+548
+rodolfo.milano
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6538
 
 Instruccion.xml
 file
@@ -606,7 +606,7 @@ victor.carrera
 
 AsuntoDetalle.xml
 file
-603
+
 
 
 
@@ -776,7 +776,7 @@ alejandro.gonzalez
 
 Asunto.xml
 file
-607
+
 
 
 

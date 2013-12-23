@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 66
-/svn/gestion/!svn/ver/588/V8/scg_svn2/src/mx/gob/economia/scg/util
+/svn/gestion/!svn/ver/610/V8/scg_svn2/src/mx/gob/economia/scg/util
 END
 CharsetFilter.java
 K 25
@@ -61,7 +61,7 @@ Util.java
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/gestion/!svn/ver/588/V8/scg_svn2/src/mx/gob/economia/scg/util/Util.java
+/svn/gestion/!svn/ver/610/V8/scg_svn2/src/mx/gob/economia/scg/util/Util.java
 END
 Compuesto.java
 K 25

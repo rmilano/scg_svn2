@@ -1,7 +1,7 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/form
 https://svn.economia.gob.mx/svn/gestion
 
@@ -94,40 +94,6 @@ victor.carrera
 
 185
 
-ConsultaRecepcionForm.java
-file
-
-
-
-
-2013-07-02T19:16:27.233870Z
-ab7365950a069e3c78d76572ab3c7607
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-191
-
 ReporteForm.java
 file
 
@@ -162,14 +128,14 @@ rodolfo.milano
 
 3971
 
-ConsultaRevisadoForm.java
+ConsultaRecepcionForm.java
 file
 
 
 
 
-2013-07-02T19:16:27.236870Z
-00c462e898be0155db04dbc295cf363b
+2013-07-02T19:16:27.233870Z
+ab7365950a069e3c78d76572ab3c7607
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -194,7 +160,7 @@ victor.carrera
 
 
 
-189
+191
 
 ConsultaTurnadoForm.java
 file
@@ -230,14 +196,14 @@ victor.carrera
 
 191
 
-EmpleadoForm.java
+ConsultaRevisadoForm.java
 file
 
 
 
 
-2013-07-02T19:16:27.238870Z
-03cd3dd94bbfcefa009b3fdcdc4b3641
+2013-07-02T19:16:27.236870Z
+00c462e898be0155db04dbc295cf363b
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -262,7 +228,7 @@ victor.carrera
 
 
 
-2410
+189
 
 TemaForm.java
 file
@@ -298,14 +264,14 @@ victor.carrera
 
 2034
 
-ConsultaResumenForm.java
+EmpleadoForm.java
 file
 
 
 
 
-2013-07-02T19:16:27.240870Z
-72d0970751bb3c4517f6b6766d773a7b
+2013-07-02T19:16:27.238870Z
+03cd3dd94bbfcefa009b3fdcdc4b3641
 2011-10-21T23:08:01.280750Z
 259
 victor.carrera
@@ -330,7 +296,7 @@ victor.carrera
 
 
 
-546
+2410
 
 ConsultaConfidencialForm.java
 file
@@ -366,6 +332,40 @@ victor.carrera
 
 193
 
+ConsultaResumenForm.java
+file
+
+
+
+
+2013-07-02T19:16:27.240870Z
+72d0970751bb3c4517f6b6766d773a7b
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+546
+
 ConsultaForm.java
 file
 
@@ -400,40 +400,6 @@ rodolfo.milano
 
 5537
 
-ConsultaFinalizadoForm.java
-file
-
-
-
-
-2013-07-02T19:16:27.243871Z
-c3bfbbd0f9e49ba279b3dc6147efd268
-2011-10-21T23:08:01.280750Z
-259
-victor.carrera
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-191
-
 TipoDocumentoForm.java
 file
 
@@ -467,6 +433,40 @@ victor.carrera
 
 
 1262
+
+ConsultaFinalizadoForm.java
+file
+
+
+
+
+2013-07-02T19:16:27.243871Z
+c3bfbbd0f9e49ba279b3dc6147efd268
+2011-10-21T23:08:01.280750Z
+259
+victor.carrera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+191
 
 ExpedienteForm.java
 file

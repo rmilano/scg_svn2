@@ -1,15 +1,15 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/service
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-11-06T18:12:03.473375Z
-595
-rodolfo.milano
+2013-12-06T18:24:43.145250Z
+610
+alejandro.gonzalez
 
 
 
@@ -236,11 +236,11 @@ file
 
 
 
-2013-11-06T18:14:36.296128Z
-d82539a42e51433c865f22d5965bd78d
-2013-11-06T18:12:03.473375Z
-595
-rodolfo.milano
+2013-12-19T21:42:14.383622Z
+c15819a5189d673f2413440d7f6cd7cd
+2013-12-06T18:24:43.145250Z
+610
+alejandro.gonzalez
 
 
 
@@ -262,7 +262,7 @@ rodolfo.milano
 
 
 
-39746
+40639
 
 DocumentoService.java
 file
@@ -468,40 +468,6 @@ victor.carrera
 
 1995
 
-AutenticacionServiceImpl.java
-file
-
-
-
-
-2013-10-24T18:45:21.028598Z
-79d58ed24184e8a6ae8f241eb6a3a1a6
-2013-10-24T18:38:04.879625Z
-592
-alejandro.gonzalez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2529
-
 TemaServiceImpl.java
 file
 
@@ -569,6 +535,40 @@ alejandro.gonzalez
 
 
 16423
+
+AutenticacionServiceImpl.java
+file
+
+
+
+
+2013-10-24T18:45:21.028598Z
+79d58ed24184e8a6ae8f241eb6a3a1a6
+2013-10-24T18:38:04.879625Z
+592
+alejandro.gonzalez
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2529
 
 ReporteVolanteService.java
 file
@@ -1218,14 +1218,14 @@ victor.carrera
 
 AsuntoServiceImpl.java
 file
-609
+611
 
 
 
-2013-12-02T18:56:39.543665Z
-13a8c3468c10ee034ba70725735b85b1
-2013-12-06T17:36:36.629625Z
-609
+2013-12-19T21:42:14.376622Z
+9c868727c1286321308bb01c5a44938b
+2013-12-19T21:40:32.504625Z
+611
 rodolfo.milano
 
 
@@ -1248,7 +1248,7 @@ rodolfo.milano
 
 
 
-130273
+131854
 
 ServerConfigImpl.java
 file
@@ -1524,7 +1524,7 @@ victor.carrera
 
 AsuntoService.java
 file
-602
+
 
 
 
@@ -1592,20 +1592,15 @@ rodolfo.milano
 
 AsuntoRevisionServiceImpl.java
 file
+611
 
 
 
-
-2013-09-27T17:35:32.811155Z
-e6818681f6fd67b3d73cb8c4df6ee744
-2013-09-25T18:31:29.582750Z
-570
-alejandro.gonzalez
-
-
-
-
-
+2013-12-11T16:54:50.594242Z
+258203945628a79f31e8b166b4c4f6d0
+2013-12-19T21:40:32.504625Z
+611
+rodolfo.milano
 
 
 
@@ -1622,7 +1617,12 @@ alejandro.gonzalez
 
 
 
-15922
+
+
+
+
+
+17027
 
 ServerConfig.java
 file

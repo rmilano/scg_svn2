@@ -665,7 +665,9 @@ public class CapturaAction extends DispatchAction
         // Obtiene los catalogos para los combos de la pantalla de captura
         asuntoService.loadCatalogosCapturaAsunto(request);
         cF.setTiposSeguimiento(this.tipoSeguimientoService.listTipoSeguimientos());
-        cF.setFirmantesVolante(this.empleadoService.listEmpleadosByIdArea(usuarioSession.getId_area()));
+        //cF.setFirmantesVolante(this.empleadoService.listEmpleadosByIdArea(usuarioSession.getId_area()));
+        cF.setFirmantesVolante(this.empleadoService.listEmpleadosByIdAreaOrdFirm(usuarioSession.getId_area()));
+        cF.setFirmantesVolanteRol(this.empleadoService.listByIdAreaOrderByFirmanteRol(usuarioSession.getId_area()));
 
         Integer id_asunto = null;
         request.getSession().setAttribute("arbolExternoOficinaSecretario", Constantes.NO_ACTIVO);

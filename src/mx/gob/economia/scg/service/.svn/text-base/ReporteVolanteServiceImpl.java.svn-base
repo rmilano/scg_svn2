@@ -140,7 +140,29 @@ public class ReporteVolanteServiceImpl implements ReporteVolanteService
                 if (empleado.getPrioridad().getId_prioridad().equals(-1)){
                     empleado.getPrioridad().setId_prioridad(asunto.getAsunto_detalle().getPrioridad().getId_prioridad());
                 }
-                volanteCorrespondencia.setPrioridad(this.prioridadService.getPrioridad(empleado.getPrioridad().getId_prioridad()));
+                Prioridad prioridad = this.prioridadService.getPrioridad(empleado.getPrioridad().getId_prioridad());
+                if (usuarioSession.getArea().getId_area().equals(1375)){                    
+                    switch(prioridad.getId_prioridad()){
+                        case 1: 
+                            prioridad.setPrioridad("");
+                        break;
+                        case 2: 
+                            prioridad.setPrioridad("ORDINARIO");
+                        break;
+                        case 3: 
+                            prioridad.setPrioridad("URGENTE");
+                        break;
+                        case 4: 
+                            prioridad.setPrioridad("EXTRAURGENTE");
+                        break;
+                        case 5: 
+                            prioridad.setPrioridad("OTRO");
+                        break;
+                    }
+                    
+                }
+                volanteCorrespondencia.setPrioridad(prioridad);
+
                 volanteCorrespondencia.setFechaLimiteAtencion(empleado.getFh_limiteDDMMYYYY());// verificar la fecha
                 if (volanteCorrespondencia.getFechaLimiteAtencion().equals("")){
                     if (!empleado.getPrioridad().getId_prioridad().equals(1)){

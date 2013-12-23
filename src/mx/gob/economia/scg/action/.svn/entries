@@ -1,41 +1,14 @@
 10
 
 dir
-597
+610
 https://svn.economia.gob.mx/svn/gestion/V8/scg_svn2/src/mx/gob/economia/scg/action
 https://svn.economia.gob.mx/svn/gestion
 
 
 
-2013-11-06T22:37:43.410875Z
-596
-rodolfo.milano
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3190096e-2e56-2746-9f61-438c76f444f6
-
-ConsultaModificadoAction.java
-file
-
-
-
-
-2013-07-02T19:16:28.286975Z
-f2acbe9e81712dbcefdb5594964dc10b
-2012-02-22T17:34:45.460875Z
-440
+2013-12-06T18:24:43.145250Z
+610
 alejandro.gonzalez
 
 
@@ -51,14 +24,7 @@ alejandro.gonzalez
 
 
 
-
-
-
-
-
-
-
-7447
+3190096e-2e56-2746-9f61-438c76f444f6
 
 ConsultaRevisionAction.java
 file
@@ -94,17 +60,17 @@ alejandro.gonzalez
 
 9322
 
-ConsultaCapturaAction.java
+ConsultaModificadoAction.java
 file
 
 
 
 
-2013-09-11T19:52:08.041976Z
-0acd26d2b9821d6ff4f1e6798ddc899f
-2013-09-11T22:08:39.395250Z
-564
-rodolfo.milano
+2013-07-02T19:16:28.286975Z
+f2acbe9e81712dbcefdb5594964dc10b
+2012-02-22T17:34:45.460875Z
+440
+alejandro.gonzalez
 
 
 
@@ -126,7 +92,7 @@ rodolfo.milano
 
 
 
-9296
+7447
 
 AreaAction.java
 file
@@ -162,50 +128,16 @@ rodolfo.milano
 
 12658
 
-ConsultaArchivadoAction.java
+ConsultaCapturaAction.java
 file
 
 
 
 
-2013-07-02T19:16:28.328979Z
-b6bc32f5503b98f1face569842cd1406
-2011-12-27T20:49:43.617125Z
-374
-rodrigo.montiel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7261
-
-AsuntoAction.java
-file
-602
-
-
-
-2013-12-02T18:57:37.422452Z
-18a4f1bd835954b6a7f5ecffd3e5a11f
-2013-11-21T20:19:23.942125Z
-602
+2013-09-11T19:52:08.041976Z
+0acd26d2b9821d6ff4f1e6798ddc899f
+2013-09-11T22:08:39.395250Z
+564
 rodolfo.milano
 
 
@@ -228,7 +160,7 @@ rodolfo.milano
 
 
 
-86912
+9296
 
 ReporteVolanteAction.java
 file
@@ -263,6 +195,74 @@ rodolfo.milano
 
 
 6902
+
+AsuntoAction.java
+file
+
+
+
+
+2013-12-02T18:57:37.422452Z
+18a4f1bd835954b6a7f5ecffd3e5a11f
+2013-11-21T20:19:23.942125Z
+602
+rodolfo.milano
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+86912
+
+ConsultaArchivadoAction.java
+file
+
+
+
+
+2013-07-02T19:16:28.328979Z
+b6bc32f5503b98f1face569842cd1406
+2011-12-27T20:49:43.617125Z
+374
+rodrigo.montiel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7261
 
 InicioAction.java
 file
@@ -366,6 +366,40 @@ alejandro.gonzalez
 
 8332
 
+ReporteAction.java
+file
+
+
+
+
+2013-12-02T17:51:29.959750Z
+e06ac294155f1ce3ce6590873137ac79
+2013-12-02T18:06:05.942125Z
+607
+rodolfo.milano
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+31037
+
 ConsultaRecepcionAction.java
 file
 
@@ -400,21 +434,17 @@ alejandro.gonzalez
 
 7949
 
-ReporteAction.java
+ConsultaTurnadoAction.java
 file
-607
-
-
-
-2013-12-02T17:51:29.959750Z
-e06ac294155f1ce3ce6590873137ac79
-2013-12-02T18:06:05.942125Z
-607
-rodolfo.milano
 
 
 
 
+2013-07-02T19:16:28.344981Z
+34bff1d5e05697d89ae2404d56818822
+2011-12-16T01:48:11.945250Z
+351
+alejandro.gonzalez
 
 
 
@@ -432,7 +462,11 @@ rodolfo.milano
 
 
 
-31037
+
+
+
+
+7838
 
 ConsultaRevisadoAction.java
 file
@@ -467,40 +501,6 @@ alejandro.gonzalez
 
 
 8093
-
-ConsultaTurnadoAction.java
-file
-
-
-
-
-2013-07-02T19:16:28.344981Z
-34bff1d5e05697d89ae2404d56818822
-2011-12-16T01:48:11.945250Z
-351
-alejandro.gonzalez
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7838
 
 TemaAction.java
 file
@@ -810,7 +810,7 @@ alejandro.gonzalez
 
 ConsultaBandejaAction.java
 file
-603
+
 
 
 
@@ -882,10 +882,10 @@ file
 
 
 
-2013-10-18T19:45:10.495138Z
-2358625e45b2601f4c1cb2f3d872c09d
-2013-10-18T19:38:42.145250Z
-588
+2013-12-19T21:42:14.601644Z
+ed77a727cdb25d5456206923a1d9a639
+2013-12-06T18:24:43.145250Z
+610
 alejandro.gonzalez
 
 
@@ -908,7 +908,7 @@ alejandro.gonzalez
 
 
 
-76198
+76431
 
 ConsultaAtendidoAction.java
 file
